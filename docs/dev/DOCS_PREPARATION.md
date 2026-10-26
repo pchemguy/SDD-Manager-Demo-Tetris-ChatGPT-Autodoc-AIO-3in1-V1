@@ -44,7 +44,7 @@ Exact remaining contracts belong to the later specification. Initial package rou
 
 ## Pending transitions
 
-DOCS-005 document commit 0f36bb9ccd729d8f074ff1c34e60773f54548fb5 was pushed and exactly read back with confirmed cleanup. The evidence-comment POST to issue 5 was denied by the network proxy: Tunnel connection failed: 403 Forbidden. Read-only connector reconciliation confirmed issue 5 remains open with zero comments. Issues 1–4 are verified closed. Hold PLAN and dependent stages until issue 5 evidence/closure can be completed through permitted access. No credential replacement or alternate write route was attempted after this host denial. This blocker-record commit requires its own normal Git publication/readback; after DOCS-008 the requested stop still excludes whole-package QC, integration and implementation.
+DOCS-006 commit publication and issue 6 closure require readback after this checkpoint. Earlier completed document boundaries have been published and their issue closures verified. Continue only after this transition; after DOCS-008 stop before whole-package QC, integration and implementation.
 
 ## PROJECT proposal review
 
@@ -65,3 +65,11 @@ Scoped preapproval from autodoc/onepass; owner conformance review passed for thi
 ## DOCS-005 completion evidence
 
 Scoped preapproval from autodoc/onepass; owner conformance review passed for this document and any required report. Reviewed state: docs/dev/SPEC.md blob 5552c34055ecd2f5a88f232bc1b02ddef241e4de; docs/dev/spec/PORTABLE-FORMAT.md blob 087dc063533084053c16ddfdb97e7f9f2a75b28f; docs/dev/SPEC-REVIEW-REPORT.md blob 36fac1e9cdfb7df439a5b635aa1eb6227e69c68a. The owning checkbox closes in this commit. Required publication and hosted closure follow this checkpoint and must be verified before dependent work.
+
+## Hosted closure recovery
+
+The user requested “Try again”. The same issue 5 API route was retried after exact issue/comment lookup; the existing SPEC completion evidence was added and issue 5 was closed as completed and read back. No document completion or implementation was replayed. PLAN preparation resumed only after that verified closure.
+
+## DOCS-006 completion evidence
+
+Scoped preapproval from autodoc/onepass; owner conformance review passed for this document and any required report. Reviewed state: docs/dev/PLAN.md blob ee8c831310cb05707385f8803e904ecb63e179b8; docs/dev/PLAN-REVIEW-REPORT.md blob 753b34581519acc145258b490126d873de6356d8. The owning checkbox closes in this commit. Required publication and hosted closure follow this checkpoint and must be verified before dependent work.
