@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Tetris portable snapshot v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "formatVersion",
+    "results",
+    "settings"
+  ],
+  "properties": {
+    "formatVersion": {
+      "const": 1
+    },
+    "results": {
+      "type": "array",
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "score",
+          "timestamp"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128,
+            "pattern": "^[^\\u0000-\\u001f\\u007f]+$"
+          },
+          "score": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{3}Z$"
+          }
+        }
+      }
+    },
+    "settings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ghost",
+        "hardDrop",
+        "next",
+        "hardDropLock",
+        "lock",
+        "hold"
+      ],
+      "properties": {
+        "ghost": {
+          "enum": [
+            "hide",
+            "dynamic",
+            "show"
+          ]
+        },
+        "hardDrop": {
+          "type": "boolean"
+        },
+        "next": {
+          "type": "boolean"
+        },
+        "hardDropLock": {
+          "enum": [
+            "general",
+            "immediate"
+          ]
+        },
+        "lock": {
+          "enum": [
+            "failed-down",
+            "interval"
+          ]
+        },
+        "hold": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

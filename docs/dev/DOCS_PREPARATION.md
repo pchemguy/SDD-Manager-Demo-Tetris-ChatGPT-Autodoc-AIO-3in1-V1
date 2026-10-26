@@ -30,7 +30,7 @@ Exact remaining contracts belong to the later specification. Initial package rou
 | --- | --- |
 | DOCS-001 | Four existing root files preserved byte-for-byte against f14f78a6cc9fc3420425d5be19c9db3cdd2e6911; no root copies needed. Task/control/handoff records initialized here. Enabled provenance setup verified below. |
 | DOCS-002 | User accepted published PROJECT proposal with “k”; exact blob retained. See completion evidence below. |
-| DOCS-003–008 | Not authored; later-document preapproval comes from autodoc selection, subject to governing inputs and QC. |
+| DOCS-003–008 | Individual completed boundaries and exact identities are recorded below. Boundaries without completion evidence remain pending; autodoc supplies later-document preapproval subject to QC. |
 | DOCS-009 | Not selected; remains pending after the autodoc stop. |
 
 ## Initialization
@@ -44,7 +44,7 @@ Exact remaining contracts belong to the later specification. Initial package rou
 
 ## Pending transitions
 
-DOCS-004 commit publication and issue 4 closure require readback after this checkpoint. Earlier completed document boundaries have been published and their issue closures verified. Continue only after this transition; after DOCS-008 stop before whole-package QC, integration and implementation.
+DOCS-005 commit publication and issue 5 closure require readback after this checkpoint. Earlier completed document boundaries have been published and their issue closures verified. Continue only after this transition; after DOCS-008 stop before whole-package QC, integration and implementation.
 
 ## PROJECT proposal review
 
@@ -61,3 +61,7 @@ Scoped preapproval from autodoc/onepass; owner conformance review passed for thi
 ## DOCS-004 completion evidence
 
 Scoped preapproval from autodoc/onepass; owner conformance review passed for this document and any required report. Reviewed state: docs/dev/DECOMPOSITION.md blob a7dd2f1756c91a7a7f8588677d6198bc7706c5ed. The owning checkbox closes in this commit. Required publication and hosted closure follow this checkpoint and must be verified before dependent work.
+
+## DOCS-005 completion evidence
+
+Scoped preapproval from autodoc/onepass; owner conformance review passed for this document and any required report. Reviewed state: docs/dev/SPEC.md blob 5552c34055ecd2f5a88f232bc1b02ddef241e4de; docs/dev/spec/PORTABLE-FORMAT.md blob 087dc063533084053c16ddfdb97e7f9f2a75b28f; docs/dev/SPEC-REVIEW-REPORT.md blob 36fac1e9cdfb7df439a5b635aa1eb6227e69c68a. The owning checkbox closes in this commit. Required publication and hosted closure follow this checkpoint and must be verified before dependent work.
