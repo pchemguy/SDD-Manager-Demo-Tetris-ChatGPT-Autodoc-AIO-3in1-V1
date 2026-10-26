@@ -29,7 +29,7 @@ Exact remaining contracts belong to the later specification. Initial package rou
 | Task | Current evidence / decision basis |
 | --- | --- |
 | DOCS-001 | Four existing root files preserved byte-for-byte against f14f78a6cc9fc3420425d5be19c9db3cdd2e6911; no root copies needed. Task/control/handoff records initialized here. Enabled provenance setup verified below. |
-| DOCS-002 | PROJECT not yet published or approved. |
+| DOCS-002 | PROJECT proposal blob 3d6a68f612226a1d42f86e92df1d05697990d606; reviewed for complete principal scope, accepted clarifications, document boundaries and truthful delivery claims. Human first approval pending; task and issue remain open. |
 | DOCS-003–008 | Not authored; later-document preapproval comes from autodoc selection, subject to governing inputs and QC. |
 | DOCS-009 | Not selected; remains pending after the autodoc stop. |
 
@@ -44,4 +44,8 @@ Exact remaining contracts belong to the later specification. Initial package rou
 
 ## Pending transitions
 
-Initialization commit publication and issue 1 evidence/closure require confirmation after this checkpoint. Then PROJECT may be proposed. Reconcile actual Git/provider state before retry; no product implementation or release has started.
+Initialization d5dc16106d94e916a509625b5bbf29fdfa6b46e2 was published with exact remote readback and confirmed cleanup. Issue 1 evidence comment and completed closure were read back. The PROJECT proposal commit now requires publication/readback and human first approval of blob 3d6a68f612226a1d42f86e92df1d05697990d606. ARCHITECTURE and all dependent stages remain held; no product implementation or release has started.
+
+## PROJECT proposal review
+
+The brief covers the complete requested target, accepted gameplay/lifecycle clarifications, six settings, ordered persistence increments, session leaderboard, transactional JSON/SQLite restore, panel layout and verified-package release obligations. Detailed contracts, stack, compatibility floors and package routes remain with their later owners. Development distribution is proposed without assuming signing or store publication. Browser API feasibility was checked against [Chromium sidePanel](https://developer.chrome.com/docs/extensions/reference/api/sidePanel), [Firefox sidebar_action](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/sidebar_action), and [Firefox sidebar lifecycle](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/user_interface/Sidebars). This is documentation/source research, not runtime or artifact verification.
