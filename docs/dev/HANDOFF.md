@@ -1,6 +1,6 @@
 # Project handoff
 
-Checkpoint: autodoc/onepass DOCS-008 completion, pending its publication/hosted readback.
+Checkpoint: DOCS-009 package QC; publication, integration and hosted transitions pending.
 
 Outcome: Complete intended design, specification, delivery plan, physical layout and 72-task breakdown authored. Required per-document SPEC, PLAN/layout and TASKS reviews are Ready for their own downstream uses. No whole-package QC, implementation, native/runtime verification, platform delivery or release exists.
 
@@ -15,7 +15,7 @@ Outcome: Complete intended design, specification, delivery plan, physical layout
 
 - User approved PROJECT with “k” after proposal 65fad484fd8a73d090006f45ec70bebe37ba1028; autodoc preapproves later document checkpoints through TASKS. Six accepted gameplay/platform clarifications are retained in DOCS_PREPARATION.
 - The user’s “Try again” authorized retry of the blocked issue 5 transition; the same route succeeded, issue 5 closure was verified, then preparation continued. No credential change or duplicate document/task completion was used for recovery.
-- Exact stop: after DOCS-008 publication and issue closure. DOCS-009 whole-package QC, documentation integration, implementation activation and releases require subsequent direction.
+- Expanded authority: “Do QC and full implement”, followed by “Try again”, authorizes package QC, preparation integration, T-001–T-072 and verified releases after every phase. The earlier DOCS-008 stop is superseded. No repeated human approval is required for this range.
 - Tracking: root policy enables preparation/implementation tracking. Milestone 1 and issues 1–9 exist; issues 1–7 are verified closed. Verify issue 8 closure after this checkpoint; issue 9 and the milestone stay open.
 - Reporting: Standard. PLAN specifies nine useful phases, versions 0.1.0 through 1.0.0, browser-only Phase 1 and four-target delivery from Phase 2 onward.
 
@@ -28,7 +28,6 @@ Outcome: Complete intended design, specification, delivery plan, physical layout
 
 ## Pending effects and next action
 
-- Publish and exactly read back this DOCS-008 commit, then add evidence/close/read back issue 8. Reconcile actual Git/provider state before replaying an uncertain operation.
-- Confirm issue 9 and sdd-docs-main remain open, and stop. Do not run package QC, merge design-docs/main, create implementation issues or begin a task from TASKS merely because per-document reviews are Ready.
-- If the human explicitly advances preparation, perform DOCS-009 whole-package QC, repairs and its atomic evidence/checkoff, then verified published documentation integration and milestone closure under the existing procedure. Implementation range remains a separate authorization.
-- Browser binaries, actual sidebar execution and native Windows packaged tests remain unestablished. Planned tasks own those capabilities and must not claim platform delivery without artifact evidence.
+- Publish and read back this DOCS-009 checkpoint and close/read back issue 9, then explicitly integrate documentation into main, verify/publish/read back the merge and close/read back sdd-docs-main.
+- Activate Phase 1 only after preparation integration; use the full TASKS but project only Phase 1 objects and execute one task per verified completion commit/push. Preserve full T-001–T-072 authority across interruptions.
+- Browser/native Windows/sidebar capabilities remain to be established by their owning tasks. Report actual blockers without claiming untested platform delivery.

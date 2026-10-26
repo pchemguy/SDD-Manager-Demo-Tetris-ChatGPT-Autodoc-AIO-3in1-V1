@@ -44,7 +44,7 @@ Exact remaining contracts belong to the later specification. Initial package rou
 
 ## Pending transitions
 
-DOCS-008 commit publication and issue 8 closure require readback after this checkpoint. Earlier completed document boundaries have been published and their issue closures verified. Continue only after this transition; after DOCS-008 stop before whole-package QC, integration and implementation.
+DOCS-009 commit publication and issue 9 closure require readback after this checkpoint. Earlier completed document boundaries have been published and their issue closures verified. Continue only after this transition; the expanded user authorization includes DOCS-009, preparation integration and T-001–T-072 implementation with phase releases.
 
 ## PROJECT proposal review
 
@@ -81,3 +81,11 @@ Scoped preapproval from autodoc/onepass; owner conformance review passed for thi
 ## DOCS-008 completion evidence
 
 Scoped preapproval from autodoc/onepass; owner conformance review passed for this document and any required report. Reviewed state: docs/dev/TASKS.md blob 8d63f11c534636f57a886cebf43efaf8c01c03b5; docs/dev/TASKS-REVIEW-REPORT.md blob cefa20fdde4b85f83f9a4f4a4e0b3e5affbe7579; docs/dev/HANDOFF.md blob 42e9c07296e3277c08099463e13f88a428cd4e44; AGENTS.md blob b9c62a25811b80ce0b567dbb3fece99873280fdd. The owning checkbox closes in this commit. Required publication and hosted closure follow this checkpoint and must be verified before dependent work.
+
+## Expanded authorization and package QC
+
+The user requested “Do QC and full implement”, then “Try again” after the environment returned. This explicitly selects DOCS-009, preparation integration, the full T-001–T-072 range and required phase releases. The previous autodoc stop is superseded within that scope. Whole-package QC passed; see DOCS-QC-REPORT. No product runtime/package verification is claimed.
+
+## DOCS-009 completion evidence
+
+Explicit user request for QC and full implementation; whole-package review passed. Reviewed state: docs/dev/DOCS-QC-REPORT.md blob ae09109082b782147fc001e292f4637e43521551; docs/dev/HANDOFF.md blob 4ec727b2bb740b4c613b80215e9563f81e2d48e5. The owning checkbox closes in this commit. Required publication and hosted closure follow this checkpoint and must be verified before dependent work.
