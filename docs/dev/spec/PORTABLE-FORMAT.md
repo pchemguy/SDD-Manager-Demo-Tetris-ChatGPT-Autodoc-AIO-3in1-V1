@@ -26,4 +26,3 @@ Maximum database file size is 16 MiB. Each import/export worker operation has a 
 ## Failure and transaction boundary
 
 Decode, structural checks, JSON Schema checks, semantic validation and settings preparation all precede any results/settings/persistence mutation. Filename mismatch alone does not bypass content checks. Cancellation changes nothing. A normal persistence failure uses the captured pre-operation snapshot/rollback described by CFG and reports an error; completed Restore publishes one replacement snapshot. Save failure changes no live state. No automatic import, autosave or score persistence is introduced by this format.
-

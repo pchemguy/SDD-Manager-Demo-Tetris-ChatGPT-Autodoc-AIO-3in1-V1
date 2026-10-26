@@ -7,7 +7,7 @@
 - Approval basis: PROJECT was approved by the user’s “k” response to the published proposal 65fad484fd8a73d090006f45ec70bebe37ba1028; ARCHITECTURE through TASKS are preapproved by autodoc. The later “OK, and check env” accepts the six presented gameplay/platform proposals and requests environment recovery; it does not approve an unseen PROJECT artifact.
 - Tracking: enabled for preparation and implementation by root AGENTS.md policy. Milestone 1, sdd-docs-main, and DOCS-001–009 issues 1–9 were created/reused and read back with exact template content and associations before repository writes.
 - Publication: push and exact remote readback after every owned commit. Standard reporting follows the Explicit bootstrap.
-- Next boundary: prepare through DOCS-008 under autodoc preapproval, then stop before DOCS-009, documentation integration or implementation.
+- Next boundary: verify published documentation integration and preparation milestone closure, activate Phase 1, then execute the user-authorized full T-001–T-072 range with phase releases. The user explicitly advanced beyond the autodoc stop.
 
 ## Scope and decisions
 
@@ -89,3 +89,7 @@ The user requested “Do QC and full implement”, then “Try again” after th
 ## DOCS-009 completion evidence
 
 Explicit user request for QC and full implementation; whole-package review passed. Reviewed state: docs/dev/DOCS-QC-REPORT.md blob ae09109082b782147fc001e292f4637e43521551; docs/dev/HANDOFF.md blob 4ec727b2bb740b4c613b80215e9563f81e2d48e5. The owning checkbox closes in this commit. Required publication and hosted closure follow this checkpoint and must be verified before dependent work.
+
+## Preparation integration
+
+DOCS-009 a292cba55680e06072257601f901490ba53f07f8 was published with exact remote readback and issue 9 was closed/read back. The documentation merge into main includes all accepted product sources and passing whole-package QC. Main publication and preparation milestone closure must be verified before implementation activation.

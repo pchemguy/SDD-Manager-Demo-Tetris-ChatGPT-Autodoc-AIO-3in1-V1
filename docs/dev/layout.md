@@ -49,4 +49,3 @@ Core modules import no DOM, Node, application or platform code. Application code
 Task edit scopes normally stay within one owned component and its focused tests; composition, adapters, packaging and acceptance tests can cross the few collaborating areas needed for a meaningful integration. Runtime assets and formats have one canonical maintained source. Do not create a per-platform game engine or a handwritten schema mirror.
 
 Existing .agents/ plugin/skill sources, root guidance and disclosures retain their current ownership. Project development does not authorize editing the bundled SDD Manager or unrelated skills. Add project navigation and validated commands to root AGENTS when established; do not publish hypothetical npm commands as working setup. Do not modify /pyenv. Windows jobs follow CMD-based repository policy, independently of this Linux authoring host.
-

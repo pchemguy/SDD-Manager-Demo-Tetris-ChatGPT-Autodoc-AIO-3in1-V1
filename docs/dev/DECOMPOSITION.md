@@ -51,4 +51,3 @@ Extension file adapters use user-initiated file selection and downloads from the
 The application composes ports once at the host entry point. The domain imports no host types. Common validators and codecs do not depend on presentation. The SQLite worker exchanges bounded, tagged request/result messages with request IDs and explicit errors; a failed startup, timeout or malformed response cannot change live state. Its asset locator is host-aware without introducing host-specific database rules.
 
 Component tests exercise pure inputs/outputs. Application tests use controlled clock, random, ID, file and repository ports. Native-host checks exercise actual cookies/history, sidebar open/close and focus, downloads, packaged WASM, Electron dialogs and protocol resolution. A fake port or browser tab does not prove a packaged extension or Windows runtime works. Physical ownership belongs to the later repository layout; exact contracts belong to the system specification.
-

@@ -57,4 +57,3 @@ Canvas gives a compact scalable board while semantic HTML exposes controls, scor
 - [Chromium sidePanel lifecycle API](https://developer.chrome.com/docs/extensions/reference/api/sidePanel)
 - [Firefox sidebar manifest](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/sidebar_action)
 - [Firefox temporary installation](https://extensionworkshop.com/documentation/develop/temporary-installation-in-firefox/)
-

@@ -196,4 +196,3 @@ Use domain tests with injected time/randomness, application/codec/adapter integr
 | Development distribution limitations | Test unpacked/temporary extension and unsigned desktop installation routes and state limitations in every release |
 
 The environment currently establishes documentation tools only; execution tasks must establish reproducible runtime/dependency capabilities. These gates constrain delivery claims and do not require browser installation for document preparation. Repository layout owns physical paths; TASKS owns executable units and their exact dependencies.
-

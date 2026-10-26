@@ -89,4 +89,3 @@ Execute installation, launch, controls, pause/reopen, offline asset loading and 
 | A-FILE | JSON/SQLite round trips preserve exact data; malformed/version/row/key/score/date/duplicate/content/resource failures leave results/settings/cookies/URL/storage unchanged; cancellation and worker failure recover |
 | A-HOST | Centering/toggles/sidebar widths, actual focus/visibility/close/reopen, persistent versus session boundaries, packaged dialogs/downloads, keyboard and visual inspection |
 | A-RELEASE | Each required extracted artifact installs/launches offline, carries in-scope behavior/assets/notices and matches uploaded checksums and tagged source |
-
