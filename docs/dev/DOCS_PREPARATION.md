@@ -4,10 +4,10 @@
 
 - Mode: autodoc/onepass, selected by the original project request.
 - Scope: complete Tetris target across browser, Windows Electron, Chromium sidebar and Firefox sidebar, including all requested gameplay, configuration, leaderboard and manual file capabilities.
-- Approval basis: PROJECT first approval remains active; ARCHITECTURE through TASKS are preapproved by autodoc. The later “OK, and check env” accepts the six presented gameplay/platform proposals and requests environment recovery; it does not approve an unseen PROJECT artifact.
+- Approval basis: PROJECT was approved by the user’s “k” response to the published proposal 65fad484fd8a73d090006f45ec70bebe37ba1028; ARCHITECTURE through TASKS are preapproved by autodoc. The later “OK, and check env” accepts the six presented gameplay/platform proposals and requests environment recovery; it does not approve an unseen PROJECT artifact.
 - Tracking: enabled for preparation and implementation by root AGENTS.md policy. Milestone 1, sdd-docs-main, and DOCS-001–009 issues 1–9 were created/reused and read back with exact template content and associations before repository writes.
 - Publication: push and exact remote readback after every owned commit. Standard reporting follows the Explicit bootstrap.
-- Next boundary: publish initialization, close and verify issue 1, then publish PROJECT for human first approval. After approval, prepare through DOCS-008 and stop before DOCS-009, integration or implementation.
+- Next boundary: prepare through DOCS-008 under autodoc preapproval, then stop before DOCS-009, documentation integration or implementation.
 
 ## Scope and decisions
 
@@ -29,7 +29,7 @@ Exact remaining contracts belong to the later specification. Initial package rou
 | Task | Current evidence / decision basis |
 | --- | --- |
 | DOCS-001 | Four existing root files preserved byte-for-byte against f14f78a6cc9fc3420425d5be19c9db3cdd2e6911; no root copies needed. Task/control/handoff records initialized here. Enabled provenance setup verified below. |
-| DOCS-002 | PROJECT proposal blob 3d6a68f612226a1d42f86e92df1d05697990d606; reviewed for complete principal scope, accepted clarifications, document boundaries and truthful delivery claims. Human first approval pending; task and issue remain open. |
+| DOCS-002 | User accepted published PROJECT proposal with “k”; exact blob retained. See completion evidence below. |
 | DOCS-003–008 | Not authored; later-document preapproval comes from autodoc selection, subject to governing inputs and QC. |
 | DOCS-009 | Not selected; remains pending after the autodoc stop. |
 
@@ -44,8 +44,12 @@ Exact remaining contracts belong to the later specification. Initial package rou
 
 ## Pending transitions
 
-Initialization d5dc16106d94e916a509625b5bbf29fdfa6b46e2 was published with exact remote readback and confirmed cleanup. Issue 1 evidence comment and completed closure were read back. The PROJECT proposal commit now requires publication/readback and human first approval of blob 3d6a68f612226a1d42f86e92df1d05697990d606. ARCHITECTURE and all dependent stages remain held; no product implementation or release has started.
+DOCS-002 commit publication and issue 2 closure require readback after this checkpoint. Earlier completed document boundaries have been published and their issue closures verified. Continue only after this transition; after DOCS-008 stop before whole-package QC, integration and implementation.
 
 ## PROJECT proposal review
 
 The brief covers the complete requested target, accepted gameplay/lifecycle clarifications, six settings, ordered persistence increments, session leaderboard, transactional JSON/SQLite restore, panel layout and verified-package release obligations. Detailed contracts, stack, compatibility floors and package routes remain with their later owners. Development distribution is proposed without assuming signing or store publication. Browser API feasibility was checked against [Chromium sidePanel](https://developer.chrome.com/docs/extensions/reference/api/sidePanel), [Firefox sidebar_action](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/sidebar_action), and [Firefox sidebar lifecycle](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/user_interface/Sidebars). This is documentation/source research, not runtime or artifact verification.
+
+## DOCS-002 completion evidence
+
+Human approval of the published PROJECT proposal. Reviewed state: docs/dev/PROJECT.md blob 3d6a68f612226a1d42f86e92df1d05697990d606. The owning checkbox closes in this commit. Required publication and hosted closure follow this checkpoint and must be verified before dependent work.
