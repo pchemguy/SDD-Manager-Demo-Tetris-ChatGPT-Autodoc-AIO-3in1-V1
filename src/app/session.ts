@@ -8,6 +8,6 @@ export class GameSession {
   constructor(next:()=>PieceType=()=>TYPES[Math.floor(Math.random()*TYPES.length)]){this.next=next;}
   subscribe(listener:(state:Readonly<GameState>)=>void){this.listeners.add(listener);listener(this.state);return()=>{this.listeners.delete(listener);};}
   start(){this.state=startGame(this.next);this.publish();}
-  act(action:Action){this.state=action==='down'?descend(this.state,this.next):command(this.state,action);this.publish();}
+  act(action:Action){this.state=action==='down'?descend(this.state,this.next,'soft'):command(this.state,action);this.publish();}
   private publish(){for(const listener of this.listeners)listener(this.state);}
 }

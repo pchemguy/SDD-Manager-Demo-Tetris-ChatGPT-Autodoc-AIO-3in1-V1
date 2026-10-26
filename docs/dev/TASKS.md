@@ -34,10 +34,11 @@ Versions and platform deferrals are in PLAN. Every phase review prepares source/
             Depends on: T-003.
             Acceptance/evidence: Explicit time advances prove gravity, failed-down locking, spawn transitions and top-out at boundaries.
             Verified: Six new gravity/locking scenarios observed RED before implementation; all 24 core tests, typecheck and four Chromium/Firefox UI regressions passed. Explicit active-time intervals/remainders, failed-down locking, exactly-one next spawn, top-out without board writes, paused/over exclusion and invalid elapsed input were verified. Session soft-down uses the coherent locking transition; automatic UI scheduling remains T-006.
-        - [ ] T-005 — Implement line clearing and score progression
+        - [x] T-005 — Implement line clearing and score progression
             Scope: src/core scoring/clear transitions and tests/core. Contracts: GAME, basic HOST/UI, browser RELEASE.
             Depends on: T-004.
             Acceptance/evidence: One through four simultaneous clears, row compaction, drop points, score saturation and level/speed thresholds match GAME.
+            Verified: Eight scoring/clear fixtures observed RED before implementation; all 32 core tests, typecheck and four Chromium/Firefox UI regressions passed. Verified 1-4 simultaneous line awards, row compaction, independent empty rows, pre-clear level multipliers, level/speed thresholds, soft-drop versus gravity points and safe-integer score saturation. An intermediate duplicate-local compile error was corrected before the passing runs. Hard drop remains outside the classic phase.
         - [ ] T-006 — Integrate the complete classic game loop
             Scope: src/app session, src/ui game information and tests/e2e. Contracts: GAME, basic HOST/UI, browser RELEASE.
             Depends on: T-004, T-005.

@@ -1,5 +1,5 @@
 /** Immutable classic commands; clocks and random selection are supplied by callers. */
-import { emptyBoard, spawn, canPlace, cells, type Cell, type Piece, type PieceType } from './geometry.ts';
+import { emptyBoard, spawn, canPlace, cells, WIDTH, HEIGHT, type Cell, type Piece, type PieceType } from './geometry.ts';
 export interface GameState {
   board:Cell[][];
   active:Piece|null;
@@ -44,13 +44,18 @@ export function lockPiece(state:GameState,next:()=>PieceType):GameState {
   if(points.some(p=>p.y<0))return {...state,active:null,status:'over',fallMs:0};
   const board=state.board.map(row=>[...row]);
   for(const {x,y} of points)board[y][x]=state.active.type;
-  return spawnNext({...state,board},next());
+  const surviving=board.filter(row=>row.some(cell=>cell===null));
+  const cleared=HEIGHT-surviving.length;
+  const compacted=[...Array.from({length:cleared},()=>Array<Cell>(WIDTH).fill(null)),...surviving];
+  const lines=state.lines+cleared;
+  const award=[0,100,300,500,800][cleared]*state.level;
+  return spawnNext({...state,board:compacted,lines,level:1+Math.floor(lines/10),score:addScore(state.score,award)},next());
 }
 /** A classic downward attempt locks only when the one-row move fails. */
-export function descend(state:GameState,next:()=>PieceType):GameState {
+export function descend(state:GameState,next:()=>PieceType,source:'gravity'|'soft'='gravity'):GameState {
   if(state.status!=='running'||!state.active)return state;
   const moved=command(state,'down');
-  return moved===state?lockPiece(state,next):moved;
+  return moved===state?lockPiece(state,next):(source==='soft'?{...moved,score:addScore(moved.score,1)}:moved);
 }
 /** Advance active time deterministically, excluding paused/game-over duration. */
 export function tick(state:GameState,elapsed:number,next:()=>PieceType):GameState {
@@ -62,3 +67,6 @@ export function tick(state:GameState,elapsed:number,next:()=>PieceType):GameStat
   }
   return {...current,fallMs:current.status==='running'?remaining:0};
 }
+
+/** Keep scores exactly representable at the portable-format integer boundary. */
+function addScore(score:number,points:number){return Math.min(Number.MAX_SAFE_INTEGER,score+points);}
