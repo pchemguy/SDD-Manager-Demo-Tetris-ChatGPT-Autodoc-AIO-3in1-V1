@@ -29,10 +29,11 @@ Versions and platform deferrals are in PLAN. Every phase review prepares source/
             Verified: two real-browser missing-control tests observed RED, then four UI tests passed across managed Chromium/Firefox; all 18 core tests, typecheck and production compilation passed. Whole-milestone code review and visual inspection passed; see reports/phases/1/1.1.md for browser recovery, screenshots and evidence limits.
             Milestone boundary: after its implementation, review all of 1.1, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/1/1.1.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
     - [ ] Milestone 1.2 — Complete classic loop
-        - [ ] T-004 — Implement gravity and classic locking
+        - [x] T-004 — Implement gravity and classic locking
             Scope: src/core reducer timing and tests/core. Contracts: GAME, basic HOST/UI, browser RELEASE.
             Depends on: T-003.
             Acceptance/evidence: Explicit time advances prove gravity, failed-down locking, spawn transitions and top-out at boundaries.
+            Verified: Six new gravity/locking scenarios observed RED before implementation; all 24 core tests, typecheck and four Chromium/Firefox UI regressions passed. Explicit active-time intervals/remainders, failed-down locking, exactly-one next spawn, top-out without board writes, paused/over exclusion and invalid elapsed input were verified. Session soft-down uses the coherent locking transition; automatic UI scheduling remains T-006.
         - [ ] T-005 — Implement line clearing and score progression
             Scope: src/core scoring/clear transitions and tests/core. Contracts: GAME, basic HOST/UI, browser RELEASE.
             Depends on: T-004.
