@@ -35,3 +35,28 @@ test('automatic top-out shows game over and restart clears the board',async({pag
  await page.screenshot({path:`test-results/gameover-${test.info().project.name}.png`,fullPage:true});
  await page.getByRole('button',{name:'Restart',exact:true}).click();await expect(page.getByRole('status',{name:'Game status',exact:true})).toHaveText('In play');expect((await painted(page)).length).toBeLessThanOrEqual(4);await expect(page.getByLabel('Score',{exact:true})).toHaveText('0');
 });
+
+test('pause preserves remaining gravity time without a catch-up burst',async({page})=>{
+ await page.goto('/');await page.getByRole('button',{name:'Start',exact:true}).click();const board=page.getByRole('img',{name:'Game board'});await board.press('ArrowDown');await page.clock.runFor(700);
+ await page.getByRole('button',{name:'Pause',exact:true}).click();const before=await painted(page);await expect(page.getByRole('status',{name:'Game status',exact:true})).toHaveText('Paused');
+ await page.clock.runFor(5000);expect(await painted(page)).toEqual(before);await page.getByRole('button',{name:'Resume',exact:true}).click();await page.clock.runFor(250);expect(await painted(page)).toEqual(before);
+ await page.clock.runFor(100);expect(await painted(page)).toEqual(before.map(v=>{const[x,y]=v.split(',').map(Number);return `${x},${y+1}`;}).sort());await board.press('p');await expect(page.getByRole('status',{name:'Game status',exact:true})).toHaveText('Paused');await board.press('Escape');await expect(page.getByRole('status',{name:'Game status',exact:true})).toHaveText('In play');
+});
+test('held arrows repeat and board blur clears their state',async({page})=>{
+ await page.goto('/');await page.getByRole('button',{name:'Start',exact:true}).click();const board=page.getByRole('img',{name:'Game board'});await board.press('ArrowDown');const before=await painted(page);
+ await page.keyboard.down('ArrowLeft');await page.clock.runFor(149);const once=await painted(page);expect(once).toEqual(before.map(v=>{const[x,y]=v.split(',').map(Number);return `${x-1},${y}`;}).sort());
+ await page.clock.runFor(20);expect(await painted(page)).toEqual(before.map(v=>{const[x,y]=v.split(',').map(Number);return `${x-2},${y}`;}).sort());
+ await page.getByRole('button',{name:'Restart',exact:true}).focus();const blurred=await painted(page);await page.clock.runFor(500);expect(await painted(page)).toEqual(blurred);await page.keyboard.up('ArrowLeft');
+});
+test('modeled host blur pauses and requires explicit resume',async({page})=>{
+ await page.goto('/');await page.getByRole('button',{name:'Start',exact:true}).click();await page.evaluate(()=>window.dispatchEvent(new Event('blur')));
+ await expect(page.getByRole('status',{name:'Game status',exact:true})).toHaveText('Paused');await page.clock.runFor(5000);await page.getByRole('button',{name:'Resume',exact:true}).click();await expect(page.getByRole('status',{name:'Game status',exact:true})).toHaveText('In play');
+});
+
+test('modeled hidden-document events pause without automatic resume',async({page})=>{
+ await page.goto('/');await page.getByRole('button',{name:'Start',exact:true}).click();
+ await page.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,get:()=>true});document.dispatchEvent(new Event('visibilitychange'));});
+ await expect(page.getByRole('status',{name:'Game status',exact:true})).toHaveText('Paused');
+ await page.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,get:()=>false});document.dispatchEvent(new Event('visibilitychange'));});
+ await expect(page.getByRole('status',{name:'Game status',exact:true})).toHaveText('Paused');await page.getByRole('button',{name:'Resume',exact:true}).click();await expect(page.getByRole('status',{name:'Game status',exact:true})).toHaveText('In play');
+});

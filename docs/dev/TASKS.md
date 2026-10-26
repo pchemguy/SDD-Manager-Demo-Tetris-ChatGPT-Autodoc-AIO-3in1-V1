@@ -47,10 +47,11 @@ Versions and platform deferrals are in PLAN. Every phase review prepares source/
             Verified: Four application cases and two real-browser automatic-gravity scenarios observed RED before integration. Final verification: 36 core/application tests, eight Chromium/Firefox UI tests, typecheck and production compilation passed. Whole-milestone code review, completion/restart behavior and screenshot inspection passed; report 1.2.md records timing controls, resolved status-locator ambiguity and native/package evidence limits.
             Milestone boundary: after its implementation, review all of 1.2, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/1/1.2.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
     - [ ] Milestone 1.3 — Browser delivery
-        - [ ] T-007 — Implement pause, focus and keyboard repeat handling
+        - [x] T-007 — Implement pause, focus and keyboard repeat handling
             Scope: src/app input/scheduler and focused UI checks. Contracts: GAME, basic HOST/UI, browser RELEASE.
             Depends on: T-006.
             Acceptance/evidence: Pause excludes elapsed time, blur clears held keys, repeats use specified delays, and form/button interaction keeps normal keyboard behavior.
+            Verified: Four new application input/pause cases and three Chromium UI cases observed RED. Final checks passed 40 core/application tests, 16 Chromium/Firefox UI cases, typecheck and production compilation. Verified 150/50 ms horizontal and 50 ms down repeats, once-per-press rotations, pause remainder/no catch-up, P/Escape, real DOM board-blur key clearing, and explicitly modeled window/visibility suspension with manual resume. Full Chromium native-window probing was blocked by the host socket restriction; no host restriction was relaxed and native desktop/sidebar evidence remains pending.
         - [ ] T-008 — Build and document the standalone browser artifact
             Scope: scripts web packaging, generated dist/web and docs/user. Contracts: GAME, basic HOST/UI, browser RELEASE.
             Depends on: T-007.

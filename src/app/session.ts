@@ -11,6 +11,8 @@ export class GameSession {
   onComplete(listener:(score:number)=>void){this.completions.add(listener);return()=>{this.completions.delete(listener);};}
   start(){this.commit(startGame(this.next));}
   act(action:Action){this.commit(action==='down'?descend(this.state,this.next,'soft'):command(this.state,action));}
+  pause(){if(this.state.status==='running')this.commit({...this.state,status:'paused'});}
+  togglePause(){if(this.state.status==='running')this.pause();else if(this.state.status==='paused')this.commit({...this.state,status:'running'});}
   advance(elapsed:number){this.commit(tick(this.state,elapsed,this.next));}
   private commit(next:GameState){
     if(next===this.state)return;
