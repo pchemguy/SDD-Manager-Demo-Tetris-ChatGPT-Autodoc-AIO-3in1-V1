@@ -44,7 +44,7 @@ Exact remaining contracts belong to the later specification. Initial package rou
 
 ## Pending transitions
 
-DOCS-007 commit publication and issue 7 closure require readback after this checkpoint. Earlier completed document boundaries have been published and their issue closures verified. Continue only after this transition; after DOCS-008 stop before whole-package QC, integration and implementation.
+DOCS-008 commit publication and issue 8 closure require readback after this checkpoint. Earlier completed document boundaries have been published and their issue closures verified. Continue only after this transition; after DOCS-008 stop before whole-package QC, integration and implementation.
 
 ## PROJECT proposal review
 
@@ -77,3 +77,7 @@ Scoped preapproval from autodoc/onepass; owner conformance review passed for thi
 ## DOCS-007 completion evidence
 
 Scoped preapproval from autodoc/onepass; owner conformance review passed for this document and any required report. Reviewed state: docs/dev/layout.md blob c0197c5429e7bb2cb0bba442297453542fdde384; docs/dev/PLAN-REVIEW-REPORT.md blob 0a8690d318f66b3f449b181a59a9072d5cb706a2; AGENTS.md blob be0c5b8290d2539df36c1207d9260d87784a5d86. The owning checkbox closes in this commit. Required publication and hosted closure follow this checkpoint and must be verified before dependent work.
+
+## DOCS-008 completion evidence
+
+Scoped preapproval from autodoc/onepass; owner conformance review passed for this document and any required report. Reviewed state: docs/dev/TASKS.md blob 8d63f11c534636f57a886cebf43efaf8c01c03b5; docs/dev/TASKS-REVIEW-REPORT.md blob cefa20fdde4b85f83f9a4f4a4e0b3e5affbe7579; docs/dev/HANDOFF.md blob 42e9c07296e3277c08099463e13f88a428cd4e44; AGENTS.md blob b9c62a25811b80ce0b567dbb3fece99873280fdd. The owning checkbox closes in this commit. Required publication and hosted closure follow this checkpoint and must be verified before dependent work.
