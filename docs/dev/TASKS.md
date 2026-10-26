@@ -17,10 +17,11 @@ Versions and platform deferrals are in PLAN. Every phase review prepares source/
             Depends on: none; accepted/published preparation and verified eligible Phase 1 projection.
             Acceptance/evidence: Pin compatible dependencies/lockfile; verify all seven spawn shapes, bounds and occupied-cell tests; document the actual Linux/Windows-CMD commands and isolated browser setup requirements.
             Verified: Node 24.22.1; all 11 independent geometry tests first failed for unimplemented geometry, then passed after implementation, including after clean npm ci. npm run typecheck passed. Vite 8.3.5, TypeScript 7.0.2 and Playwright 1.62.1 are pinned in the lockfile. npm emits an inherited http-proxy configuration warning; installation and checks succeed. Browser/runtime package acceptance is not part of this task.
-        - [ ] T-002 — Implement active-piece commands and restart state
+        - [x] T-002 — Implement active-piece commands and restart state
             Scope: src/core reducer and tests/core. Contracts: GAME, basic HOST/UI, browser RELEASE.
             Depends on: T-001.
             Acceptance/evidence: Controlled streams prove spawn, movement, baseline no-kick rotation, rejected moves and fresh restart without settled-cell overwrites.
+            Verified: seven new command tests observed RED before implementation, then 18 total core tests passed; typecheck passed. Controlled draw counts, immutable move/restart outcomes, wall/settled-cell rejection, no-kick rotation and blocked spawn were exercised. Gravity and line/score progression remain separate tasks.
         - [ ] T-003 — Render and control the playable board
             Scope: src/app session composition, src/ui board and tests/ui. Contracts: GAME, basic HOST/UI, browser RELEASE.
             Depends on: T-001, T-002.

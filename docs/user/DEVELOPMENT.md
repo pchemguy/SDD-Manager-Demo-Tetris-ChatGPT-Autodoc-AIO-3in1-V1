@@ -6,7 +6,7 @@ Use Node.js 24.x and npm. Runtime application users will not need Node.js; the b
 
 ## Validated source commands
 
-These commands were exercised on the Linux execution host for the geometry foundation and use syntax also accepted by Windows CMD:
+These commands were exercised on the Linux execution host for the geometry and command foundation and use syntax also accepted by Windows CMD:
 
 ```text
 npm ci --no-audit --no-fund
