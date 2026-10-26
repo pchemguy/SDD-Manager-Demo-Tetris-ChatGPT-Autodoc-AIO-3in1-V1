@@ -27,6 +27,7 @@ Versions and platform deferrals are in PLAN. Every phase review prepares source/
             Depends on: T-001, T-002.
             Acceptance/evidence: A real browser displays the board and active piece, accepts focused movement/rotation and visibly rejects collisions; domain state and rendering agree.
             Verified: two real-browser missing-control tests observed RED, then four UI tests passed across managed Chromium/Firefox; all 18 core tests, typecheck and production compilation passed. Whole-milestone code review and visual inspection passed; see reports/phases/1/1.1.md for browser recovery, screenshots and evidence limits.
+            Follow-up repair: a synthetic HEAD-only fixture demonstrated that development credential routes were served (HTTP 200). Explicit Vite fs.deny rules now reject direct, encoded, raw-query and @fs credential routes; the regression passes. Real credentials were neither read through HTTP nor logged. No game rules or task completion changed.
             Milestone boundary: after its implementation, review all of 1.1, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/1/1.1.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
     - [x] Milestone 1.2 — Complete classic loop
         - [x] T-004 — Implement gravity and classic locking
