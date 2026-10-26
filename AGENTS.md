@@ -49,3 +49,9 @@ Follow `sdd-manage`'s preparation and phase-activation workflows for required tr
 ## Project guidance
 
 Maintain project-specific navigation and validated setup/check commands here as they become established. Do not invent commands, paths, requirements or completion claims.
+
+## Project navigation
+
+Current product sources are [PROJECT](docs/dev/PROJECT.md), [ARCHITECTURE](docs/dev/ARCHITECTURE.md), [DECOMPOSITION](docs/dev/DECOMPOSITION.md), [SPEC](docs/dev/SPEC.md), [PLAN](docs/dev/PLAN.md) and [layout](docs/dev/layout.md). Physical implementation locations in layout are planned until their owning tasks create them. Add setup/test commands only after they have been established and validated. Keep bundled .agents sources outside ordinary application edits.
+
+See [DOCS_TASKS](docs/dev/DOCS_TASKS.md) and [DOCS_PREPARATION](docs/dev/DOCS_PREPARATION.md) for preparation progress and decisions; use HANDOFF and subsequent records/Git for continuation.

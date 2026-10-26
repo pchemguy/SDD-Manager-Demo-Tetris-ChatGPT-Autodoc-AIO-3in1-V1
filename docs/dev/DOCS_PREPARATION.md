@@ -44,7 +44,7 @@ Exact remaining contracts belong to the later specification. Initial package rou
 
 ## Pending transitions
 
-DOCS-006 commit publication and issue 6 closure require readback after this checkpoint. Earlier completed document boundaries have been published and their issue closures verified. Continue only after this transition; after DOCS-008 stop before whole-package QC, integration and implementation.
+DOCS-007 commit publication and issue 7 closure require readback after this checkpoint. Earlier completed document boundaries have been published and their issue closures verified. Continue only after this transition; after DOCS-008 stop before whole-package QC, integration and implementation.
 
 ## PROJECT proposal review
 
@@ -73,3 +73,7 @@ The user requested “Try again”. The same issue 5 API route was retried after
 ## DOCS-006 completion evidence
 
 Scoped preapproval from autodoc/onepass; owner conformance review passed for this document and any required report. Reviewed state: docs/dev/PLAN.md blob ee8c831310cb05707385f8803e904ecb63e179b8; docs/dev/PLAN-REVIEW-REPORT.md blob 753b34581519acc145258b490126d873de6356d8. The owning checkbox closes in this commit. Required publication and hosted closure follow this checkpoint and must be verified before dependent work.
+
+## DOCS-007 completion evidence
+
+Scoped preapproval from autodoc/onepass; owner conformance review passed for this document and any required report. Reviewed state: docs/dev/layout.md blob c0197c5429e7bb2cb0bba442297453542fdde384; docs/dev/PLAN-REVIEW-REPORT.md blob 0a8690d318f66b3f449b181a59a9072d5cb706a2; AGENTS.md blob be0c5b8290d2539df36c1207d9260d87784a5d86. The owning checkbox closes in this commit. Required publication and hosted closure follow this checkpoint and must be verified before dependent work.

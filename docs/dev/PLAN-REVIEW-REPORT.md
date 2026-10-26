@@ -2,7 +2,7 @@
 
 ## Current gate
 
-State: Ready for layout preparation, strategy scope only. TASKS readiness remains held until combined PLAN/layout review. No implementation or package verification is claimed. No unresolved confirmed strategy finding.
+State: Ready for TASKS derivation after the combined strategy/layout review in Revision 1. No implementation or package verification is claimed. No unresolved confirmed strategy finding.
 
 ## Initial review
 
@@ -44,3 +44,9 @@ Assessed complete SPEC coverage, bounded outcomes, dependencies, scoped exits, p
 | RELEASE, regression and current host behavior | Every phase for its explicitly included platforms |
 
 Reviewed early usability, milestone report obligations and the separate phase review/merge/release sequence. Required Windows/sidebar evidence remains a future execution gate, not a fictitious completed check. Layout allocation is intentionally not assessed yet; dependent TASKS generation is held until the combined review.
+
+## Revision 1 — Combined PLAN and layout review
+
+Reviewed PLAN blob ee8c831310cb05707385f8803e904ecb63e179b8 and layout blob c0197c5429e7bb2cb0bba442297453542fdde384. The governing SPEC/design identities above are unchanged. Reviewed logical-to-physical coverage, core dependency direction, host entry separation, workers/schema asset ownership, test/fixture allocation, native package acceptance, generated paths and report locations.
+
+Every decomposed component and planned phase has a source/check/packaging/documentation home. The canonical Schema remains the single maintained source and generated packages consume it, avoiding a drifting duplicate. Browser and extension bundles exclude Electron Node modules. The layout distinguishes planned paths from existing implementation and does not invent executable setup commands. Added project navigation to AGENTS while preserving its existing controlling instructions. Relative links and heading/whitespace checks passed. No confirmed finding remains; combined PLAN/layout gate is Ready for TASKS. Source/runtime behavior remains unimplemented and unverified.
