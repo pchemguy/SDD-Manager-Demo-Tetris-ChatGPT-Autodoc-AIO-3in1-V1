@@ -50,3 +50,7 @@ Structural checks executed: 72 unique IDs, 21 folded boundaries, nine phase-revi
 Checked that native Windows execution and true browser sidebars are acceptance gates, not optional synthetic replacements; early phases explicitly defer independent later features. All four packages are rebuilt/reverified from Phase 2 onward. Every phase review includes version/notes/installation/artifact preparation and the final review includes the implementation/TODO aggregation. PLAN still owns the distinct default merge/tag/release sequence; TASKS does not pretend future hosted effects happened.
 
 No product tests, native host runtime, package verification or whole-package documentation QC ran during this task-list review. Those remain with their owning authorized stages. No implementation task is checked and no phase tracking was activated.
+
+## Revision 1 — Whitespace and source currency
+
+Removed trailing spaces and paragraph EOF blank lines without changing contracts, phase/task identities, scope, dependencies or checklist state. Rechecked the unchanged substantive coverage against the same governing inputs. Current reviewed roots: TASKS.md blob dd0f60c0449a2d4d3ff7c82caee63bdab5666edc. Scope remains Ready; no product execution is claimed.

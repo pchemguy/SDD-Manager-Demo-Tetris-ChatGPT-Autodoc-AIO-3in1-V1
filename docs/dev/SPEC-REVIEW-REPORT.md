@@ -28,3 +28,7 @@ Compared the complete user scope and accepted clarifications against PROJECT, ar
 | HOST/UI/RELEASE | Presentation, platform adapters and packaging | Four distinct delivery targets, real-native evidence, offline dependencies and honest development distribution |
 
 Source/child links and JSON syntax were checked. Contract ownership remains directed; no domain dependency on host I/O. Schema validation does not claim to implement semantic calendar, duplicate-key or duplicate-ID checks; those are explicit additional obligations. Browser cookie/history rollback is an in-process operation, not a crash-atomic storage claim. Runtime/packaged feasibility remains to be demonstrated by implementation tasks. No test execution or native package verification was performed during this document review.
+
+## Revision 1 — Whitespace and source currency
+
+Removed trailing spaces and paragraph EOF blank lines without changing contracts, phase/task identities, scope, dependencies or checklist state. Rechecked the unchanged substantive coverage against the same governing inputs. Current reviewed roots: SPEC.md blob a08c3806702451f44f054b1d48edd6f04e9c1206, spec/PORTABLE-FORMAT.md blob 2044964ea2354504a03300fdc066a6c8a2ca98dd. Scope remains Ready; no product execution is claimed.

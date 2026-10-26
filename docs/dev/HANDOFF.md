@@ -1,6 +1,6 @@
 # Project handoff
 
-Checkpoint: accepted preparation integration into main; target publication and milestone closure pending.
+Checkpoint: accepted preparation integration into main; corrected preparation publication/integration and milestone closure pending.
 
 Outcome: Complete intended design, specification, delivery plan, physical layout and 72-task breakdown authored. Required per-document SPEC, PLAN/layout and TASKS reviews are Ready for their own downstream uses. No whole-package QC, implementation, native/runtime verification, platform delivery or release exists.
 
@@ -31,3 +31,7 @@ Outcome: Complete intended design, specification, delivery plan, physical layout
 - DOCS-001–009 are verified closed, and DOCS-009 was published. Verify/publish/read back this explicit main merge, then close/read back sdd-docs-main. Only then activate Phase 1.
 - Activate Phase 1 only after preparation integration; use the full TASKS but project only Phase 1 objects and execute one task per verified completion commit/push. Preserve full T-001–T-072 authority across interruptions.
 - Browser/native Windows/sidebar capabilities remain to be established by their owning tasks. Report actual blockers without claiming untested platform delivery.
+
+## Preparation correction
+
+The first main merge 1f6fcf29d03a3d0450cc3435f04fb4d81648889b was published before its whitespace failure was handled. QC-001 was corrected on design-docs/main with updated review currency. Publish this correction and explicitly integrate/verify/publish it into main before closing the preparation milestone or activating implementation. Product contracts and authorized T-001–T-072 range are unchanged.
