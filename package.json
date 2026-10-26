@@ -11,7 +11,10 @@
     "typecheck": "tsc --noEmit",
     "dev": "vite --host 127.0.0.1",
     "build": "tsc --noEmit && vite build",
-    "test:ui": "node scripts/browser.mjs test"
+    "test:ui": "node scripts/browser.mjs test",
+    "test:server": "node --test tests/server/*.test.mjs",
+    "test:package": "python -m unittest discover -s tests/package -p \"test_*.py\"",
+    "package:web": "npm run build && python scripts/package_web.py"
   },
   "devDependencies": {
     "@playwright/test": "1.62.1",

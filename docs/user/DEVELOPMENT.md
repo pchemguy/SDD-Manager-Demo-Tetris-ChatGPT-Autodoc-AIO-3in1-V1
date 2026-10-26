@@ -39,3 +39,15 @@ The recorded host needed official-image Chromium recovery and the PRSS Firefox d
 ## Native-window evidence boundary
 
 Chromium shell and managed Firefox pass real game input/Canvas checks. DOM board focus loss is tested through actual browser focus. Window blur and document visibility handlers have explicitly modeled tests. A separate full Chromium native-window probe failed the execution host’s process-singleton socket restriction (Operation not permitted); no socket restriction or host sandbox was relaxed. Actual desktop/sidebar window events require a compatible native environment in their owning phases.
+
+## Browser distribution packaging
+
+Packaging requires Python 3.11+ in addition to the pinned Node development tools. Runtime players do not need either. The validated commands are:
+
+```text
+npm run test:server
+npm run test:package
+npm run package:web
+```
+
+The package command compiles the static build and creates release/tetris-web-<version>.zip, SHA256SUMS and artifacts.json. Only the compiled build and explicit installation/control/license documents enter the archive. Credential files, links and unsafe archive paths are rejected. Archive timestamps and ordering are fixed for reproducible bytes. Candidate packages are generated/ignored; release publication and final-source verification are separate phase gates.

@@ -52,10 +52,11 @@ Versions and platform deferrals are in PLAN. Every phase review prepares source/
             Depends on: T-006.
             Acceptance/evidence: Pause excludes elapsed time, blur clears held keys, repeats use specified delays, and form/button interaction keeps normal keyboard behavior.
             Verified: Four new application input/pause cases and three Chromium UI cases observed RED. Final checks passed 40 core/application tests, 16 Chromium/Firefox UI cases, typecheck and production compilation. Verified 150/50 ms horizontal and 50 ms down repeats, once-per-press rotations, pause remainder/no catch-up, P/Escape, real DOM board-blur key clearing, and explicitly modeled window/visibility suspension with manual resume. Full Chromium native-window probing was blocked by the host socket restriction; no host restriction was relaxed and native desktop/sidebar evidence remains pending.
-        - [ ] T-008 — Build and document the standalone browser artifact
+        - [x] T-008 — Build and document the standalone browser artifact
             Scope: scripts web packaging, generated dist/web and docs/user. Contracts: GAME, basic HOST/UI, browser RELEASE.
             Depends on: T-007.
             Acceptance/evidence: Extracted static build runs through a static HTTP(S) host without an app backend/CDN; include controls, notices, versioned archive and checksums.
+            Verified: Five archive cases observed RED before implementation; all five packaging tests and the private-route regression pass. Production build and ZIP CRC/content checks passed. The extracted candidate launched over a plain static HTTP host in managed Chromium, with working input/score/pause, no page errors and only local runtime requests. Candidate SHA-256: 744557c62935ff1330ec88ec333aaf928195033dc826ef24fc8e0765bc234421. Installation/control/license/version documents and checksums included; reproducibility, private-file, symlink and traversal checks passed. Final broad artifact acceptance and release are still T-009/T-010.
         - [ ] T-009 — Verify baseline browser usability and package behavior
             Scope: tests/e2e, scripts artifact checks and docs/user. Contracts: GAME, basic HOST/UI, browser RELEASE.
             Depends on: T-007, T-008.

@@ -1,0 +1,10 @@
+Blockfield browser distribution
+
+Application license: MIT; see LICENSE.
+The compiled browser entry includes Vite's generated module-preload helper.
+Vite is MIT licensed; the installed package's complete license notices are
+provided verbatim in VITE-LICENSE.txt.
+
+TypeScript and Playwright are development/test tools and are not shipped as
+application runtime dependencies in this browser ZIP. The distribution uses
+browser platform APIs and bundled local application assets.
