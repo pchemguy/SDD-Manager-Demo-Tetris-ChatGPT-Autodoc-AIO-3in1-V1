@@ -12,10 +12,11 @@ Versions and platform deferrals are in PLAN. Every phase review prepares source/
 
 - [ ] Phase 1 — Classic browser game
     - [ ] Milestone 1.1 — Playable board
-        - [ ] T-001 — Establish geometry and a pinned development foundation
+        - [x] T-001 — Establish geometry and a pinned development foundation
             Scope: package/tool configuration, src/core geometry and tests/core. Contracts: GAME, basic HOST/UI, browser RELEASE.
             Depends on: none; accepted/published preparation and verified eligible Phase 1 projection.
             Acceptance/evidence: Pin compatible dependencies/lockfile; verify all seven spawn shapes, bounds and occupied-cell tests; document the actual Linux/Windows-CMD commands and isolated browser setup requirements.
+            Verified: Node 24.22.1; all 11 independent geometry tests first failed for unimplemented geometry, then passed after implementation, including after clean npm ci. npm run typecheck passed. Vite 8.3.5, TypeScript 7.0.2 and Playwright 1.62.1 are pinned in the lockfile. npm emits an inherited http-proxy configuration warning; installation and checks succeed. Browser/runtime package acceptance is not part of this task.
         - [ ] T-002 — Implement active-piece commands and restart state
             Scope: src/core reducer and tests/core. Contracts: GAME, basic HOST/UI, browser RELEASE.
             Depends on: T-001.

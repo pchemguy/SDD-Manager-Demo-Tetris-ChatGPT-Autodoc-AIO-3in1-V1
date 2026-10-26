@@ -55,3 +55,7 @@ Maintain project-specific navigation and validated setup/check commands here as 
 Current product sources are [PROJECT](docs/dev/PROJECT.md), [ARCHITECTURE](docs/dev/ARCHITECTURE.md), [DECOMPOSITION](docs/dev/DECOMPOSITION.md), [SPEC](docs/dev/SPEC.md), [PLAN](docs/dev/PLAN.md) and [layout](docs/dev/layout.md). The canonical executable owner is [TASKS](docs/dev/TASKS.md), with [task-list QC](docs/dev/TASKS-REVIEW-REPORT.md). Physical implementation locations in layout are planned until their owning tasks create them. Add setup/test commands only after they have been established and validated. Keep bundled .agents sources outside ordinary application edits.
 
 See [DOCS_TASKS](docs/dev/DOCS_TASKS.md) and [DOCS_PREPARATION](docs/dev/DOCS_PREPARATION.md) for preparation progress and decisions; use HANDOFF and subsequent records/Git for continuation.
+
+## Validated application checks
+
+Use Node.js 24.x. From the repository root, npm ci --no-audit --no-fund, npm test and npm run typecheck have been validated on Linux. Their syntax also works in Windows CMD; native Windows execution remains unverified. See docs/user/DEVELOPMENT.md for isolated browser setup. The dev/build entry is not yet implemented.

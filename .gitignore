@@ -1,3 +1,10 @@
 .obsidian
 .trash
 *.tkn
+
+node_modules/
+dist/
+release/
+test-results/
+playwright-report/
+.browser-cache/
