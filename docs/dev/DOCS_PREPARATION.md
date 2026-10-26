@@ -44,7 +44,7 @@ Exact remaining contracts belong to the later specification. Initial package rou
 
 ## Pending transitions
 
-DOCS-003 commit publication and issue 3 closure require readback after this checkpoint. Earlier completed document boundaries have been published and their issue closures verified. Continue only after this transition; after DOCS-008 stop before whole-package QC, integration and implementation.
+DOCS-004 commit publication and issue 4 closure require readback after this checkpoint. Earlier completed document boundaries have been published and their issue closures verified. Continue only after this transition; after DOCS-008 stop before whole-package QC, integration and implementation.
 
 ## PROJECT proposal review
 
@@ -57,3 +57,7 @@ Human approval of the published PROJECT proposal. Reviewed state: docs/dev/PROJE
 ## DOCS-003 completion evidence
 
 Scoped preapproval from autodoc/onepass; owner conformance review passed for this document and any required report. Reviewed state: docs/dev/ARCHITECTURE.md blob c311e609d49e0254ae4827dd00abece643704d43. The owning checkbox closes in this commit. Required publication and hosted closure follow this checkpoint and must be verified before dependent work.
+
+## DOCS-004 completion evidence
+
+Scoped preapproval from autodoc/onepass; owner conformance review passed for this document and any required report. Reviewed state: docs/dev/DECOMPOSITION.md blob a7dd2f1756c91a7a7f8588677d6198bc7706c5ed. The owning checkbox closes in this commit. Required publication and hosted closure follow this checkpoint and must be verified before dependent work.
