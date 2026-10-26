@@ -58,4 +58,4 @@ See [DOCS_TASKS](docs/dev/DOCS_TASKS.md) and [DOCS_PREPARATION](docs/dev/DOCS_PR
 
 ## Validated application checks
 
-Use Node.js 24.x. From the repository root, npm ci --no-audit --no-fund, npm test and npm run typecheck have been validated on Linux. Their syntax also works in Windows CMD; native Windows execution remains unverified. See docs/user/DEVELOPMENT.md for isolated browser setup. The dev/build entry is not yet implemented.
+Use Node.js 24.x. From the repository root, npm ci --no-audit --no-fund, npm test and npm run typecheck have been validated on Linux. Their syntax also works in Windows CMD; native Windows execution remains unverified. See docs/user/DEVELOPMENT.md for isolated browser setup. npm run dev and npm run build are validated for the manually controlled board. npm run test:ui uses project-owned managed browsers; see development guidance for the diagnosed trusted-local Firefox flag.

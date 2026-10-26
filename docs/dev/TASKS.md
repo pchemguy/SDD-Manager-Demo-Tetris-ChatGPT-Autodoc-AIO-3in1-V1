@@ -11,7 +11,7 @@ Versions and platform deferrals are in PLAN. Every phase review prepares source/
 ## Phase 1 — Classic browser game
 
 - [ ] Phase 1 — Classic browser game
-    - [ ] Milestone 1.1 — Playable board
+    - [x] Milestone 1.1 — Playable board
         - [x] T-001 — Establish geometry and a pinned development foundation
             Scope: package/tool configuration, src/core geometry and tests/core. Contracts: GAME, basic HOST/UI, browser RELEASE.
             Depends on: none; accepted/published preparation and verified eligible Phase 1 projection.
@@ -22,10 +22,11 @@ Versions and platform deferrals are in PLAN. Every phase review prepares source/
             Depends on: T-001.
             Acceptance/evidence: Controlled streams prove spawn, movement, baseline no-kick rotation, rejected moves and fresh restart without settled-cell overwrites.
             Verified: seven new command tests observed RED before implementation, then 18 total core tests passed; typecheck passed. Controlled draw counts, immutable move/restart outcomes, wall/settled-cell rejection, no-kick rotation and blocked spawn were exercised. Gravity and line/score progression remain separate tasks.
-        - [ ] T-003 — Render and control the playable board
+        - [x] T-003 — Render and control the playable board
             Scope: src/app session composition, src/ui board and tests/ui. Contracts: GAME, basic HOST/UI, browser RELEASE.
             Depends on: T-001, T-002.
             Acceptance/evidence: A real browser displays the board and active piece, accepts focused movement/rotation and visibly rejects collisions; domain state and rendering agree.
+            Verified: two real-browser missing-control tests observed RED, then four UI tests passed across managed Chromium/Firefox; all 18 core tests, typecheck and production compilation passed. Whole-milestone code review and visual inspection passed; see reports/phases/1/1.1.md for browser recovery, screenshots and evidence limits.
             Milestone boundary: after its implementation, review all of 1.1, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/1/1.1.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
     - [ ] Milestone 1.2 — Complete classic loop
         - [ ] T-004 — Implement gravity and classic locking

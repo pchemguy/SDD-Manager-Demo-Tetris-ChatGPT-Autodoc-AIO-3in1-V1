@@ -14,7 +14,7 @@ npm test
 npm run typecheck
 ```
 
-Node's built-in runner executes the TypeScript core tests directly. Compiler checking is a separate command. The complete browser app and production build entry are introduced by later tasks; dev/build scripts are reserved but are not yet claimed as working application commands.
+Node's built-in runner executes the TypeScript core tests directly. Compiler checking is a separate command. The manually controlled board is available with npm run dev; npm run build compiles the static browser bundle. Gravity/scoring and phase delivery remain later tasks. These source commands are not evidence of an extracted release artifact.
 
 ## Isolated browser provisioning
 
@@ -25,3 +25,13 @@ node node_modules/playwright/cli.js install --only-shell chromium firefox
 ```
 
 Linux sets PLAYWRIGHT_BROWSERS_PATH in the process environment. Windows CMD uses set PLAYWRIGHT_BROWSERS_PATH=<absolute-owned-directory>; do not invoke PowerShell/pwsh. Native sidebar tasks require full contained browsers and actual sidebar events; shell content tests do not substitute. Follow the bundled browser policy and Playwright diagnostics for download signatures, matching revisions, sandbox/session faults and supported official-image recovery. Native Windows package evidence remains required before desktop delivery.
+
+## Browser checks on the diagnosed Linux host
+
+```text
+TETRIS_FIREFOX_SANDBOX_OVERRIDE=1 npm run test:ui
+```
+
+The prefix above is Linux process-environment syntax. Windows CMD uses set TETRIS_FIREFOX_SANDBOX_OVERRIDE=1 only if the same Firefox content-sandbox failure is actually diagnosed and policy permits trusted local testing; do not apply that override routinely. It reduces Firefox content-process isolation. The normal test command is npm run test:ui without that flag on compatible hosts. scripts/browser.mjs always supplies the same absolute project browser root.
+
+The recorded host needed official-image Chromium recovery and the PRSS Firefox download fallback. See docs/dev/reports/phases/1/1.1.md for exact versions, official source digests, checks, failures and evidence limits. Browser binaries remain ignored and must be reprovisioned in a fresh environment under the bundled browser policy.
