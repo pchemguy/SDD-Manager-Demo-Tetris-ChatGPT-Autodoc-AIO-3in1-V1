@@ -14,7 +14,7 @@ npm test
 npm run typecheck
 ```
 
-Node's built-in runner executes the TypeScript core tests directly. Compiler checking is a separate command. The manually controlled board is available with npm run dev; npm run build compiles the static browser bundle. Gravity/scoring and phase delivery remain later tasks. These source commands are not evidence of an extracted release artifact.
+Node's built-in runner executes the TypeScript core tests directly. Compiler checking is a separate command. The classic game loop is available with npm run dev; npm run build compiles the static browser bundle. Pause/input policy and phase delivery remain later tasks. These source commands are not evidence of an extracted release artifact.
 
 ## Isolated browser provisioning
 

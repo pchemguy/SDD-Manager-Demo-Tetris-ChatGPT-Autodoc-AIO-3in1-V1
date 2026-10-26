@@ -1,8 +1,8 @@
 # Project handoff
 
-Checkpoint: Milestone 1.1 playable board; T-003 publication/issue/milestone closure follows this checkpoint.
+Checkpoint: Milestone 1.2 complete classic loop; T-006 publication/issue/milestone closure follows this checkpoint.
 
-Outcome: Whole-package QC passed with QC-001 whitespace corrected; accepted preparation is explicitly merged and published on main at ed9cf4355df7b7891d16c035e79b72814ff01c08. Preparation milestone 1 and all nine DOCS issues were closed/read back. Phase 1 tracking was fully established before source edits/tests. T-001–T-003 provide geometry, commands and a real browser-controlled board. Milestone review is in reports/phases/1/1.1.md. No complete phase or release is claimed.
+Outcome: Whole-package QC passed with QC-001 whitespace corrected; accepted preparation is explicitly merged and published on main at ed9cf4355df7b7891d16c035e79b72814ff01c08. Preparation milestone 1 and all nine DOCS issues were closed/read back. Phase 1 tracking was fully established before source edits/tests. T-001–T-006 provide the automatic classic loop, scoring/levels, game over and restart. Milestone reviews are in reports/phases/1/1.1.md and 1.2.md. No complete phase or release is claimed.
 
 ## Workflow and sources
 
@@ -22,5 +22,5 @@ Outcome: Whole-package QC passed with QC-001 whitespace corrected; accepted prep
 
 ## Pending work and next action
 
-- T-001/T-002 publication and issues 10/11 are verified. Publish/read back this T-003 completion, close/read back issue 12 and milestone 2 (1.1), then execute T-004. Do not advance past a pending required transition.
+- T-001–T-005 publication and issue closures, and milestone 2 (1.1), are verified. Publish/read back T-006, close/read back issue 15 and milestone 3 (1.2), then execute T-007. Preserve the one-task commit contract and full remaining range authorization.
 - Milestone 1.1 report/HANDOFF belongs to T-003; only a complete reviewed Phase 1 integrates into main and receives its verified browser release. Full later-phase authority persists; native Windows and real sidebar evidence remain required before corresponding delivery claims.

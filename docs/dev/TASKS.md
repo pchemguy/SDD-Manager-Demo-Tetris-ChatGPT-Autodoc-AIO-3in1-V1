@@ -28,7 +28,7 @@ Versions and platform deferrals are in PLAN. Every phase review prepares source/
             Acceptance/evidence: A real browser displays the board and active piece, accepts focused movement/rotation and visibly rejects collisions; domain state and rendering agree.
             Verified: two real-browser missing-control tests observed RED, then four UI tests passed across managed Chromium/Firefox; all 18 core tests, typecheck and production compilation passed. Whole-milestone code review and visual inspection passed; see reports/phases/1/1.1.md for browser recovery, screenshots and evidence limits.
             Milestone boundary: after its implementation, review all of 1.1, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/1/1.1.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
-    - [ ] Milestone 1.2 — Complete classic loop
+    - [x] Milestone 1.2 — Complete classic loop
         - [x] T-004 — Implement gravity and classic locking
             Scope: src/core reducer timing and tests/core. Contracts: GAME, basic HOST/UI, browser RELEASE.
             Depends on: T-003.
@@ -39,10 +39,11 @@ Versions and platform deferrals are in PLAN. Every phase review prepares source/
             Depends on: T-004.
             Acceptance/evidence: One through four simultaneous clears, row compaction, drop points, score saturation and level/speed thresholds match GAME.
             Verified: Eight scoring/clear fixtures observed RED before implementation; all 32 core tests, typecheck and four Chromium/Firefox UI regressions passed. Verified 1-4 simultaneous line awards, row compaction, independent empty rows, pre-clear level multipliers, level/speed thresholds, soft-drop versus gravity points and safe-integer score saturation. An intermediate duplicate-local compile error was corrected before the passing runs. Hard drop remains outside the classic phase.
-        - [ ] T-006 — Integrate the complete classic game loop
+        - [x] T-006 — Integrate the complete classic game loop
             Scope: src/app session, src/ui game information and tests/e2e. Contracts: GAME, basic HOST/UI, browser RELEASE.
             Depends on: T-004, T-005.
             Acceptance/evidence: Demonstrate continued play, score/levels and game over; completion fires once and restart abandons unfinished games without recording fake completions.
+            Verified: Four application cases and two real-browser automatic-gravity scenarios observed RED before integration. Final verification: 36 core/application tests, eight Chromium/Firefox UI tests, typecheck and production compilation passed. Whole-milestone code review, completion/restart behavior and screenshot inspection passed; report 1.2.md records timing controls, resolved status-locator ambiguity and native/package evidence limits.
             Milestone boundary: after its implementation, review all of 1.2, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/1/1.2.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
     - [ ] Milestone 1.3 — Browser delivery
         - [ ] T-007 — Implement pause, focus and keyboard repeat handling
