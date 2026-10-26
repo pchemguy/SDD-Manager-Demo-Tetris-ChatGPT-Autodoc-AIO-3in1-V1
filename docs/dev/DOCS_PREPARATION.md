@@ -44,7 +44,7 @@ Exact remaining contracts belong to the later specification. Initial package rou
 
 ## Pending transitions
 
-DOCS-005 commit publication and issue 5 closure require readback after this checkpoint. Earlier completed document boundaries have been published and their issue closures verified. Continue only after this transition; after DOCS-008 stop before whole-package QC, integration and implementation.
+DOCS-005 document commit 0f36bb9ccd729d8f074ff1c34e60773f54548fb5 was pushed and exactly read back with confirmed cleanup. The evidence-comment POST to issue 5 was denied by the network proxy: Tunnel connection failed: 403 Forbidden. Read-only connector reconciliation confirmed issue 5 remains open with zero comments. Issues 1–4 are verified closed. Hold PLAN and dependent stages until issue 5 evidence/closure can be completed through permitted access. No credential replacement or alternate write route was attempted after this host denial. This blocker-record commit requires its own normal Git publication/readback; after DOCS-008 the requested stop still excludes whole-package QC, integration and implementation.
 
 ## PROJECT proposal review
 

@@ -1,33 +1,32 @@
 # Project handoff
 
-Checkpoint: DOCS-001 initialization, before its publication and hosted closure.
+Checkpoint: autodoc preparation through DOCS-005; hosted closure blocked.
 
-Outcome: Preserved all four root guidance files, established task/control records, and verified the preliminary manual provenance scaffold and its published default merge. No game implementation exists.
+Outcome: PROJECT approved by the user’s “k”. ARCHITECTURE, DECOMPOSITION, SPEC, portable-format contract, JSON Schema and SPEC review published on design-docs/main. SPEC review is Ready for planning; hosted issue 5 closure is a separate unmet gate. No implementation, runtime verification or release exists.
 
 ## Workflow and sources
 
-- Workflow/stage/owner: main development, greenfield autodoc/onepass preparation; sdd-manage coordinates and sdd-design owns the upcoming brief.
-- Governing instructions: root AGENTS.md, SKILL_DISCOVERY_PROTOCOL.md and .agents/plugins/sdd-manager/PLUGIN.md.
-- Preparation owners: [DOCS_TASKS.md](DOCS_TASKS.md) and [DOCS_PREPARATION.md](DOCS_PREPARATION.md). Recover later progress and decisions there and from Git.
-- Required package: repository-pinned SDD Manager 0.15.4. Manual record scaffold is initialized; no transcript is required.
+- Workflow/stage/owner: main development, greenfield autodoc/onepass; sdd-manage coordinates, sdd-plan is the next document owner after the tracking gate clears.
+- Owners: [DOCS_TASKS](DOCS_TASKS.md), [DOCS_PREPARATION](DOCS_PREPARATION.md), [PROJECT](PROJECT.md), [ARCHITECTURE](ARCHITECTURE.md), [DECOMPOSITION](DECOMPOSITION.md), [SPEC](SPEC.md), [SPEC review](SPEC-REVIEW-REPORT.md).
+- Running package: repository-pinned SDD Manager 0.15.4. Root AGENTS and plugin entries govern continuation; preserve the manual provenance scaffold without reading or changing transcripts.
 
-## Scope and human decisions
+## Scope and decisions
 
-- Objective: prepare the complete requested four-target Tetris project, with the simplest playable baseline followed by bounded enhancements and verified packaged phase releases when implementation is authorized.
-- Current stop: publish and present PROJECT for first human approval. Autodoc then preapproves later documents through TASKS and stops after DOCS-008, before package QC or implementation.
-- Accepted clarifications: six proposals confirmed by “OK, and check env”; see DOCS_PREPARATION. This was not approval of an unseen document.
-- Tracking: enabled by root AGENTS policy; milestone 1 and issues 1–9 fully projected and verified before target writes. Publication after every commit; reporting Standard.
+- Authorized work: complete four-target Tetris documentation through DOCS-008 in autodoc mode. User approved PROJECT proposal 65fad484fd8a73d090006f45ec70bebe37ba1028 with “k”; remaining document checkpoints through TASKS are preapproved subject to QC.
+- Exact stop: after DOCS-008, before DOCS-009, documentation integration, implementation or release publication.
+- Tracking: enabled by root policy. Milestone 1 and issues 1–9 projected/verified. Issues 1–4 closed; issue 5 open, with zero comments at reconciliation.
+- Reporting: Standard. Accepted gameplay/platform decisions and exact document identities are in DOCS_PREPARATION.
 
 ## Branches and return
 
 - Working branch: design-docs/main.
-- Creation parent / eventual integration target: main.
-- Branch-off commit: 9a23aaca4d260eac949ed27d322a839c5643cf6d.
-- Retained provenance branch: design-docs/ai-logs, already integrated into main. Unmerged future manual records are outside routine continuation.
-- Suspended parent: none.
+- Creation parent and eventual integration target: main.
+- Branch-off: 9a23aaca4d260eac949ed27d322a839c5643cf6d.
+- Latest published document boundary: 0f36bb9ccd729d8f074ff1c34e60773f54548fb5.
+- No suspended parent. design-docs/ai-logs remains retained and its scaffold is integrated.
 
 ## Pending work and next action
 
-- Verify initialization publication and close/read back DOCS-001 issue 1 with evidence. Then author and publish PROJECT on this branch and pause for its approval.
-- Browser and Windows package runtime verification are not established. Environment observations are in DOCS_PREPARATION; no delivery claim is supported.
-- Recover newer records and Git before acting; this snapshot is not necessarily the branch tip.
+- Issue 5 evidence-comment POST failed with network-proxy Tunnel connection failed: 403 Forbidden. This is a host/transport denial, not evidence of an invalid token. Read-only connector fetch confirmed no comment and an open issue. Do not repeat an unchanged denied write or switch write routes to evade it.
+- Preserve the published SPEC completion; reconcile actual provider state before any authorized retry after access changes. Add its existing commit evidence, close and read back issue 5 through permitted access, then prepare PLAN, layout and TASKS with required owner QC and per-document publication/issue closure.
+- Verify publication of this blocker-record commit before further work. Browser and native Windows package readiness remain unestablished and do not block document-only planning once tracking is cleared.
