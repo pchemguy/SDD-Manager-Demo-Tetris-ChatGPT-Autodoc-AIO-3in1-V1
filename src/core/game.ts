@@ -1,5 +1,6 @@
 /** Immutable classic commands; clocks and random selection are supplied by callers. */
 import { emptyBoard, spawn, canPlace, cells, WIDTH, HEIGHT, type Cell, type Piece, type PieceType } from './geometry.ts';
+import {rotateSRS} from './rotation.ts';
 export interface GameState {
   board:Cell[][];
   active:Piece|null;
@@ -30,17 +31,19 @@ export function holdPiece(state:GameState,next:()=>PieceType):GameState {
   const incoming=state.heldPiece??next();
   return {...spawnNext(state,incoming),heldPiece:state.active.type,holdUsed:true};
 }
-/** Apply a legal single-cell move or baseline no-kick rotation to a running game. */
+/** Apply a legal single-cell move or ordered SRS rotation to a running game. */
 export function command(state:GameState,action:Action):GameState {
   if(state.status!=='running' || !state.active)return state;
   const p=state.active;
+  if(action==='rotateCW'||action==='rotateCCW'){
+    const rotated=rotateSRS(state.board,p,action==='rotateCW'?1:-1);
+    return rotated===p?state:{...state,active:rotated};
+  }
   const candidate:Piece={...p};
   switch(action){
     case 'left':candidate.x--;break;
     case 'right':candidate.x++;break;
     case 'down':candidate.y++;break;
-    case 'rotateCW':candidate.rotation=(p.rotation+1)%4;break;
-    case 'rotateCCW':candidate.rotation=(p.rotation+3)%4;break;
   }
   return canPlace(state.board,candidate) ? {...state,active:candidate} : state;
 }

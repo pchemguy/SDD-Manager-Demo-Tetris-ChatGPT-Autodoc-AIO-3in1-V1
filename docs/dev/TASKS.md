@@ -196,10 +196,11 @@ The user explicitly directed: “Run full implementation without native Windows 
             Depends on: T-028.
             Acceptance/evidence: JLSTZ, I and O cases cover walls/floors, CW/CCW transitions, first-valid ordering and unchanged state after complete rejection.
             Verified: RED missing rotation search module reproduced;95 core/application tests and typecheck pass. CW/CCW traverse canonical orientations, JLSTZ/I wall/floor fixtures select the first valid ordered candidate, O geometry remains stationary, stack collisions are immutable and complete rejection preserves original identity/board.
-        - [ ] T-030 — Integrate SRS rotation into the shared game
+        - [x] T-030 — Integrate SRS rotation into the shared game
             Scope: src/core reducer, src/app input and UI acceptance. Contracts: MOD SRS/ghost/drop/timing.
             Depends on: T-028, T-029.
             Acceptance/evidence: Visible rotations and rejected wall/floor cases match fixture expectations; Hold/spawn orientation behavior remains correct.
+            Verified: Old reducer wall rejection observed RED, then96 core/application tests, typecheck/build and34 extracted-browser headless cases pass. Shared commands use ordered SRS; literal I wall/CCW Canvas and Hold orientation reset verified. Independent milestone review found no defects; screenshot inspected. Report/HANDOFF included; native Windows/installed-sidebar behavior explicitly unverified under approved scope.
             Milestone boundary: after its implementation, review all of 4.1, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/4/4.1.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
     - [ ] Milestone 4.2 — Ghost and hard drop
         - [ ] T-031 — Implement normal landing projection
