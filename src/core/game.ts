@@ -1,5 +1,6 @@
 /** Immutable classic commands; clocks and random selection are supplied by callers. */
 import { emptyBoard, spawn, canPlace, cells, WIDTH, HEIGHT, type Cell, type Piece, type PieceType } from './geometry.ts';
+import {projectLanding} from './landing.ts';
 import {rotateSRS} from './rotation.ts';
 export interface GameState {
   board:Cell[][];
@@ -46,6 +47,13 @@ export function command(state:GameState,action:Action):GameState {
     case 'down':candidate.y++;break;
   }
   return canPlace(state.board,candidate) ? {...state,active:candidate} : state;
+}
+/** Drop to the same first-reachable landing used by the ghost, then failed-down lock. */
+export function hardDrop(state:GameState,next:()=>PieceType):GameState {
+  if(state.status!=='running'||!state.active)return state;
+  const active=projectLanding(state.board,state.active);
+  const dropped={...state,active,score:addScore(state.score,(active.y-state.active.y)*2)};
+  return lockPiece(dropped,next);
 }
 /** Current classic fall interval; level changes are owned by clear/scoring transitions. */
 export function gravityMs(level:number){return Math.max(80,Math.floor(1000*Math.pow(.8,level-1)));}

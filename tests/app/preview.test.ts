@@ -35,3 +35,7 @@ test('Hold and preview share one stream; swapping consumes none and restart clea
  session.act('hold');assert.equal(state!.active?.type,'I');assert.equal(state!.heldPiece,'L');assert.equal(state!.nextPiece,'O');assert.equal(draws,4);
  session.start();assert.equal(state!.heldPiece,null);assert.equal(state!.holdUsed,false);assert.equal(draws,6);
 });
+test('session hard drop uses the shared projection, scores distance and advances one cached spawn',()=>{
+ let draws=0;const session=new GameSession(()=>TYPES[draws++%7]);let state:Readonly<GameState>;session.subscribe(s=>{state=s;});session.start();session.act('hardDrop');
+ assert.equal(state!.score,38);assert.equal(state!.active?.type,'J');assert.equal(state!.nextPiece,'L');assert.equal(draws,3);
+});

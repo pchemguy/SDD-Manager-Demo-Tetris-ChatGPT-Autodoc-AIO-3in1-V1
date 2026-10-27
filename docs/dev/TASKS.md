@@ -208,10 +208,11 @@ The user explicitly directed: “Run full implementation without native Windows 
             Depends on: T-030.
             Acceptance/evidence: Projection returns the first reachable resting placement, including hidden-spawn cells, cavities and immediate support, without mutating board state.
             Verified: RED missing landing module reproduced;101 core/application tests and typecheck pass. All normal orientations project to the first reachable floor/support; floating obstructions are never jumped, reachable wells and immediate/hidden spawn support are literal fixtures. Inputs/board remain unchanged; invalid initial placement rejected. SRS milestone13 and issues37–39 closed/read back.
-        - [ ] T-032 — Implement hard-drop movement and scoring
+        - [x] T-032 — Implement hard-drop movement and scoring
             Scope: src/core commands and tests/core/app. Contracts: MOD SRS/ghost/drop/timing.
             Depends on: T-031.
             Acceptance/evidence: Hard drop matches landing, adds exactly two points per descended row and cannot jump obstructions or score on a zero-distance repeat.
+            Verified: RED missing hard-drop export reproduced;107 core/application tests and typecheck pass. Hard drop uses first-reachable projection, awards exactly2 points per descended row before line scoring, respects safe integer saturation and cannot jump obstructions. Zero-distance/terminal repeats award no extra points; current failed-down policy locks once and advances the cached stream. Interval behavior remains T-034/T-035.
         - [ ] T-033 — Render the shared ghost and integrate hard-drop input
             Scope: src/ui board, src/app input and UI checks. Contracts: MOD SRS/ghost/drop/timing.
             Depends on: T-031, T-032.
