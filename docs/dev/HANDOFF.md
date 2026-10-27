@@ -1,28 +1,24 @@
 # Project handoff
 
-Checkpoint: Phase4 activated from published Phase3; Full Phase4 implementation/review verified; integration/release pending.
+Checkpoint: Phase 4 v0.4.0 four-target release verified; Phase 5 activation is next.
 
-Outcome: T-001–T-027 are implemented, separately committed/pushed and closed. Phase2 explicitly merged into main; release v0.2.0 is published stable/latest from ef75333c01367559f47923bbd7d09881044976b9. All four ZIPs,checksums and four installation documents were downloaded and byte/hash compared. See [phase/release report](reports/phases/2/PHASE-REPORT.md). Native Windows execution and actual installed-sidebar events remain explicitly unverified under the accepted scope.
+Outcome: T-001–T-037 are implemented, individually committed/pushed and closed. Phase 4 integrated at c5908f5a03848f4f64803e930bb8b5f2dd2394c2; v0.4.0 is published stable/latest from 645415b2c39c90a833f0ba9bbf0a0f62520c43d2. All nine assets and the body were downloaded/read back and byte/hash compared. See [phase/release report](reports/phases/4/PHASE-REPORT.md).
 
-## Workflow and sources
+## Workflow and authority
 
-- Workflow: main implementation; sdd-implement owns T-001–T-072. Governing [SPEC](SPEC.md), [PLAN](PLAN.md), [layout](layout.md), [TASKS](TASKS.md), [package QC](DOCS-QC-REPORT.md) and [preparation evidence](DOCS_PREPARATION.md).
-- Dependencies: Node 24.x, exact package-lock dependencies and [development commands](../user/DEVELOPMENT.md). Isolated Chromium/Firefox browser input/Canvas execution is verified under the documented recovered environment; native Windows and actual sidebars remain unverified.
-- Selected range: full 72-task implementation with required phase releases, authorized by “Do QC and full implement” and resumed by “Try again”. No additional human checkpoint approval is required within that scope; technical gates remain except the explicit native Windows verification exception below.
-- Tracking: phase label sdd-phase-1-Classic-browser-game; milestones 1.1–1.4 map to GitHub milestone numbers 2–5; all ten task bodies/labels/milestone associations were read back before T-001. T-001 is issue 10. Phase 2 is now fully projected: label sdd-phase-2-Desktop-and-sidebar-baseline; milestones 2.1–2.4 are numbers 6–9; T-011–T-020 are issues 20–29, all titles/bodies and associations read back. Phase3 associations are verified: milestones 3.1–3.3 are 10–12; T-021–T-027 are issues 30–36. Later phases remain unactivated.
-- The projection utility left T-001 creation uncertain; read-only reconciliation confirmed it, then missing issues were created/reused and every association read back. No duplicate identities were created.
-- Reporting: Standard. Preserve one verified task result/evidence/initial checkbox per commit, push/read back before advancing.
+- Workflow: main implementation under sdd-implement, selected full T-001–T-072 with per-phase releases, authorized by “Do QC and full implement” and subsequent continuation/“Go”. No additional human checkpoint approval is required inside that scope; QC, verification, publication and tracking gates remain.
+- Governing sources: [SPEC](SPEC.md), [PLAN](PLAN.md), [layout](layout.md), [TASKS](TASKS.md), [task-list QC](TASKS-REVIEW-REPORT.md), [package QC](DOCS-QC-REPORT.md) and [preparation evidence](DOCS_PREPARATION.md). Preparation integration is complete; retain design-docs/main and design-docs/ai-logs. No unfinished parent workflow is suspended.
+- Preserve one verified task result/evidence/initial executable checkbox per commit, push/read back before advancing, and close/read back task issues and milestones. Automatic milestone/phase report tasks own checkpoint refresh. Integrate complete verified phases explicitly; keep release tags on their exact default-branch release commits.
+- Tracking remains enabled. Phase 4 issues 37–46 and milestones 13–16 are closed/read back. Later phases remain unactivated. Reuse known identities rather than creating duplicates after uncertainty.
 
-## Branches and return
+## Verification scope and setup
 
-- Current branch: phase/4-landing-and-rotation-rules, created from published main3356f0040ff0c7c1eebbddcacb8116ea777228a4. Integration target: main.
-- Creation parent and integration target: main.
-- Phase 2 branch-off commit: 422adf7f01bde2a0a0912448b5f3744f7e7d998c.
-- Retain design-docs/main and design-docs/ai-logs. Preparation integration is complete; no unfinished parent workflow is suspended.
+- User explicitly directed “Run full implementation without native Windows 10/11 verification” and selected supported headless checks for continuation. Native Windows execution and actual installed-sidebar/native-window delivery remain explicitly unverified and do not halt implementation/releases. Never describe modeled host APIs or extracted-asset rendering as native checks.
+- Node24.x, pinned package-lock dependencies and Python3.11+; see [development commands](../user/DEVELOPMENT.md). Use owned absolute browser/cache paths, Chromium headless shell and managed Firefox. On this diagnosed trusted-local Linux host only, TETRIS_FIREFOX_SANDBOX_OVERRIDE=1 enables the documented process-only Firefox override. Full Chromium's host-denied socket EPERM is not repaired by repeating sandbox flags; do not change host restrictions.
+- Build all four packages with package:all, check/extract exact bytes and run the supported headless suites. Generated assets/caches remain ignored. Do not expose gh.tkn or ship private files. Native packages retain unsigned/unpacked/temporary status. Complete notes remain retained locally and in release commit/body; consumed internal highlights are separately cleaned up.
 
-## Pending work and next action
+## Branches and next action
 
-- Phase2 integration/publication, issues20–29, milestones6–9, exact-body release commit/tag, all nine release assets and latest state are verified. Preserve v0.2.0 at ef75333c01367559f47923bbd7d09881044976b9; subsequent report/task commits do not move it.
-- Phase3 integrated/published at19c9e54aa1955e01a2aff389ce59548faca27f63 and v0.3.0 released from b808e093c2747d962b834be5d4de4598aaf68586. All issues30–36/milestones10–12 and nine uploaded/downloaded assets/body/latest verified; see reports/phases/3/PHASE-REPORT.md. Phase4 branch-off and complete tracking were verified before task/test edits. Phase4 tracking is fully verified: milestones4.1–4.4 are13–16; T-028–T-037 are issues37–46. T-028–T-037 modern landing implementation/independent review verified;119 core/app and40 headless cases per target (160 total) pass. Delivery issues37–45/milestones13–15 closed/read back. Publish T-037 and close issue46/milestone16, then integrate/release0.4.0 before Phase5 activation. See reports/phases/4/PHASE-REPORT.md.
-- Continue the full T-028–T-072 range and per-phase releases without another approval. Native Windows execution is excluded, and unavailable actual sidebar/native-window coverage remains explicitly unverified while supported headless source/adapter/package checks govern progression. Never claim those native checks passed.
-- Complete notes remain locally ignored and retained, recoverable from release commits/GitHub. Generated packages/caches may need rebuilding after transfer. Phase3 outcome is bag/preview/Hold, followed by the remaining accepted gameplay/configuration/persistence phases.
+- Current branch: main. Completed phase source: phase/4-landing-and-rotation-rules; creation parent/integration target: main at 3356f0040ff0c7c1eebbddcacb8116ea777228a4. Preserve v0.4.0 at 645415b2c39c90a833f0ba9bbf0a0f62520c43d2; later status commits do not move it.
+- Create Phase 5 from the published main checkpoint containing this record; verify its actual branch-off and complete tracking before source/test edits. Continue T-038–T-072 and every required phase release without another approval.
+- Reconstruct current state from this checkpoint plus subsequent Git/task evidence. Current release/body/assets/latest and closure gates are verified; no next-phase tracking objects are created by this record.

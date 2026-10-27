@@ -184,7 +184,7 @@ The user explicitly directed: “Run full implementation without native Windows 
 
 ## Phase 4 — Landing and rotation rules
 
-- [ ] Phase 4 — Landing and rotation rules
+- [x] Phase 4 — Landing and rotation rules
     - [x] Milestone 4.1 — SRS rotation
         - [x] T-028 — Define canonical SRS geometry and orientation fixtures
             Scope: src/core geometry/tables and tests/fixtures. Contracts: MOD SRS/ghost/drop/timing.
@@ -236,7 +236,7 @@ The user explicitly directed: “Run full implementation without native Windows 
             Acceptance/evidence: All four artifacts pass SRS/projection/drop/timing interactions, native pause evidence and preserved piece-flow/classic behavior; update installation/controls notes.
             Verified: All four version0.4.0 archives each passed40 extracted Chromium/Firefox headless cases (160 total): SRS/ghost/drop/grounding, manual pause and modeled host blur, preserved piece flow and five widths.119 core/app checks/typecheck/build pass; CRC/version/current controls/shared UI/hash inspected. Independent timing milestone review clean;280px screenshot inspected. Native Windows/installed sidebar delivery remains explicitly unverified under approved scope.
             Milestone boundary: after its implementation, review all of 4.3, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/4/4.3.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
-    - [ ] Milestone 4.4 — Phase review
+    - [x] Milestone 4.4 — Phase review
         - [x] T-037 — Review, test and report phase 4
             Scope: whole Phase 4 code, contracts, integration, required artifacts and preserved prior behavior.
             Depends on: T-030, T-033, T-036; all delivery milestones 4.1, 4.2, 4.3 completed and closed/read back.
