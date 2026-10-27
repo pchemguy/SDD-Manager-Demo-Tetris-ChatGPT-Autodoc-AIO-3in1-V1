@@ -1,6 +1,6 @@
 # Project handoff
 
-Checkpoint: Milestone 2.1 desktop implementation/package committed, pushed and closed under the native Windows exception; T-014 blocked by full-browser capability.
+Checkpoint: Milestone 2.1 desktop implementation/package committed, pushed and closed under the native Windows exception; T-014 resumed with headless-only verification authorized.
 
 Outcome: T-001–T-013 implement the classic browser game and desktop host/lifecycle/portable Windows candidate. Eight desktop, 40 core/app, 10 package and 28 extracted-Windows-shared-asset cases pass. Native Windows execution remains explicitly waived/unverified. See [desktop milestone report](reports/phases/2/2.1.md). Phase 1 v0.1.0 remains the latest published release; Phase 2 is incomplete.
 
@@ -22,7 +22,6 @@ Outcome: T-001–T-013 implement the classic browser game and desktop host/lifec
 
 ## Pending work and next action
 
-- Preserve the explicit user instruction “Run full implementation without native Windows 10/11 verification” across all remaining tasks/releases. Native Windows execution is waived; source/adapter/archive and available runtime checks remain required, Windows assets remain in scope, and native Windows claims remain unverified. Actual extension sidebar checks are not waived.
-- T-011–T-013 are committed/pushed with exact remote containment and issues 20–22 closed/read back. Milestone 6 (2.1) closure is verified. T-013 result commit: 8dab2b252ae7af34bb3a8bdec3edbebfa9111b02. Candidate tetris-windows-x64-0.2.0.zip has SHA-256 b9d0794e17fe0cc7d2a235a99434cc0627cbf98658fa856e3cdad8d70083918c; rebuild via the recorded package command if ignored files are unavailable.
-- Next task T-014 requires an actual Chromium side panel. Fresh isolated full Chromium 151.0.7922.34 launch fails before page creation with process_singleton_posix.cc:297 socket() EPERM; an independent AF_UNIX bind is also denied. Playwright's owned process/profile cleanup completed. Headless-shell asset tests pass but cannot establish actual sidebars. Docker/Xvfb and a compatible connected remote facility are unavailable. No restriction bypass, browser downgrade or silent coverage waiver is authorized.
-- Full T-001–T-072 implementation and per-phase release authority persists. Resume T-014 when its required full-browser capability is available; Phase 2 remains on its phase branch and must not integrate/release while its unwaived exits remain blocked.
+- User directs full implementation without native Windows verification, then explicitly selects headless-only testing and says “Go”. Continue T-014–T-072 and phase releases using supported headless application, adapter and package checks. Native Windows execution and actual extension installation/open/close coverage remain unverified; unavailable native facilities do not halt the workflow. This interpretation is recorded in TASKS and AGENTS; no claim that native checks passed is authorized.
+- T-011–T-013 and milestone 2.1 are committed/pushed and closed/read back. Current branch, parent and tracking identities above remain unchanged. Begin T-014, then proceed through the full remaining scope with individual task commits/pushes and phase releases.
+- The repeated full Chromium probe already included --no-sandbox and still failed at process-singleton socket EPERM; an explicit chromiumSandbox:false probe confirmed this. Chromium headless shell passes two isolated input/Canvas cycles and all 14 extracted application cases; managed headless Firefox remains available with its documented process-local override. Preserve these evidence distinctions and do not retry the unchanged host denial.
