@@ -151,10 +151,11 @@ The user explicitly directed: “Run full implementation without native Windows 
             Depends on: T-021.
             Acceptance/evidence: Repeated preview reads consume no random values and always match the next spawn, including bag boundaries.
             Verified: RED missing preview and non-bag default reproduced; 49 core/app tests and typecheck pass. Repeated snapshots consume no draws; cached preview matches ten controlled spawns across bag boundaries. Default session uses complete seven-piece bags and restart resets pending selection.
-        - [ ] T-023 — Render next preview on every host
+        - [x] T-023 — Render next preview on every host
             Scope: src/ui next view and cross-host acceptance. Contracts: MOD bag/preview/Hold.
             Depends on: T-021, T-022.
             Acceptance/evidence: Preview matches a controlled spawn sequence on browser, desktop and both sidebars without changing gameplay state.
+            Verified: RED missing Next view reproduced in both browsers; shared SVG preview passes controlled spawn/pause checks. All four extracted packages each pass30 headless cases (120 total), 49 core/app plus host/package/security checks pass. Independent milestone review found no defects; screenshot inspected. Native Windows and actual installed sidebars remain explicitly unverified under authorized scope.
             Milestone boundary: after its implementation, review all of 3.1, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/3/3.1.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
     - [ ] Milestone 3.2 — Hold
         - [ ] T-024 — Implement Hold state and exchange rules
