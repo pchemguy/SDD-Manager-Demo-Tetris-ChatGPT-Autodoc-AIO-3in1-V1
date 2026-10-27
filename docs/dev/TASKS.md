@@ -101,10 +101,11 @@ The user explicitly directed: “Run full implementation without native Windows 
             Depends on: T-013.
             Acceptance/evidence: MV3 manifest and local assets open the same classic game in a real side panel with only currently required permissions.
             Verified: Three extension packaging tests observed RED before the packager existed, then passed. The actual Chromium worker configures the toolbar opener through the expected sidePanel API boundary. Production compilation/typecheck and versioned ZIP build passed with bundled shared UI, minimal sidePanel-only permission, local panel path and notices. Candidate SHA-2563e2a39e69aa4c2524c6204d29ff4f6afbe02d28307160541d70a16fbea0ab98f. Native installation/opening remains explicitly unverified under the user-authorized headless-only scope.
-        - [ ] T-015 — Integrate Chromium panel close and reopen events
+        - [x] T-015 — Integrate Chromium panel close and reopen events
             Scope: src/platform/chromium lifecycle bridge and tests/extensions/chromium. Contracts: HOST/UI, RELEASE for all four targets.
             Depends on: T-014.
             Acceptance/evidence: Chromium 142+ native panel events pause retained documents, reset destroyed sessions and never persist scores or run background gravity.
+            Verified: Receiver and actual-worker lifecycle cases observed RED before implementation;41 core/app and1 extension boundary cases now pass, with typecheck and production Chromium ZIP build. Close/open events forward only window-scoped suspension; foreign senders, wrong windows and invalid payloads are ignored. Retained sessions never auto-resume and destroyed documents retain no background game state. Native event delivery remains explicitly unverified under headless-only scope.
         - [ ] T-016 — Verify Chromium development installation and layout
             Scope: scripts extension packaging, native panel tests and docs/user. Contracts: HOST/UI, RELEASE for all four targets.
             Depends on: T-014, T-015.
