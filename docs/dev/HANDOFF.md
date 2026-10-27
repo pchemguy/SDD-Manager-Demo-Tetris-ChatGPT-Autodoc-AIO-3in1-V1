@@ -1,8 +1,8 @@
 # Project handoff
 
-Checkpoint: Phase 1 integration into main; merge publication and release workflow follow this checkpoint.
+Checkpoint: Phase 1 browser release v0.1.0 verified; Phase 2 native-environment readiness pending.
 
-Outcome: T-001–T-010 implement and verify the classic browser game. Independent phase review found two Minor issues; narrow help access and stale documentation were fixed and rechecked. Forty core/application, five package, one server and 28 extracted Chromium/Firefox cases pass. See [phase report](reports/phases/1/PHASE-REPORT.md). Candidate version 0.1.0; provider release remains pending. Complete notes are retained locally in ignored RELEASE-NOTES.md and must be reconstructed if unavailable after transfer.
+Outcome: T-001–T-010 are complete, individually committed/pushed and closed. Phase 1 is explicitly integrated into main and v0.1.0 is published stable/latest from 416feaaab94b53d809a9d33c129a07a1eb329494. All three uploaded assets were downloaded through the supported asset API and byte/hash compared. See [phase and release report](reports/phases/1/PHASE-REPORT.md). The final release source passed 28 extracted Chromium/Firefox cases; core/application, package/server and type checks passed.
 
 ## Workflow and sources
 
@@ -22,6 +22,7 @@ Outcome: T-001–T-010 implement and verify the classic browser game. Independen
 
 ## Pending work and next action
 
-- T-001–T-010 and all four Phase 1 milestones are closed/read back; task/result/checkbox audit passed for all ten initial closing commits.
-- Complete/publish the explicit two-parent merge into main (parents ed9cf4355df7b7891d16c035e79b72814ff01c08 and 6384185553db1fd1bb995daae77abc682ba2d38b), then perform the exact-body default-branch release commit/tag and direct GitHub release workflow. No existing publisher is configured. Release assets: stable tetris-web.zip, SHA256SUMS and INSTALL-WEB.md; final-source rebuild/acceptance and uploaded-byte readback remain required.
-- Full T-001–T-072 authorization persists. Activate Phase 2 only after verified predecessor release. Native Windows and actual sidebar evidence remain unestablished and required before corresponding acceptance.
+- Phase 1 publication, all ten issues/four milestones, integration and release are verified. Preserve tag v0.1.0 at 416feaaab94b53d809a9d33c129a07a1eb329494; subsequent handoff/report commits do not move the release source. Complete release notes remain locally ignored; their exact body is recoverable from the release commit or GitHub release.
+- Environment blocker for the next desktop milestone: actual host is Linux; cmd.exe/Wine/Docker/Xvfb are absent and connected tools expose no Windows execution facility. Accepted tests/desktop requires dedicated native Windows execution; Windows 10/11 x64 package evidence cannot be replaced by Linux cross-builds, modeled events or Wine. No native desktop package or runtime is claimed. Full Chromium native-window/socket restriction also remains a recorded later sidebar prerequisite.
+- Resume at Phase 2 environment readiness, then eligible phase branch and full verified phase projection before source/test edits. Phase 2 has not been activated; T-011–T-072 remain pending. Existing accepted document reviews remain current because only implementation/evidence status changed.
+- Full T-001–T-072 and per-phase release authorization persists without another human approval; the remaining scope requires compatible native execution facilities. No additional implementation was started across the unmet environment gate.
