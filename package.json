@@ -1,0 +1,26 @@
+{
+  "name": "tetris-3in1",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0 <25"
+  },
+  "scripts": {
+    "test": "node --test tests/core/*.test.ts tests/app/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "test:ui": "node scripts/browser.mjs test",
+    "test:server": "node --test tests/server/*.test.mjs",
+    "test:package": "python -m unittest discover -s tests/package -p \"test_*.py\"",
+    "package:web": "npm run build && python scripts/package_web.py",
+    "test:artifact": "npm run package:web && python scripts/prepare_web_test.py && node scripts/browser.mjs test --config playwright.artifact.config.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.1",
+    "@types/node": "24.0.0",
+    "typescript": "7.0.2",
+    "vite": "8.3.5"
+  }
+}

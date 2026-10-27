@@ -1,37 +1,27 @@
 # Project handoff
 
-Checkpoint: accepted preparation integration into main; corrected preparation publication/integration and milestone closure pending.
+Checkpoint: Phase 1 integration into main; merge publication and release workflow follow this checkpoint.
 
-Outcome: Complete intended design, specification, delivery plan, physical layout and 72-task breakdown authored. Required per-document SPEC, PLAN/layout and TASKS reviews are Ready for their own downstream uses. No whole-package QC, implementation, native/runtime verification, platform delivery or release exists.
+Outcome: T-001–T-010 implement and verify the classic browser game. Independent phase review found two Minor issues; narrow help access and stale documentation were fixed and rechecked. Forty core/application, five package, one server and 28 extracted Chromium/Firefox cases pass. See [phase report](reports/phases/1/PHASE-REPORT.md). Candidate version 0.1.0; provider release remains pending. Complete notes are retained locally in ignored RELEASE-NOTES.md and must be reconstructed if unavailable after transfer.
 
 ## Workflow and sources
 
-- Workflow/stage/owner: main development, greenfield autodoc/onepass; sdd-manage at the requested stop after DOCS-008.
-- Product sources: [PROJECT](PROJECT.md), [ARCHITECTURE](ARCHITECTURE.md), [DECOMPOSITION](DECOMPOSITION.md), [SPEC](SPEC.md) and portable-format children, [PLAN](PLAN.md), [layout](layout.md), [TASKS](TASKS.md).
-- Preparation owners: [DOCS_TASKS](DOCS_TASKS.md) and [DOCS_PREPARATION](DOCS_PREPARATION.md). Adjacent [SPEC review](SPEC-REVIEW-REPORT.md), [PLAN review](PLAN-REVIEW-REPORT.md) and [TASKS review](TASKS-REVIEW-REPORT.md) pin reviewed identities.
-- Running package: repository-pinned SDD Manager 0.15.4. Root AGENTS/plugin guidance and browser/Windows policies remain governing; no validated application commands exist yet.
-
-## Scope and human decisions
-
-- User approved PROJECT with “k” after proposal 65fad484fd8a73d090006f45ec70bebe37ba1028; autodoc preapproves later document checkpoints through TASKS. Six accepted gameplay/platform clarifications are retained in DOCS_PREPARATION.
-- The user’s “Try again” authorized retry of the blocked issue 5 transition; the same route succeeded, issue 5 closure was verified, then preparation continued. No credential change or duplicate document/task completion was used for recovery.
-- Expanded authority: “Do QC and full implement”, followed by “Try again”, authorizes package QC, preparation integration, T-001–T-072 and verified releases after every phase. The earlier DOCS-008 stop is superseded. No repeated human approval is required for this range.
-- Tracking: root policy enables preparation/implementation tracking. Milestone 1 and issues 1–9 exist; issues 1–7 are verified closed. Verify issue 8 closure after this checkpoint; issue 9 and the milestone stay open.
-- Reporting: Standard. PLAN specifies nine useful phases, versions 0.1.0 through 1.0.0, browser-only Phase 1 and four-target delivery from Phase 2 onward.
+- Workflow: main implementation; sdd-implement owns T-001–T-072. Governing [SPEC](SPEC.md), [PLAN](PLAN.md), [layout](layout.md), [TASKS](TASKS.md), [package QC](DOCS-QC-REPORT.md) and [preparation evidence](DOCS_PREPARATION.md).
+- Dependencies: Node 24.x, exact package-lock dependencies and [development commands](../user/DEVELOPMENT.md). Isolated Chromium/Firefox browser input/Canvas execution is verified under the documented recovered environment; native Windows and actual sidebars remain unverified.
+- Selected range: full 72-task implementation with required phase releases, authorized by “Do QC and full implement” and resumed by “Try again”. No additional human checkpoint approval is required within that scope; technical gates remain.
+- Tracking: phase label sdd-phase-1-Classic-browser-game; milestones 1.1–1.4 map to GitHub milestone numbers 2–5; all ten task bodies/labels/milestone associations were read back before T-001. T-001 is issue 10. Later phases remain unactivated.
+- The projection utility left T-001 creation uncertain; read-only reconciliation confirmed it, then missing issues were created/reused and every association read back. No duplicate identities were created.
+- Reporting: Standard. Preserve one verified task result/evidence/initial checkbox per commit, push/read back before advancing.
 
 ## Branches and return
 
-- Working branch: design-docs/main; creation parent and eventual integration target: main.
-- Branch-off: 9a23aaca4d260eac949ed27d322a839c5643cf6d.
-- Last prior published document boundary: 697c7037e3e246696267cd986e9ec1789b54765e (layout and combined PLAN/layout review).
-- No suspended parent. Retain design-docs/ai-logs; its scaffold is already integrated and future manual logs are outside routine continuation.
+- Current branch: main; completed source branch: phase/1-classic-browser-game.
+- Creation parent and integration target: main.
+- Branch-off commit: ed9cf4355df7b7891d16c035e79b72814ff01c08.
+- Retain design-docs/main and design-docs/ai-logs. Preparation integration is complete; no unfinished parent workflow is suspended.
 
-## Pending effects and next action
+## Pending work and next action
 
-- DOCS-001–009 are verified closed, and DOCS-009 was published. Verify/publish/read back this explicit main merge, then close/read back sdd-docs-main. Only then activate Phase 1.
-- Activate Phase 1 only after preparation integration; use the full TASKS but project only Phase 1 objects and execute one task per verified completion commit/push. Preserve full T-001–T-072 authority across interruptions.
-- Browser/native Windows/sidebar capabilities remain to be established by their owning tasks. Report actual blockers without claiming untested platform delivery.
-
-## Preparation correction
-
-The first main merge 1f6fcf29d03a3d0450cc3435f04fb4d81648889b was published before its whitespace failure was handled. QC-001 was corrected on design-docs/main with updated review currency. Publish this correction and explicitly integrate/verify/publish it into main before closing the preparation milestone or activating implementation. Product contracts and authorized T-001–T-072 range are unchanged.
+- T-001–T-010 and all four Phase 1 milestones are closed/read back; task/result/checkbox audit passed for all ten initial closing commits.
+- Complete/publish the explicit two-parent merge into main (parents ed9cf4355df7b7891d16c035e79b72814ff01c08 and 6384185553db1fd1bb995daae77abc682ba2d38b), then perform the exact-body default-branch release commit/tag and direct GitHub release workflow. No existing publisher is configured. Release assets: stable tetris-web.zip, SHA256SUMS and INSTALL-WEB.md; final-source rebuild/acceptance and uploaded-byte readback remain required.
+- Full T-001–T-072 authorization persists. Activate Phase 2 only after verified predecessor release. Native Windows and actual sidebar evidence remain unestablished and required before corresponding acceptance.

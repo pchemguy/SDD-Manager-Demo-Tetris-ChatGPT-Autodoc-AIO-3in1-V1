@@ -55,3 +55,13 @@ Maintain project-specific navigation and validated setup/check commands here as 
 Current product sources are [PROJECT](docs/dev/PROJECT.md), [ARCHITECTURE](docs/dev/ARCHITECTURE.md), [DECOMPOSITION](docs/dev/DECOMPOSITION.md), [SPEC](docs/dev/SPEC.md), [PLAN](docs/dev/PLAN.md) and [layout](docs/dev/layout.md). The canonical executable owner is [TASKS](docs/dev/TASKS.md), with [task-list QC](docs/dev/TASKS-REVIEW-REPORT.md). Physical implementation locations in layout are planned until their owning tasks create them. Add setup/test commands only after they have been established and validated. Keep bundled .agents sources outside ordinary application edits.
 
 See [DOCS_TASKS](docs/dev/DOCS_TASKS.md) and [DOCS_PREPARATION](docs/dev/DOCS_PREPARATION.md) for preparation progress and decisions; use HANDOFF and subsequent records/Git for continuation.
+
+## Validated application checks
+
+Use Node.js 24.x. From the repository root, npm ci --no-audit --no-fund, npm test and npm run typecheck have been validated on Linux. Their syntax also works in Windows CMD; native Windows execution remains unverified. See docs/user/DEVELOPMENT.md for isolated browser setup. npm run dev and npm run build are validated for the manually controlled board. npm run test:ui uses project-owned managed browsers; see development guidance for the diagnosed trusted-local Firefox flag.
+
+## Distribution checks
+
+Browser packaging additionally requires Python 3.11+. npm run test:server, npm run test:package and npm run package:web are validated on Linux. The exported ZIP is generated under release/ and must be tested after extraction before a release claim. Only explicit compiled/runtime and installation/license assets may be exported; private .tkn files must remain denied by both the development server and packaging boundary.
+
+npm run test:artifact verifies the versioned extracted browser ZIP through a plain static HTTP server in isolated Chromium/Firefox, including five viewport widths. On the diagnosed Linux host only, use the documented TETRIS_FIREFOX_SANDBOX_OVERRIDE=1 process setting. See docs/user/DEVELOPMENT.md for evidence boundaries.

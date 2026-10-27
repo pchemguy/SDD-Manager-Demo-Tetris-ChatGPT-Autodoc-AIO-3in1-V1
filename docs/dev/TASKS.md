@@ -10,54 +10,65 @@ Versions and platform deferrals are in PLAN. Every phase review prepares source/
 
 ## Phase 1 — Classic browser game
 
-- [ ] Phase 1 — Classic browser game
-    - [ ] Milestone 1.1 — Playable board
-        - [ ] T-001 — Establish geometry and a pinned development foundation
+- [x] Phase 1 — Classic browser game
+    - [x] Milestone 1.1 — Playable board
+        - [x] T-001 — Establish geometry and a pinned development foundation
             Scope: package/tool configuration, src/core geometry and tests/core. Contracts: GAME, basic HOST/UI, browser RELEASE.
             Depends on: none; accepted/published preparation and verified eligible Phase 1 projection.
             Acceptance/evidence: Pin compatible dependencies/lockfile; verify all seven spawn shapes, bounds and occupied-cell tests; document the actual Linux/Windows-CMD commands and isolated browser setup requirements.
-        - [ ] T-002 — Implement active-piece commands and restart state
+            Verified: Node 24.22.1; all 11 independent geometry tests first failed for unimplemented geometry, then passed after implementation, including after clean npm ci. npm run typecheck passed. Vite 8.3.5, TypeScript 7.0.2 and Playwright 1.62.1 are pinned in the lockfile. npm emits an inherited http-proxy configuration warning; installation and checks succeed. Browser/runtime package acceptance is not part of this task.
+        - [x] T-002 — Implement active-piece commands and restart state
             Scope: src/core reducer and tests/core. Contracts: GAME, basic HOST/UI, browser RELEASE.
             Depends on: T-001.
             Acceptance/evidence: Controlled streams prove spawn, movement, baseline no-kick rotation, rejected moves and fresh restart without settled-cell overwrites.
-        - [ ] T-003 — Render and control the playable board
+            Verified: seven new command tests observed RED before implementation, then 18 total core tests passed; typecheck passed. Controlled draw counts, immutable move/restart outcomes, wall/settled-cell rejection, no-kick rotation and blocked spawn were exercised. Gravity and line/score progression remain separate tasks.
+        - [x] T-003 — Render and control the playable board
             Scope: src/app session composition, src/ui board and tests/ui. Contracts: GAME, basic HOST/UI, browser RELEASE.
             Depends on: T-001, T-002.
             Acceptance/evidence: A real browser displays the board and active piece, accepts focused movement/rotation and visibly rejects collisions; domain state and rendering agree.
+            Verified: two real-browser missing-control tests observed RED, then four UI tests passed across managed Chromium/Firefox; all 18 core tests, typecheck and production compilation passed. Whole-milestone code review and visual inspection passed; see reports/phases/1/1.1.md for browser recovery, screenshots and evidence limits.
+            Follow-up repair: a synthetic HEAD-only fixture demonstrated that development credential routes were served (HTTP 200). Explicit Vite fs.deny rules now reject direct, encoded, raw-query and @fs credential routes; the regression passes. Real credentials were neither read through HTTP nor logged. No game rules or task completion changed.
             Milestone boundary: after its implementation, review all of 1.1, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/1/1.1.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
-    - [ ] Milestone 1.2 — Complete classic loop
-        - [ ] T-004 — Implement gravity and classic locking
+    - [x] Milestone 1.2 — Complete classic loop
+        - [x] T-004 — Implement gravity and classic locking
             Scope: src/core reducer timing and tests/core. Contracts: GAME, basic HOST/UI, browser RELEASE.
             Depends on: T-003.
             Acceptance/evidence: Explicit time advances prove gravity, failed-down locking, spawn transitions and top-out at boundaries.
-        - [ ] T-005 — Implement line clearing and score progression
+            Verified: Six new gravity/locking scenarios observed RED before implementation; all 24 core tests, typecheck and four Chromium/Firefox UI regressions passed. Explicit active-time intervals/remainders, failed-down locking, exactly-one next spawn, top-out without board writes, paused/over exclusion and invalid elapsed input were verified. Session soft-down uses the coherent locking transition; automatic UI scheduling remains T-006.
+        - [x] T-005 — Implement line clearing and score progression
             Scope: src/core scoring/clear transitions and tests/core. Contracts: GAME, basic HOST/UI, browser RELEASE.
             Depends on: T-004.
             Acceptance/evidence: One through four simultaneous clears, row compaction, drop points, score saturation and level/speed thresholds match GAME.
-        - [ ] T-006 — Integrate the complete classic game loop
+            Verified: Eight scoring/clear fixtures observed RED before implementation; all 32 core tests, typecheck and four Chromium/Firefox UI regressions passed. Verified 1-4 simultaneous line awards, row compaction, independent empty rows, pre-clear level multipliers, level/speed thresholds, soft-drop versus gravity points and safe-integer score saturation. An intermediate duplicate-local compile error was corrected before the passing runs. Hard drop remains outside the classic phase.
+        - [x] T-006 — Integrate the complete classic game loop
             Scope: src/app session, src/ui game information and tests/e2e. Contracts: GAME, basic HOST/UI, browser RELEASE.
             Depends on: T-004, T-005.
             Acceptance/evidence: Demonstrate continued play, score/levels and game over; completion fires once and restart abandons unfinished games without recording fake completions.
+            Verified: Four application cases and two real-browser automatic-gravity scenarios observed RED before integration. Final verification: 36 core/application tests, eight Chromium/Firefox UI tests, typecheck and production compilation passed. Whole-milestone code review, completion/restart behavior and screenshot inspection passed; report 1.2.md records timing controls, resolved status-locator ambiguity and native/package evidence limits.
             Milestone boundary: after its implementation, review all of 1.2, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/1/1.2.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
-    - [ ] Milestone 1.3 — Browser delivery
-        - [ ] T-007 — Implement pause, focus and keyboard repeat handling
+    - [x] Milestone 1.3 — Browser delivery
+        - [x] T-007 — Implement pause, focus and keyboard repeat handling
             Scope: src/app input/scheduler and focused UI checks. Contracts: GAME, basic HOST/UI, browser RELEASE.
             Depends on: T-006.
             Acceptance/evidence: Pause excludes elapsed time, blur clears held keys, repeats use specified delays, and form/button interaction keeps normal keyboard behavior.
-        - [ ] T-008 — Build and document the standalone browser artifact
+            Verified: Four new application input/pause cases and three Chromium UI cases observed RED. Final checks passed 40 core/application tests, 16 Chromium/Firefox UI cases, typecheck and production compilation. Verified 150/50 ms horizontal and 50 ms down repeats, once-per-press rotations, pause remainder/no catch-up, P/Escape, real DOM board-blur key clearing, and explicitly modeled window/visibility suspension with manual resume. Full Chromium native-window probing was blocked by the host socket restriction; no host restriction was relaxed and native desktop/sidebar evidence remains pending.
+        - [x] T-008 — Build and document the standalone browser artifact
             Scope: scripts web packaging, generated dist/web and docs/user. Contracts: GAME, basic HOST/UI, browser RELEASE.
             Depends on: T-007.
             Acceptance/evidence: Extracted static build runs through a static HTTP(S) host without an app backend/CDN; include controls, notices, versioned archive and checksums.
-        - [ ] T-009 — Verify baseline browser usability and package behavior
+            Verified: Five archive cases observed RED before implementation; all five packaging tests and the private-route regression pass. Production build and ZIP CRC/content checks passed. The extracted candidate launched over a plain static HTTP host in managed Chromium, with working input/score/pause, no page errors and only local runtime requests. Candidate SHA-256: 744557c62935ff1330ec88ec333aaf928195033dc826ef24fc8e0765bc234421. Installation/control/license/version documents and checksums included; reproducibility, private-file, symlink and traversal checks passed. Final broad artifact acceptance and release are still T-009/T-010.
+        - [x] T-009 — Verify baseline browser usability and package behavior
             Scope: tests/e2e, scripts artifact checks and docs/user. Contracts: GAME, basic HOST/UI, browser RELEASE.
             Depends on: T-007, T-008.
             Acceptance/evidence: Isolated Chromium/Firefox exercise the extracted build, actual Canvas output, restart/pause and wide/narrow layout; report exact binaries and evidence limitations.
+            Verified: 26 extracted-build Chromium/Firefox cases passed across five viewport widths; 40 core/app tests, typecheck, five packaging tests and credential-route regression passed. Candidate ZIP hash remained 744557c62935ff1330ec88ec333aaf928195033dc826ef24fc8e0765bc234421. Whole Milestone 1.3 code review and screenshot inspection passed; see reports/phases/1/1.3.md for binaries and explicit native-event limits.
             Milestone boundary: after its implementation, review all of 1.3, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/1/1.3.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
-    - [ ] Milestone 1.4 — Phase review
-        - [ ] T-010 — Review, test and report phase 1
+    - [x] Milestone 1.4 — Phase review
+        - [x] T-010 — Review, test and report phase 1
             Scope: whole Phase 1 code, contracts, integration, required artifacts and preserved prior behavior.
             Depends on: T-003, T-006, T-009; all delivery milestones 1.1, 1.2, 1.3 completed and closed/read back.
             Acceptance/evidence: independent code review and applicable domain/application/native-package checks cover the phase exits in PLAN; fix blockers, audit one-task commit/checkbox persistence, prepare version 0.1.0, complete release notes, installation/development-status instructions and candidate artifact checksums. Include PHASE-REPORT.md and HANDOFF with this task’s initial completion. A missing required platform check blocks completion; no integration/release is claimed before its actual verified workflow.
+            Verified: Independent Phase 1 code review found no Critical/Important issues; two Minor help/documentation findings fixed and rechecked. Narrow guide regression observed RED before repair; all 28 rebuilt extracted-browser cases, 40 core/app tests, typecheck, five packaging cases and credential-route regression pass. Task persistence audit passed; version 0.1.0 notes and candidate hash prepared. See reports/phases/1/PHASE-REPORT.md. Integration and published release remain subsequent gates.
             Report: docs/dev/reports/phases/1/PHASE-REPORT.md. After this task and its review milestone close, integrate/verify/publish the complete phase and perform the pinned default-branch release workflow before activating any authorized next phase.
 
 ## Phase 2 — Desktop and sidebar baseline
