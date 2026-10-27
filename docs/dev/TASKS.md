@@ -140,7 +140,7 @@ The user explicitly directed: “Run full implementation without native Windows 
 ## Phase 3 — Piece flow
 
 - [ ] Phase 3 — Piece flow
-    - [ ] Milestone 3.1 — Bag and next preview
+    - [x] Milestone 3.1 — Bag and next preview
         - [x] T-021 — Implement the injectable seven-piece bag
             Scope: src/core randomizer and tests/core. Contracts: MOD bag/preview/Hold.
             Depends on: T-020. Phase 2 integration/publication/release and current-phase activation must also be verified.
@@ -158,10 +158,11 @@ The user explicitly directed: “Run full implementation without native Windows 
             Verified: RED missing Next view reproduced in both browsers; shared SVG preview passes controlled spawn/pause checks. All four extracted packages each pass30 headless cases (120 total), 49 core/app plus host/package/security checks pass. Independent milestone review found no defects; screenshot inspected. Native Windows and actual installed sidebars remain explicitly unverified under authorized scope.
             Milestone boundary: after its implementation, review all of 3.1, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/3/3.1.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
     - [ ] Milestone 3.2 — Hold
-        - [ ] T-024 — Implement Hold state and exchange rules
+        - [x] T-024 — Implement Hold state and exchange rules
             Scope: src/core Hold transitions and tests/core. Contracts: MOD bag/preview/Hold.
             Depends on: T-023.
             Acceptance/evidence: Empty/populated slots, once-per-piece limits, orientation/timer reset and blocked held-piece spawn match MOD.
+            Verified: RED missing Hold export reproduced;54 core/application tests and typecheck pass. Empty slot consumes one draw; populated swap consumes none; second Hold rejected until lock; spawn resets orientation/position/timer; blocked swap preserves settled board and ends game. Pause/game-over/idle reject Hold; restart clears slot. Milestone3.1 issues30–32 and milestone10 closed/read back.
         - [ ] T-025 — Integrate Hold controls and presentation
             Scope: src/app input and src/ui Hold view. Contracts: MOD bag/preview/Hold.
             Depends on: T-024.
