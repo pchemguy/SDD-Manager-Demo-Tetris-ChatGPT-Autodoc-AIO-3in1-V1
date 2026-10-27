@@ -95,7 +95,7 @@ The user explicitly directed: “Run full implementation without native Windows 
             Acceptance/evidence: Extracted Windows x64 ZIP launches on actual declared Windows versions without external Node/server; record unsigned status, runtime versions, offline assets and checksums.
             Verified: Portable unsigned Windows x64 candidate built and integrity/content verified with pinned official Electron43.8.3 runtime; final ZIP SHA-256 b9d0794e17fe0cc7d2a235a99434cc0627cbf98658fa856e3cdad8d70083918c. Eight desktop,40 core/app,10 packaging and28 final extracted-shared-asset Chromium/Firefox cases pass; typecheck/build pass. Independent whole-milestone code review passed and configuration/license findings fixed/rechecked. Native Windows execution explicitly waived/unverified. See reports/phases/2/2.1.md; Phase2 and actual sidebar verification remain incomplete.
             Milestone boundary: after its implementation, review all of 2.1, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/2/2.1.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
-    - [ ] Milestone 2.2 — Chromium sidebar
+    - [x] Milestone 2.2 — Chromium sidebar
         - [x] T-014 — Build the minimal Chromium sidebar package
             Scope: extensions/chromium, src/entry and src/platform/chromium. Contracts: HOST/UI, RELEASE for all four targets.
             Depends on: T-013.
@@ -123,10 +123,11 @@ The user explicitly directed: “Run full implementation without native Windows 
             Depends on: T-017.
             Acceptance/evidence: Actual sidebar hide/close/document destruction obey pause/reset rules; retained settings and results have only their current in-scope lifetimes.
             Verified: Firefox lifecycle tests failed on the missing adapter, then43 core/app and2 background API cases passed with typecheck and production build. Page hide/restoration routes into shared suspension, preserves remaining gravity time and requires manual resume; new documents create idle sessions with no background game replica. Native sidebar destruction/reopen delivery remains explicitly unverified under headless-only scope.
-        - [ ] T-019 — Verify temporary Firefox installation and all-host parity
+        - [x] T-019 — Verify temporary Firefox installation and all-host parity
             Scope: scripts packaging, tests/extensions/firefox, cross-host checks and docs/user. Contracts: HOST/UI, RELEASE for all four targets.
             Depends on: T-017, T-018.
             Acceptance/evidence: Temporary ZIP installation opens a real sidebar offline; document restart/signing limitations and verify the classic behavior remains shared across all four packaged targets.
+            Verified: All four target archives built from one compiled UI;Firefox,Chromium and Windows-extracted shared assets each passed28 headless browser cases.43 core/app,2 extension API,8 desktop and14 packaging cases passed; build/typecheck passed. Independent milestone and final harness review found no defects. Hashes and exact candidate names are in reports/phases/2/2.3.md. Native Windows/extension installation/events remain explicitly unverified under the authorized scope; Phase2 release remains pending.
             Milestone boundary: after its implementation, review all of 2.3, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/2/2.3.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
     - [ ] Milestone 2.4 — Phase review
         - [ ] T-020 — Review, test and report phase 2

@@ -69,3 +69,5 @@ npm run test:artifact verifies the versioned extracted browser ZIP through a pla
 ## Desktop source and package checks
 
 npm run test:desktop, npm run package:windows and npm run test:windows-assets are validated on this Linux host. The latter tests extracted Windows-package web assets in isolated browsers, not native Electron. The user explicitly waived native Windows 10/11 verification for full implementation; retain that limitation in package/release claims. See the TASKS verification exception and docs/user/INSTALL-WINDOWS.md. Following the user’s headless-only testing direction, unavailable actual sidebar installation/open/close checks remain explicitly unverified and do not halt implementation or releases. Retain supported headless app, adapter and package checks.
+
+npm run package:all, npm run test:chromium-assets, npm run test:firefox-assets and npm run test:extensions are validated. Keep artifact metadata per platform under ignored release/. Headless extracted-asset suites serve only the selected package directory; they do not represent native Electron or installed-extension execution.

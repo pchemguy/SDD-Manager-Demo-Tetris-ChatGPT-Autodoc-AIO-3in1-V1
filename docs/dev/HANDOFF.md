@@ -1,8 +1,8 @@
 # Project handoff
 
-Checkpoint: Milestone2.2 Chromium package and headless acceptance complete; T-016 publication/hosted closure follows.
+Checkpoint: Milestone2.3 Firefox/all-target package acceptance complete; T-019 publication and hosted closure follow.
 
-Outcome: T-001–T-016 implement the classic browser, desktop package and Chromium sidebar package/lifecycle bridge. Final Chromium extraction tests passed28 headless browser cases;41 core/app,1 extension API and13 packaging cases pass. Native Windows and actual sidebar installation/events remain explicitly unverified under the user's testing scope. See [Chromium milestone](reports/phases/2/2.2.md). Phase2 is not yet released.
+Outcome: T-001–T-019 implement classic browser play, desktop and both sidebar development packages. All four targets build from the same compiled UI. Final Firefox,Chromium and Windows-extracted assets each passed28 headless browser cases;43 core/app,2 extension,8 desktop and14 packaging cases pass. Native coverage remains explicitly unverified under the user's scope. See [Firefox/all-target report](reports/phases/2/2.3.md). Phase2 review/integration/release remain pending.
 
 ## Workflow and sources
 
@@ -22,6 +22,6 @@ Outcome: T-001–T-016 implement the classic browser, desktop package and Chromi
 
 ## Pending work and next action
 
-- Preserve the user's full T-001–T-072 authorization, per-phase releases, native Windows exception and headless-only verification direction. Supported source/adapter/package/headless checks remain required; unavailable actual native installation/event coverage is disclosed and does not halt progression.
-- Confirm T-016 publication/issue25 closure, then close/read back milestone7 (2.2). T-014/T-015 are pushed and issues23/24 closed/read back. Start T-017 Firefox package next, then continue the full remaining range.
-- Chromium candidate tetris-chromium-0.2.0.zip SHA-256 a7ef5b32e4038b57971394cf35bde450d7bf87f84f08410c9869a0332fadd309. Generated archives/caches may need rebuilding after transfer. Native installation and actual open/close event delivery are not claimed.
+- Full T-001–T-072 implementation and per-phase releases remain authorized with native Windows verification excluded and headless-only supported verification selected. Record native installation/event coverage as unverified without halting progression; do not claim those checks passed.
+- Confirm T-019 publication/issue28 closure, then close/read back milestone8 (2.3). Milestones6/7 and their task issues are closed/read back. Execute T-020 phase review next, including persistence audit, final notes/source/artifact preparation and independent cross-milestone review.
+- Only after review milestone closure, integrate/publish the complete phase into main and perform the exact-body default-branch release commit/tag workflow. Publish all four assets with checksums/instructions and explicit development/native-verification status. Native limits do not imply signed/store delivery.

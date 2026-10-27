@@ -73,3 +73,7 @@ npm run test:windows-assets validates and extracts the actual Windows candidate 
 ## Chromium sidebar package checks
 
 npm run package:chromium builds the shared UI and a development extension ZIP with local assets, a minimal manifest, worker and notices. npm run test:chromium-assets validates/extracts that ZIP and tests its compiled UI with the isolated headless browsers through a static server. npm run test:extensions executes actual background code against controlled API event fixtures. These checks retain native extension installation and actual sidebar events as explicitly unverified under the authorized headless-only scope.
+
+## All-target package acceptance
+
+npm run package:all compiles the shared UI once and produces browser, portable Windows x64, Chromium and Firefox archives from that build. npm run test:firefox-assets and npm run test:chromium-assets use the validated target wrapper, verify/extract the selected archive and run the pinned headless suite. The wrapper stops on preparation failure and supplies one project-owned browser root. Windows runtime and native extension installation/events remain explicitly unverified; package integrity, contents, shared UI and controlled host adapters are checked.
