@@ -1,6 +1,6 @@
 # Project handoff
 
-Checkpoint: Phase 4 v0.4.0 four-target release verified; Phase 5 activation is next.
+Checkpoint: Phase 5 activated from published Phase 4; T-038 rewards/activation in progress.
 
 Outcome: T-001–T-037 are implemented, individually committed/pushed and closed. Phase 4 integrated at c5908f5a03848f4f64803e930bb8b5f2dd2394c2; v0.4.0 is published stable/latest from 645415b2c39c90a833f0ba9bbf0a0f62520c43d2. All nine assets and the body were downloaded/read back and byte/hash compared. See [phase/release report](reports/phases/4/PHASE-REPORT.md).
 
@@ -19,6 +19,6 @@ Outcome: T-001–T-037 are implemented, individually committed/pushed and closed
 
 ## Branches and next action
 
-- Current branch: main. Completed phase source: phase/4-landing-and-rotation-rules; creation parent/integration target: main at 3356f0040ff0c7c1eebbddcacb8116ea777228a4. Preserve v0.4.0 at 645415b2c39c90a833f0ba9bbf0a0f62520c43d2; later status commits do not move it.
-- Create Phase 5 from the published main checkpoint containing this record; verify its actual branch-off and complete tracking before source/test edits. Continue T-038–T-072 and every required phase release without another approval.
-- Reconstruct current state from this checkpoint plus subsequent Git/task evidence. Current release/body/assets/latest and closure gates are verified; no next-phase tracking objects are created by this record.
+- Current branch: phase/5-penetrator-and-dynamic-ghost, created from published main e4a9920f54e8b1bb0bb4b59732325173e0f55525. Integration target: main.
+- Phase 5 branch-off and all tracking were verified before source/test edits: milestones5.1–5.3 are17–19, T-038–T-044 are issues47–53. Continue T-038 rewards/activation, then bounded transit, controls and dynamic projection in task order; full T-038–T-072 authorization persists.
+- Reconstruct current state from this checkpoint plus subsequent Git/task evidence. Current release/body/assets/latest and closure gates are verified; Phase 5 tracking is fully activated as recorded above.

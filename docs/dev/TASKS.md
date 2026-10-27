@@ -248,10 +248,11 @@ The user explicitly directed: “Run full implementation without native Windows 
 
 - [ ] Phase 5 — Penetrator and dynamic ghost
     - [ ] Milestone 5.1 — Penetrator gameplay
-        - [ ] T-038 — Implement penetrator rewards and activation lifetime
+        - [x] T-038 — Implement penetrator rewards and activation lifetime
             Scope: src/core reducer and tests/core. Contracts: PEN and MOD dynamic visibility.
             Depends on: T-037. Phase 4 integration/publication/release and current-phase activation must also be verified.
             Acceptance/evidence: Four-line rewards cap at three, activation spends once, restart clears bonuses and Hold remains disabled for the active penetrator.
+            Verified: RED missing activation export reproduced;125 core/application tests and typecheck pass. Four-line locks earn one bonus capped at3; other clears earn none. Activation spends once, preserves position/orientation/Hold restriction, rejects unavailable/paused/terminal/repeated use and disables Hold. Spawns end activation while retaining bonuses; restart clears them. Phase5 tracking verified before edits; version0.5.0 prepared.
         - [ ] T-039 — Implement bounded penetrator transit and landing
             Scope: src/core geometry/landing and adversarial board fixtures. Contracts: PEN and MOD dynamic visibility.
             Depends on: T-038.
