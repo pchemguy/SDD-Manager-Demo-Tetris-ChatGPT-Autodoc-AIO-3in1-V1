@@ -57,10 +57,11 @@ Versions and platform deferrals are in PLAN. Every phase review prepares source/
             Depends on: T-007.
             Acceptance/evidence: Extracted static build runs through a static HTTP(S) host without an app backend/CDN; include controls, notices, versioned archive and checksums.
             Verified: Five archive cases observed RED before implementation; all five packaging tests and the private-route regression pass. Production build and ZIP CRC/content checks passed. The extracted candidate launched over a plain static HTTP host in managed Chromium, with working input/score/pause, no page errors and only local runtime requests. Candidate SHA-256: 744557c62935ff1330ec88ec333aaf928195033dc826ef24fc8e0765bc234421. Installation/control/license/version documents and checksums included; reproducibility, private-file, symlink and traversal checks passed. Final broad artifact acceptance and release are still T-009/T-010.
-        - [ ] T-009 — Verify baseline browser usability and package behavior
+        - [x] T-009 — Verify baseline browser usability and package behavior
             Scope: tests/e2e, scripts artifact checks and docs/user. Contracts: GAME, basic HOST/UI, browser RELEASE.
             Depends on: T-007, T-008.
             Acceptance/evidence: Isolated Chromium/Firefox exercise the extracted build, actual Canvas output, restart/pause and wide/narrow layout; report exact binaries and evidence limitations.
+            Verified: 26 extracted-build Chromium/Firefox cases passed across five viewport widths; 40 core/app tests, typecheck, five packaging tests and credential-route regression passed. Candidate ZIP hash remained 744557c62935ff1330ec88ec333aaf928195033dc826ef24fc8e0765bc234421. Whole Milestone 1.3 code review and screenshot inspection passed; see reports/phases/1/1.3.md for binaries and explicit native-event limits.
             Milestone boundary: after its implementation, review all of 1.3, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/1/1.3.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
     - [ ] Milestone 1.4 — Phase review
         - [ ] T-010 — Review, test and report phase 1

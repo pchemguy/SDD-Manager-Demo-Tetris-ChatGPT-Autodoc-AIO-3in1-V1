@@ -1,8 +1,8 @@
 # Project handoff
 
-Checkpoint: Milestone 1.2 complete classic loop; T-006 publication/issue/milestone closure follows this checkpoint.
+Checkpoint: Milestone 1.3 browser delivery verified; T-009 publication/issue/milestone closure follows this checkpoint.
 
-Outcome: Whole-package QC passed with QC-001 whitespace corrected; accepted preparation is explicitly merged and published on main at ed9cf4355df7b7891d16c035e79b72814ff01c08. Preparation milestone 1 and all nine DOCS issues were closed/read back. Phase 1 tracking was fully established before source edits/tests. T-001–T-006 provide the automatic classic loop, scoring/levels, game over and restart. Milestone reviews are in reports/phases/1/1.1.md and 1.2.md. No complete phase or release is claimed.
+Outcome: T-001–T-009 implement and verify the classic browser game and extracted static distribution. Core/application, packaging and credential-route checks pass; 26 extracted-build Chromium/Firefox cases pass. See [browser delivery report](reports/phases/1/1.3.md). No phase integration or release is claimed.
 
 ## Workflow and sources
 
@@ -22,5 +22,6 @@ Outcome: Whole-package QC passed with QC-001 whitespace corrected; accepted prep
 
 ## Pending work and next action
 
-- T-001–T-005 publication and issue closures, and milestone 2 (1.1), are verified. Publish/read back T-006, close/read back issue 15 and milestone 3 (1.2), then execute T-007. Preserve the one-task commit contract and full remaining range authorization.
-- Milestone 1.1 report/HANDOFF belongs to T-003; only a complete reviewed Phase 1 integrates into main and receives its verified browser release. Full later-phase authority persists; native Windows and real sidebar evidence remain required before corresponding delivery claims.
+- Confirm T-009 publication and issue 18 closure, then close/read back milestone 4 (1.3). T-007/T-008 issue closures are verified.
+- Execute T-010 phase review after the delivery milestone closures; verify task persistence, prepare 0.1.0 source/notes/artifacts, close its issue/review milestone, then integrate/publish main and perform the pinned release workflow.
+- Full T-001–T-072 authorization persists. Later-phase activation follows the verified predecessor release. Native Windows and actual sidebars remain unverified and required before Phase 2 acceptance.
