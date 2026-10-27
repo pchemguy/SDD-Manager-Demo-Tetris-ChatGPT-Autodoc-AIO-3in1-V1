@@ -106,10 +106,11 @@ The user explicitly directed: “Run full implementation without native Windows 
             Depends on: T-014.
             Acceptance/evidence: Chromium 142+ native panel events pause retained documents, reset destroyed sessions and never persist scores or run background gravity.
             Verified: Receiver and actual-worker lifecycle cases observed RED before implementation;41 core/app and1 extension boundary cases now pass, with typecheck and production Chromium ZIP build. Close/open events forward only window-scoped suspension; foreign senders, wrong windows and invalid payloads are ignored. Retained sessions never auto-resume and destroyed documents retain no background game state. Native event delivery remains explicitly unverified under headless-only scope.
-        - [ ] T-016 — Verify Chromium development installation and layout
+        - [x] T-016 — Verify Chromium development installation and layout
             Scope: scripts extension packaging, native panel tests and docs/user. Contracts: HOST/UI, RELEASE for all four targets.
             Depends on: T-014, T-015.
             Acceptance/evidence: Extract and load unpacked; demonstrate actual panel input, 280/360/600 widths, close/reopen and offline loading, with exact package/binary evidence.
+            Verified: Validated/extracted actual Chromium development ZIP;28 headless Chromium/Firefox UI cases and13 packaging cases passed. Candidate SHA-256 a7ef5b32e4038b57971394cf35bde450d7bf87f84f08410c9869a0332fadd309. Independent whole-milestone code review found no defects. Static-host shared UI, source/API and package checks establish the authorized scope; native extension installation and actual panel events remain explicitly unverified. See reports/phases/2/2.2.md.
             Milestone boundary: after its implementation, review all of 2.2, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/2/2.2.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
     - [ ] Milestone 2.3 — Firefox sidebar
         - [ ] T-017 — Build the Firefox sidebar package

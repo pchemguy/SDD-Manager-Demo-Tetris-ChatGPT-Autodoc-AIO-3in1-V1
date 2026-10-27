@@ -1,8 +1,8 @@
 # Project handoff
 
-Checkpoint: Milestone 2.1 desktop implementation/package committed, pushed and closed under the native Windows exception; T-014 resumed with headless-only verification authorized.
+Checkpoint: Milestone2.2 Chromium package and headless acceptance complete; T-016 publication/hosted closure follows.
 
-Outcome: T-001–T-013 implement the classic browser game and desktop host/lifecycle/portable Windows candidate. Eight desktop, 40 core/app, 10 package and 28 extracted-Windows-shared-asset cases pass. Native Windows execution remains explicitly waived/unverified. See [desktop milestone report](reports/phases/2/2.1.md). Phase 1 v0.1.0 remains the latest published release; Phase 2 is incomplete.
+Outcome: T-001–T-016 implement the classic browser, desktop package and Chromium sidebar package/lifecycle bridge. Final Chromium extraction tests passed28 headless browser cases;41 core/app,1 extension API and13 packaging cases pass. Native Windows and actual sidebar installation/events remain explicitly unverified under the user's testing scope. See [Chromium milestone](reports/phases/2/2.2.md). Phase2 is not yet released.
 
 ## Workflow and sources
 
@@ -22,6 +22,6 @@ Outcome: T-001–T-013 implement the classic browser game and desktop host/lifec
 
 ## Pending work and next action
 
-- User directs full implementation without native Windows verification, then explicitly selects headless-only testing and says “Go”. Continue T-014–T-072 and phase releases using supported headless application, adapter and package checks. Native Windows execution and actual extension installation/open/close coverage remain unverified; unavailable native facilities do not halt the workflow. This interpretation is recorded in TASKS and AGENTS; no claim that native checks passed is authorized.
-- T-011–T-013 and milestone 2.1 are committed/pushed and closed/read back. Current branch, parent and tracking identities above remain unchanged. Begin T-014, then proceed through the full remaining scope with individual task commits/pushes and phase releases.
-- The repeated full Chromium probe already included --no-sandbox and still failed at process-singleton socket EPERM; an explicit chromiumSandbox:false probe confirmed this. Chromium headless shell passes two isolated input/Canvas cycles and all 14 extracted application cases; managed headless Firefox remains available with its documented process-local override. Preserve these evidence distinctions and do not retry the unchanged host denial.
+- Preserve the user's full T-001–T-072 authorization, per-phase releases, native Windows exception and headless-only verification direction. Supported source/adapter/package/headless checks remain required; unavailable actual native installation/event coverage is disclosed and does not halt progression.
+- Confirm T-016 publication/issue25 closure, then close/read back milestone7 (2.2). T-014/T-015 are pushed and issues23/24 closed/read back. Start T-017 Firefox package next, then continue the full remaining range.
+- Chromium candidate tetris-chromium-0.2.0.zip SHA-256 a7ef5b32e4038b57971394cf35bde450d7bf87f84f08410c9869a0332fadd309. Generated archives/caches may need rebuilding after transfer. Native installation and actual open/close event delivery are not claimed.

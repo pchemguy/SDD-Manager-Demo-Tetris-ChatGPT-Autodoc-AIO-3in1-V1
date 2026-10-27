@@ -69,3 +69,7 @@ Desktop blur, hide and minimize events send only a suspension signal. The isolat
 npm run package:windows builds the shared web UI, obtains the pinned official Electron Windows x64 archive and checks its declared size/SHA-256, then assembles release/tetris-windows-x64-<version>.zip. The archive includes the runtime, application, instructions and licenses. .runtime-cache is a project-owned ignored cache; a mismatching archive is rejected. Python 3.11+ is required for packaging, not for players.
 
 npm run test:windows-assets validates and extracts the actual Windows candidate and runs Chromium/Firefox against its bundled web directory through a plain static server. This proves shared-asset behavior and packaging contents; it does not execute the Windows binary or establish Electron's native protocol/events. npm run test:desktop covers real asset responses and modeled Electron boundaries. Follow INSTALL-WINDOWS.md for the unsigned development package and explicit native Windows verification limitation.
+
+## Chromium sidebar package checks
+
+npm run package:chromium builds the shared UI and a development extension ZIP with local assets, a minimal manifest, worker and notices. npm run test:chromium-assets validates/extracts that ZIP and tests its compiled UI with the isolated headless browsers through a static server. npm run test:extensions executes actual background code against controlled API event fixtures. These checks retain native extension installation and actual sidebar events as explicitly unverified under the authorized headless-only scope.
