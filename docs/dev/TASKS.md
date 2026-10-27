@@ -78,7 +78,7 @@ The user explicitly directed: “Run full implementation without native Windows 
 ## Phase 2 — Desktop and sidebar baseline
 
 - [ ] Phase 2 — Desktop and sidebar baseline
-    - [ ] Milestone 2.1 — Windows desktop
+    - [x] Milestone 2.1 — Windows desktop
         - [x] T-011 — Implement the sandboxed Electron asset host
             Scope: electron main/protocol/preload, src/platform/electron and tests/desktop. Contracts: HOST/UI, RELEASE for all four targets.
             Depends on: T-010. Phase 1 integration/publication/release and current-phase activation must also be verified.
