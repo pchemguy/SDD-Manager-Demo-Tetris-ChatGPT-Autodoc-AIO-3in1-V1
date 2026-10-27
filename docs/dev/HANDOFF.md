@@ -1,8 +1,8 @@
 # Project handoff
 
-Checkpoint: Phase2 explicit integration into main; merged publication and v0.2.0 release follow.
+Checkpoint: Phase2 v0.2.0 four-target release verified; Phase3 activation is next.
 
-Outcome: T-001–T-020 implement classic browser, desktop and both sidebar development packages. Independent phase review found one stale documentation paragraph; corrected/rechecked.43 core/app,8 desktop,2 extension,14 package,1 server and112 combined headless artifact cases pass. See [phase report](reports/phases/2/PHASE-REPORT.md). Native Windows and actual sidebar installation/events remain unverified under the accepted scope. v0.2.0 is prepared but not yet published.
+Outcome: T-001–T-020 are implemented, separately committed/pushed and closed. Phase2 explicitly merged into main; release v0.2.0 is published stable/latest from ef75333c01367559f47923bbd7d09881044976b9. All four ZIPs,checksums and four installation documents were downloaded and byte/hash compared. See [phase/release report](reports/phases/2/PHASE-REPORT.md). Native Windows execution and actual installed-sidebar events remain explicitly unverified under the accepted scope.
 
 ## Workflow and sources
 
@@ -22,7 +22,7 @@ Outcome: T-001–T-020 implement classic browser, desktop and both sidebar devel
 
 ## Pending work and next action
 
-- T-011–T-020 and all four Phase2 milestones6–9 are committed/pushed and closed/read back. Source tip9c882069f6f1c76a16d309547bceb73f5fb5fed7 integrates into refreshed main422adf7f01bde2a0a0912448b5f3744f7e7d998c with an explicit two-parent merge.
-- Integrate the complete phase into refreshed main with an explicit two-parent merge, verify/publish, then perform the exact-body default-branch release commit/tag and direct GitHub publisher workflow. Complete notes are locally ignored but retained; source/body freshness and raw commit equality must be checked before tagging. Phase2 remains unreleased until all four uploaded assets/checksums/instructions and latest state are verified.
-- Final source must rebuild all four packages. Candidate names/hashes are in2.3.md; release filenames are version-free. Native Windows/installed-sidebar coverage remains unverified and must be stated in notes/manifests/instructions without halting authorized supported checks.
-- After verified v0.2.0 publication, continue Phase3 and the full T-021–T-072 range with individual commits/pushes, milestone reports and per-phase releases. No further human checkpoint approval is required within the retained scope.
+- Phase2 integration/publication, issues20–29, milestones6–9, exact-body release commit/tag, all nine release assets and latest state are verified. Preserve v0.2.0 at ef75333c01367559f47923bbd7d09881044976b9; subsequent report/task commits do not move it.
+- Create Phase3 from the published main checkpoint containing this record; establish its actual branch-off and fully verify Phase3 tracking before source/test edits. A source-bound draft exists outside the repository with eligibility false; refresh/check its source/authority before apply. No Phase3 objects have been created.
+- Continue the full T-021–T-072 range and per-phase releases without another approval. Native Windows execution is excluded, and unavailable actual sidebar/native-window coverage remains explicitly unverified while supported headless source/adapter/package checks govern progression. Never claim those native checks passed.
+- Complete notes remain locally ignored and retained, recoverable from release commits/GitHub. Generated packages/caches may need rebuilding after transfer. Phase3 outcome is bag/preview/Hold, followed by the remaining accepted gameplay/configuration/persistence phases.

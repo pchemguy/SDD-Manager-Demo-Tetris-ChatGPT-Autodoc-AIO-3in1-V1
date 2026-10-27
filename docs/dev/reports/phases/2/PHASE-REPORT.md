@@ -23,3 +23,25 @@ Publish T-020 and close/read back issue29/review milestone9, then explicitly int
 ## TODO
 
 None within the authorized phase scope. Native Windows execution and installed-sidebar behavior remain explicitly unverified evidence limitations, not passed tests.
+
+## Integration and release outcome
+
+Phase2 explicitly integrated into main at d745babf2b0f22c61a3b22966a288f56d572874a, parents422adf7f01bde2a0a0912448b5f3744f7e7d998c and9c882069f6f1c76a16d309547bceb73f5fb5fed7. Merged checks passed43 core/app,typecheck and28 headless web cases; exact remote containment verified. Direct default-branch release commit ef75333c01367559f47923bbd7d09881044976b9 has no additional tree changes; its raw body exactly equals the retained complete notes. Commit and lightweight v0.2.0 tag were separately pushed/read back, with release source on remote main's first-parent history.
+
+Final-source package:all rebuild and all four archive/extraction inspections passed. Every package hash exactly matched its already tested candidate, so the112 candidate UI cases apply to these exact bytes. No runtime asset changed after the mapped checks. Windows and actual installed-sidebar coverage remains explicitly unverified, as stated in notes/instructions/metadata.
+
+[GitHub v0.2.0](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Autodoc-AIO-3in1-V1/releases/tag/v0.2.0), release425048830, is published stable and read back as latest. One direct publisher uploaded the complete nine-asset inventory to a draft before publication. Published body SHA-2563ce94f99e14c8ea58620c1569aa8b915fbd5f728c7c459da91c86845997585c9 matches the release commit and retained notes. Server digests and protected API downloads verified every exact byte. Fresh published metadata also confirmed all nine canonical v0.2.0 asset URLs; prepublication draft URLs were not retained. No tag movement, asset replacement or duplicate release occurred.
+
+| Asset | Bytes | SHA-256 |
+| --- | --- | --- |
+| INSTALL-CHROMIUM.md | 1555 | 932fa085feb384234498c17ed8f9a647f4c14bf2bd9692352cc5c1e5512dc5ac |
+| INSTALL-FIREFOX.md | 1634 | 562c4d6adc3facbab8cce96d6c86616bfbec84984c597affb8d430f9b6ff4c81 |
+| INSTALL-WEB.md | 1524 | 4de3a04b00bbf216d0c47855423b57f160f4c30c7f8791efc9bed8a607c36064 |
+| INSTALL-WINDOWS.md | 1823 | f977dc9a37e4673d6e0170d3178089d7e4336297b13734181cfd4c93ba8a2a97 |
+| SHA256SUMS | 678 | 91fef5248263788a61357c2bd0d96e9ce258c6944e909bc0024194c746964a70 |
+| tetris-chromium.zip | 17437 | 983d0e53335a8d5b325a4059db88c1d0a6dbe2834fe8de48193fbd0814edd9b0 |
+| tetris-firefox.zip | 17348 | 01de368d5500470d4444a4b0361ce0dde3750b32e1cdb8694e31f4115f5b9096 |
+| tetris-web.zip | 16595 | 25c0629aea75e178837902729bbe4ef3721a9467588c98d8fa321d3093661bca |
+| tetris-windows-x64.zip | 151391765 | 1417ae6e45bf7b9847f6c42a487b1da0c32585eec3a8694035a8c6f1ea8cfb19 |
+
+Phase2 is delivered within the authorized verification scope. The consumed internal highlights checkpoint is removed; complete RELEASE-NOTES.md remains retained and recoverable from the release commit/body. Phase3 activation is now eligible under the full implementation grant.
