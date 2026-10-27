@@ -202,7 +202,7 @@ The user explicitly directed: “Run full implementation without native Windows 
             Acceptance/evidence: Visible rotations and rejected wall/floor cases match fixture expectations; Hold/spawn orientation behavior remains correct.
             Verified: Old reducer wall rejection observed RED, then96 core/application tests, typecheck/build and34 extracted-browser headless cases pass. Shared commands use ordered SRS; literal I wall/CCW Canvas and Hold orientation reset verified. Independent milestone review found no defects; screenshot inspected. Report/HANDOFF included; native Windows/installed-sidebar behavior explicitly unverified under approved scope.
             Milestone boundary: after its implementation, review all of 4.1, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/4/4.1.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
-    - [ ] Milestone 4.2 — Ghost and hard drop
+    - [x] Milestone 4.2 — Ghost and hard drop
         - [x] T-031 — Implement normal landing projection
             Scope: src/core landing and tests/core. Contracts: MOD SRS/ghost/drop/timing.
             Depends on: T-030.
@@ -220,10 +220,11 @@ The user explicitly directed: “Run full implementation without native Windows 
             Verified: Absent ghost pixels observed RED;107 core/app tests and38 extracted Chromium/Firefox headless cases pass with build/typecheck. Outline and hard drop share first-reachable projection; coincidence remains visible. Space is board-only and once per press, with exact distance score and normal focused-button behavior. Independent milestone review clean; screenshot inspected. Interval timing remains next milestone; native omissions retained.
             Milestone boundary: after its implementation, review all of 4.2, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/4/4.2.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
     - [ ] Milestone 4.3 — Grounded lock delay
-        - [ ] T-034 — Implement full-interval grounding timers
+        - [x] T-034 — Implement full-interval grounding timers
             Scope: src/core timing and tests/core. Contracts: MOD SRS/ghost/drop/timing.
             Depends on: T-033.
             Acceptance/evidence: Grounding captures the interval; grounded movement/rotation and repeated drops do not reset it; support changes and precise boundary times behave deterministically.
+            Verified: Eight interval scenarios observed RED, then115 core/application tests and typecheck pass. Separate gravity/grounding deadlines capture a full level interval at contact, preserve elapsed time through supported movement/rotation/repeated drops, cancel on support loss and lock at exact boundaries. Large and chunked elapsed time agree through game over; pause freezes both clocks. Existing failed-down behavior remains covered; application default integration is T-035.
         - [ ] T-035 — Integrate timing with pause, Hold and drop policies
             Scope: src/core/app and tests/app. Contracts: MOD SRS/ghost/drop/timing.
             Depends on: T-034.
