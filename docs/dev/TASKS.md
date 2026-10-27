@@ -10,7 +10,7 @@ Versions and platform deferrals are in PLAN. Every phase review prepares source/
 
 ## Authorized verification exception
 
-The user explicitly directed: “Run full implementation without native Windows 10/11 verification.” Native Windows execution checks are waived throughout T-011–T-072 and the corresponding milestone/phase/release gates. Continue the complete implementation and per-phase releases using applicable source, adapter, archive/content and available runtime checks. Retain Windows packages in the required asset set, identify them as unsigned development packages and state that native Windows execution is unverified. This exception does not waive actual Chromium/Firefox sidebar checks or other verification. Product behavior and all task identities/dependencies remain unchanged.
+The user explicitly directed: “Run full implementation without native Windows 10/11 verification.” Native Windows execution checks are waived throughout T-011–T-072 and the corresponding milestone/phase/release gates. Continue the complete implementation and per-phase releases using applicable source, adapter, archive/content and available runtime checks. Retain Windows packages in the required asset set, identify them as unsigned development packages and state that native Windows execution is unverified. Following the user’s headless-only testing direction and “Go”, continue full implementation and per-phase releases using the supported headless application, adapter and package checks. Actual native sidebar installation/open/close coverage remains explicitly blocked/unverified on this host; that missing facility does not block task/phase progression. Do not claim those checks passed. Other applicable verification remains required. Product behavior and all task identities/dependencies remain unchanged.
 
 ## Phase 1 — Classic browser game
 
@@ -77,54 +77,64 @@ The user explicitly directed: “Run full implementation without native Windows 
 
 ## Phase 2 — Desktop and sidebar baseline
 
-- [ ] Phase 2 — Desktop and sidebar baseline
-    - [ ] Milestone 2.1 — Windows desktop
-        - [ ] T-011 — Implement the sandboxed Electron asset host
+- [x] Phase 2 — Desktop and sidebar baseline
+    - [x] Milestone 2.1 — Windows desktop
+        - [x] T-011 — Implement the sandboxed Electron asset host
             Scope: electron main/protocol/preload, src/platform/electron and tests/desktop. Contracts: HOST/UI, RELEASE for all four targets.
             Depends on: T-010. Phase 1 integration/publication/release and current-phase activation must also be verified.
             Acceptance/evidence: Allowlisted standard app origin loads bundled assets, rejects traversal/navigation, and exposes no Node or arbitrary filesystem API to the renderer.
-        - [ ] T-012 — Integrate desktop focus and lifecycle behavior
+            Verified: Five real-filesystem asset/window-policy cases observed RED on the missing host, then passed. Verified fixed standard app origin assets, MIME/CSP, traversal/credential-path/foreign-origin rejection, GET/HEAD policy, symlink rejection, sandbox/context isolation/Node-off preferences and denied navigation/popups. Forty existing core/app tests, typecheck, syntax checks and production build pass. Electron 43.8.3 pinned; native Windows execution explicitly waived and not claimed.
+        - [x] T-012 — Integrate desktop focus and lifecycle behavior
             Scope: electron window lifecycle, src/platform/electron and native tests. Contracts: HOST/UI, RELEASE for all four targets.
             Depends on: T-011.
             Acceptance/evidence: Native focus/hide/resume events pause the shared game, preserve remaining timers and clear keys; retained versus destroyed windows follow session contracts.
-        - [ ] T-013 — Package and verify portable Windows execution
+            Verified: Host lifecycle and actual preload tests observed RED before their corresponding changes. Eight desktop boundary tests now pass, along with 40 core/app tests, typecheck and 16 Chromium/Firefox UI cases. Blur/hide/minimize forward a narrow suspension signal into shared key-clearing/pause handlers; show/focus/restore do not auto-resume, destroyed/disposed windows receive no messages and no IPC/Node object enters the renderer. These are controlled host-boundary/browser checks; native Windows delivery is explicitly waived and unverified.
+        - [x] T-013 — Package and verify portable Windows execution
             Scope: scripts desktop packaging, tests/desktop and docs/user. Contracts: HOST/UI, RELEASE for all four targets.
             Depends on: T-011, T-012.
             Acceptance/evidence: Extracted Windows x64 ZIP launches on actual declared Windows versions without external Node/server; record unsigned status, runtime versions, offline assets and checksums.
+            Verified: Portable unsigned Windows x64 candidate built and integrity/content verified with pinned official Electron43.8.3 runtime; final ZIP SHA-256 b9d0794e17fe0cc7d2a235a99434cc0627cbf98658fa856e3cdad8d70083918c. Eight desktop,40 core/app,10 packaging and28 final extracted-shared-asset Chromium/Firefox cases pass; typecheck/build pass. Independent whole-milestone code review passed and configuration/license findings fixed/rechecked. Native Windows execution explicitly waived/unverified. See reports/phases/2/2.1.md; Phase2 and actual sidebar verification remain incomplete.
             Milestone boundary: after its implementation, review all of 2.1, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/2/2.1.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
-    - [ ] Milestone 2.2 — Chromium sidebar
-        - [ ] T-014 — Build the minimal Chromium sidebar package
+    - [x] Milestone 2.2 — Chromium sidebar
+        - [x] T-014 — Build the minimal Chromium sidebar package
             Scope: extensions/chromium, src/entry and src/platform/chromium. Contracts: HOST/UI, RELEASE for all four targets.
             Depends on: T-013.
             Acceptance/evidence: MV3 manifest and local assets open the same classic game in a real side panel with only currently required permissions.
-        - [ ] T-015 — Integrate Chromium panel close and reopen events
+            Verified: Three extension packaging tests observed RED before the packager existed, then passed. The actual Chromium worker configures the toolbar opener through the expected sidePanel API boundary. Production compilation/typecheck and versioned ZIP build passed with bundled shared UI, minimal sidePanel-only permission, local panel path and notices. Candidate SHA-2563e2a39e69aa4c2524c6204d29ff4f6afbe02d28307160541d70a16fbea0ab98f. Native installation/opening remains explicitly unverified under the user-authorized headless-only scope.
+        - [x] T-015 — Integrate Chromium panel close and reopen events
             Scope: src/platform/chromium lifecycle bridge and tests/extensions/chromium. Contracts: HOST/UI, RELEASE for all four targets.
             Depends on: T-014.
             Acceptance/evidence: Chromium 142+ native panel events pause retained documents, reset destroyed sessions and never persist scores or run background gravity.
-        - [ ] T-016 — Verify Chromium development installation and layout
+            Verified: Receiver and actual-worker lifecycle cases observed RED before implementation;41 core/app and1 extension boundary cases now pass, with typecheck and production Chromium ZIP build. Close/open events forward only window-scoped suspension; foreign senders, wrong windows and invalid payloads are ignored. Retained sessions never auto-resume and destroyed documents retain no background game state. Native event delivery remains explicitly unverified under headless-only scope.
+        - [x] T-016 — Verify Chromium development installation and layout
             Scope: scripts extension packaging, native panel tests and docs/user. Contracts: HOST/UI, RELEASE for all four targets.
             Depends on: T-014, T-015.
             Acceptance/evidence: Extract and load unpacked; demonstrate actual panel input, 280/360/600 widths, close/reopen and offline loading, with exact package/binary evidence.
+            Verified: Validated/extracted actual Chromium development ZIP;28 headless Chromium/Firefox UI cases and13 packaging cases passed. Candidate SHA-256 a7ef5b32e4038b57971394cf35bde450d7bf87f84f08410c9869a0332fadd309. Independent whole-milestone code review found no defects. Static-host shared UI, source/API and package checks establish the authorized scope; native extension installation and actual panel events remain explicitly unverified. See reports/phases/2/2.2.md.
             Milestone boundary: after its implementation, review all of 2.2, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/2/2.2.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
-    - [ ] Milestone 2.3 — Firefox sidebar
-        - [ ] T-017 — Build the Firefox sidebar package
+    - [x] Milestone 2.3 — Firefox sidebar
+        - [x] T-017 — Build the Firefox sidebar package
             Scope: extensions/firefox, src/entry and src/platform/firefox. Contracts: HOST/UI, RELEASE for all four targets.
             Depends on: T-016.
             Acceptance/evidence: Firefox manifest/sidebarAction opens the shared app from local assets without a native companion, remote code or premature storage/file permissions.
-        - [ ] T-018 — Integrate Firefox sidebar session lifecycle
+            Verified: Firefox package/opener cases observed RED before support existed, then2 actual-background API cases and14 packaging cases passed. Production build/typecheck and Firefox ZIP generation passed. Firefox140+ MV2 sidebar manifest, direct toolbar user-action opener, local shared assets, no website/storage permissions, no-data-collection declaration and temporary unsigned installation instructions are included. Native installation/opening remains explicitly unverified under headless-only scope.
+        - [x] T-018 — Integrate Firefox sidebar session lifecycle
             Scope: src/platform/firefox and tests/extensions/firefox. Contracts: HOST/UI, RELEASE for all four targets.
             Depends on: T-017.
             Acceptance/evidence: Actual sidebar hide/close/document destruction obey pause/reset rules; retained settings and results have only their current in-scope lifetimes.
-        - [ ] T-019 — Verify temporary Firefox installation and all-host parity
+            Verified: Firefox lifecycle tests failed on the missing adapter, then43 core/app and2 background API cases passed with typecheck and production build. Page hide/restoration routes into shared suspension, preserves remaining gravity time and requires manual resume; new documents create idle sessions with no background game replica. Native sidebar destruction/reopen delivery remains explicitly unverified under headless-only scope.
+        - [x] T-019 — Verify temporary Firefox installation and all-host parity
             Scope: scripts packaging, tests/extensions/firefox, cross-host checks and docs/user. Contracts: HOST/UI, RELEASE for all four targets.
             Depends on: T-017, T-018.
             Acceptance/evidence: Temporary ZIP installation opens a real sidebar offline; document restart/signing limitations and verify the classic behavior remains shared across all four packaged targets.
+            Verified: All four target archives built from one compiled UI;Firefox,Chromium and Windows-extracted shared assets each passed28 headless browser cases.43 core/app,2 extension API,8 desktop and14 packaging cases passed; build/typecheck passed. Independent milestone and final harness review found no defects. Hashes and exact candidate names are in reports/phases/2/2.3.md. Native Windows/extension installation/events remain explicitly unverified under the authorized scope; Phase2 release remains pending.
             Milestone boundary: after its implementation, review all of 2.3, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/2/2.3.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
-    - [ ] Milestone 2.4 — Phase review
-        - [ ] T-020 — Review, test and report phase 2
+    - [x] Milestone 2.4 — Phase review
+        - [x] T-020 — Review, test and report phase 2
             Scope: whole Phase 2 code, contracts, integration, required artifacts and preserved prior behavior.
             Depends on: T-013, T-016, T-019; all delivery milestones 2.1, 2.2, 2.3 completed and closed/read back.
             Acceptance/evidence: independent code review and applicable domain/application/native-package checks cover the phase exits in PLAN; fix blockers, audit one-task commit/checkbox persistence, prepare version 0.2.0, complete release notes, installation/development-status instructions and candidate artifact checksums. Include PHASE-REPORT.md and HANDOFF with this task’s initial completion. A missing required platform check blocks completion; no integration/release is claimed before its actual verified workflow.
+            Verified: Independent full Phase2 code review passed after correcting/rechecking one stale native-verification paragraph.43 core/app,8 desktop,2 extension,14 package,1 server and112 combined headless artifact cases pass; typecheck/build pass. Four candidate versions/hashes/shared UI parity and T011-T019 single-task persistence audit verified.0.2.0 notes/inventory prepared with native limits explicit. See reports/phases/2/PHASE-REPORT.md; integration and published release are subsequent gates.
             Report: docs/dev/reports/phases/2/PHASE-REPORT.md. After this task and its review milestone close, integrate/verify/publish the complete phase and perform the pinned default-branch release workflow before activating any authorized next phase.
 
 ## Phase 3 — Piece flow

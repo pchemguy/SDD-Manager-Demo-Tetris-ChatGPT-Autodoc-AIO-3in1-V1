@@ -1,11 +1,26 @@
-# Tetris — browser, Windows desktop and sidebars
+# Blockfield Tetris
 
-A Tetris project targeting a browser app, Windows Electron, and Chromium and Firefox sidebar extensions. The intended scope includes classic play, modern rules, penetrator bonuses, configurable behavior, a session leaderboard and manual JSON/SQLite files.
+A classic Tetris game sharing one TypeScript game core and Canvas UI across the browser, Windows Electron desktop and Chromium/Firefox sidebar development packages.
 
-The classic browser loop includes falling pieces, movement, rotation, line clearing, scoring, levels, game over and restart. Pause/resume, focus handling and held-arrow repeat are implemented; the browser distribution has passed extracted-package acceptance. See [development setup](docs/user/DEVELOPMENT.md) for the validated source commands.
+Implemented: seven tetrominoes, movement and rotation, automatic gravity, line clearing, scoring/levels, game over/restart, pause/focus handling and controlled held-arrow repeat. Modern rules, penetrator, settings, leaderboard and manual JSON/SQLite transfer are planned increments described by the [project brief](docs/dev/PROJECT.md).
 
-See the accepted [project brief](docs/dev/PROJECT.md), [preparation tasks](docs/dev/DOCS_TASKS.md), [decisions and evidence](docs/dev/DOCS_PREPARATION.md), and [continuity checkpoint](docs/dev/HANDOFF.md).
+## Build and install
 
-Development uses [SDD Manager](SDD-MANAGER.md). See the [AI-assisted development disclosure](AI_DISCLOSURE.md).
+Developers use Node.js 24 and Python 3.11+; see [development setup](docs/user/DEVELOPMENT.md). npm run package:all builds the static browser ZIP, portable Windows x64 ZIP and both sidebar ZIPs from the same compiled UI. Player packages bundle their runtime assets and require no separate Node.js, development server or application backend.
 
-Build the deployable browser candidate with npm run package:web (Node 24 and Python 3.11+ for development). Deployment instructions are in [INSTALL-WEB.md](docs/user/INSTALL-WEB.md), with [controls](docs/user/CONTROLS.md). The first release delivers the classic browser game. Windows Electron and Chromium/Firefox sidebars, modern gameplay and persistence remain scheduled increments. Read the actual [releases](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Autodoc-AIO-3in1-V1/releases) for published assets.
+| Target | Installation | Distribution |
+| --- | --- | --- |
+| Browser | [Static hosting](docs/user/INSTALL-WEB.md) | Deployable static ZIP |
+| Windows x64 | [Portable desktop](docs/user/INSTALL-WINDOWS.md) | Unsigned development package |
+| Chromium 142+ | [Load unpacked](docs/user/INSTALL-CHROMIUM.md) | Development extension |
+| Firefox 140 ESR+ | [Temporary add-on](docs/user/INSTALL-FIREFOX.md) | Unsigned temporary extension |
+
+Use the actual [GitHub release inventory](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Autodoc-AIO-3in1-V1/releases) and checksums for available downloads. Read [controls](docs/user/CONTROLS.md) for the classic bindings.
+
+## Verification scope
+
+Source/application tests, controlled host API tests, archive/content checks and extracted shared-asset UI tests run in isolated headless Chromium and Firefox. Native Windows execution and actual installed-extension/sidebar events remain unverified under the explicitly selected testing scope. Headless/model checks do not establish those native behaviors. No signed or store-distributed package is claimed.
+
+## Project records
+
+See the accepted [brief](docs/dev/PROJECT.md), [tasks](docs/dev/TASKS.md), [decisions](docs/dev/DOCS_PREPARATION.md), [handoff](docs/dev/HANDOFF.md) and [phase reports](docs/dev/reports/phases). Development uses [SDD Manager](SDD-MANAGER.md); see the [AI-assisted development disclosure](AI_DISCLOSURE.md).
