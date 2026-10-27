@@ -2,7 +2,7 @@
 
 A classic Tetris game sharing one TypeScript game core and Canvas UI across the browser, Windows Electron desktop and Chromium/Firefox sidebar development packages.
 
-Implemented: seven tetrominoes, movement and rotation, automatic gravity, line clearing, scoring/levels, game over/restart, pause/focus handling and controlled held-arrow repeat. Modern rules, penetrator, settings, leaderboard and manual JSON/SQLite transfer are planned increments described by the [project brief](docs/dev/PROJECT.md).
+Implemented: seven tetrominoes, movement and rotation, automatic gravity, line clearing, scoring/levels, game over/restart, pause/focus handling and controlled held-arrow repeat, seven-piece bags, next preview and once-per-piece Hold. SRS/ghost/hard drop/lock delay, penetrator, settings, leaderboard and manual JSON/SQLite transfer are planned increments described by the [project brief](docs/dev/PROJECT.md).
 
 ## Build and install
 
@@ -15,7 +15,7 @@ Developers use Node.js 24 and Python 3.11+; see [development setup](docs/user/DE
 | Chromium 142+ | [Load unpacked](docs/user/INSTALL-CHROMIUM.md) | Development extension |
 | Firefox 140 ESR+ | [Temporary add-on](docs/user/INSTALL-FIREFOX.md) | Unsigned temporary extension |
 
-Use the actual [GitHub release inventory](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Autodoc-AIO-3in1-V1/releases) and checksums for available downloads. Read [controls](docs/user/CONTROLS.md) for the classic bindings.
+Use the actual [GitHub release inventory](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Autodoc-AIO-3in1-V1/releases) and checksums for available downloads. Read [controls](docs/user/CONTROLS.md) for the current bindings.
 
 ## Verification scope
 

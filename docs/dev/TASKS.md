@@ -140,39 +140,46 @@ The user explicitly directed: “Run full implementation without native Windows 
 ## Phase 3 — Piece flow
 
 - [ ] Phase 3 — Piece flow
-    - [ ] Milestone 3.1 — Bag and next preview
-        - [ ] T-021 — Implement the injectable seven-piece bag
+    - [x] Milestone 3.1 — Bag and next preview
+        - [x] T-021 — Implement the injectable seven-piece bag
             Scope: src/core randomizer and tests/core. Contracts: MOD bag/preview/Hold.
             Depends on: T-020. Phase 2 integration/publication/release and current-phase activation must also be verified.
             Acceptance/evidence: Seeded draws prove each bag has one of every type, valid shuffle bounds and reproducible independent bags.
-        - [ ] T-022 — Expose the next-piece snapshot without consuming it
+            Verified: RED missing-module test reproduced; 47 core/app tests and typecheck pass. Seeded 100-bag reproducibility, complete bags, shuffle endpoints, draw bounds, reset and invalid RNG verified. Phase3 tracking verified before edits; version advanced to 0.3.0.
+        - [x] T-022 — Expose the next-piece snapshot without consuming it
             Scope: src/core/session interfaces and tests/app. Contracts: MOD bag/preview/Hold.
             Depends on: T-021.
             Acceptance/evidence: Repeated preview reads consume no random values and always match the next spawn, including bag boundaries.
-        - [ ] T-023 — Render next preview on every host
+            Verified: RED missing preview and non-bag default reproduced; 49 core/app tests and typecheck pass. Repeated snapshots consume no draws; cached preview matches ten controlled spawns across bag boundaries. Default session uses complete seven-piece bags and restart resets pending selection.
+        - [x] T-023 — Render next preview on every host
             Scope: src/ui next view and cross-host acceptance. Contracts: MOD bag/preview/Hold.
             Depends on: T-021, T-022.
             Acceptance/evidence: Preview matches a controlled spawn sequence on browser, desktop and both sidebars without changing gameplay state.
+            Verified: RED missing Next view reproduced in both browsers; shared SVG preview passes controlled spawn/pause checks. All four extracted packages each pass30 headless cases (120 total), 49 core/app plus host/package/security checks pass. Independent milestone review found no defects; screenshot inspected. Native Windows and actual installed sidebars remain explicitly unverified under authorized scope.
             Milestone boundary: after its implementation, review all of 3.1, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/3/3.1.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
-    - [ ] Milestone 3.2 — Hold
-        - [ ] T-024 — Implement Hold state and exchange rules
+    - [x] Milestone 3.2 — Hold
+        - [x] T-024 — Implement Hold state and exchange rules
             Scope: src/core Hold transitions and tests/core. Contracts: MOD bag/preview/Hold.
             Depends on: T-023.
             Acceptance/evidence: Empty/populated slots, once-per-piece limits, orientation/timer reset and blocked held-piece spawn match MOD.
-        - [ ] T-025 — Integrate Hold controls and presentation
+            Verified: RED missing Hold export reproduced;54 core/application tests and typecheck pass. Empty slot consumes one draw; populated swap consumes none; second Hold rejected until lock; spawn resets orientation/position/timer; blocked swap preserves settled board and ends game. Pause/game-over/idle reject Hold; restart clears slot. Milestone3.1 issues30–32 and milestone10 closed/read back.
+        - [x] T-025 — Integrate Hold controls and presentation
             Scope: src/app input and src/ui Hold view. Contracts: MOD bag/preview/Hold.
             Depends on: T-024.
             Acceptance/evidence: C/Shift exchanges once, renders the held piece and ignores repeated activation until a lock; game over and pause reject actions.
-        - [ ] T-026 — Verify piece-flow artifacts and instructions
+            Verified: RED missing Hold UI and session exchange reproduced;55 core/app tests, typecheck and20 Chromium/Firefox headless UI cases pass. C/Shift and button share Hold reducer; repeated actions, paused/game-over rejection, post-lock swap, non-consuming populated slot and restart rendering verified. Shared Hold/Next geometry and controls instructions updated; screenshot inspected.
+        - [x] T-026 — Verify piece-flow artifacts and instructions
             Scope: cross-host suites, packaging and docs/user. Contracts: MOD bag/preview/Hold.
             Depends on: T-024, T-025.
             Acceptance/evidence: All four updated extracted artifacts demonstrate bag/preview/Hold combinations, retain classic behavior and contain accurate controls/version/assets.
+            Verified: All four rebuilt version0.3.0 archives each passed32 extracted headless cases (128 total), including Hold/Next at five widths and prior gameplay. CRC/version/entry/controls and identical compiled UI verified. Independent milestone review found no defects;280px artifact screenshot inspected.55 core/app and20 source UI cases remain passing; native Windows/installed sidebar events explicitly unverified.
             Milestone boundary: after its implementation, review all of 3.2, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/3/3.2.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
     - [ ] Milestone 3.3 — Phase review
-        - [ ] T-027 — Review, test and report phase 3
+        - [x] T-027 — Review, test and report phase 3
             Scope: whole Phase 3 code, contracts, integration, required artifacts and preserved prior behavior.
             Depends on: T-023, T-026; all delivery milestones 3.1, 3.2 completed and closed/read back.
             Acceptance/evidence: independent code review and applicable domain/application/native-package checks cover the phase exits in PLAN; fix blockers, audit one-task commit/checkbox persistence, prepare version 0.3.0, complete release notes, installation/development-status instructions and candidate artifact checksums. Include PHASE-REPORT.md and HANDOFF with this task’s initial completion. A missing required platform check blocks completion; no integration/release is claimed before its actual verified workflow.
+            Verified: Independent full Phase3 review found no defects;55 core/app,8 desktop,2 background,14 packaging,1 private-route checks and typecheck pass. Four exact candidates each pass32 headless cases (128 total), shared UI/controls/version/hash checked. Each prior closing commit and parent checkbox/result/evidence audited. Version0.3.0, complete notes, installation/status and candidate checksums ready; native limitations retained. Integration/release pending.
             Report: docs/dev/reports/phases/3/PHASE-REPORT.md. After this task and its review milestone close, integrate/verify/publish the complete phase and perform the pinned default-branch release workflow before activating any authorized next phase.
 
 ## Phase 4 — Landing and rotation rules

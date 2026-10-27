@@ -56,7 +56,7 @@ The package command compiles the static build and creates release/tetris-web-<ve
 
 Run npm run test:artifact to build the versioned ZIP, verify its checksum and entries, extract it into .package-test/web and execute the Chromium/Firefox suite through a plain Python static server. The test server serves only extracted files, with no Vite transformation or application backend. Python 3.11+ is required for this developer check. Apply the process-local Firefox override described above only on the diagnosed host.
 
-The artifact suite reuses gameplay, Canvas, pause/repeat and restart checks, then exercises 280/360/600/1024/1440-pixel layouts and rejects external runtime requests. Browser virtual clocks control timing; modeled window/document events are labeled separately from actual DOM focus and key delivery.
+The artifact suite reuses gameplay, Canvas, pause/repeat, bag/preview/Hold and restart checks, then exercises 280/360/600/1024/1440-pixel layouts and rejects external runtime requests. Browser virtual clocks control timing; modeled window/document events are labeled separately from actual DOM focus and key delivery.
 
 ## Electron host checks
 

@@ -1,7 +1,7 @@
 /** Canvas projection of a snapshot; this module owns no movement or collision rules. */
 import {WIDTH,HEIGHT,cells,type Cell,type PieceType} from '../core/geometry.ts';
 import type {GameState} from '../core/game.ts';
-const COLORS:Record<PieceType,string>={I:'#30c5d6',J:'#5c81f7',L:'#e99f3c',O:'#e5d34c',S:'#69c976',T:'#ae7ae3',Z:'#eb7285'};
+export const COLORS:Record<PieceType,string>={I:'#30c5d6',J:'#5c81f7',L:'#e99f3c',O:'#e5d34c',S:'#69c976',T:'#ae7ae3',Z:'#eb7285'};
 export function renderBoard(canvas:HTMLCanvasElement,state:Readonly<GameState>){
  const ctx=canvas.getContext('2d');if(!ctx)throw new Error('Canvas 2D rendering is unavailable.');
  const size=canvas.width/WIDTH;

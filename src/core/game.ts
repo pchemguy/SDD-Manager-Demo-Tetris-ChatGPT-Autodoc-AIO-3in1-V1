@@ -3,6 +3,9 @@ import { emptyBoard, spawn, canPlace, cells, WIDTH, HEIGHT, type Cell, type Piec
 export interface GameState {
   board:Cell[][];
   active:Piece|null;
+  nextPiece:PieceType|null;
+  heldPiece:PieceType|null;
+  holdUsed:boolean;
   status:'idle'|'running'|'paused'|'over';
   score:number;
   lines:number;
@@ -12,14 +15,20 @@ export interface GameState {
 export type Action='left'|'right'|'down'|'rotateCW'|'rotateCCW';
 /** Allocate a clean inactive game. No random values are consumed. */
 export function idleState():GameState {
-  return {board:emptyBoard(),active:null,status:'idle',score:0,lines:0,level:1,fallMs:0};
+  return {board:emptyBoard(),active:null,nextPiece:null,heldPiece:null,holdUsed:false,status:'idle',score:0,lines:0,level:1,fallMs:0};
 }
 /** Start/restart from a fresh board and consume one injected piece draw. */
 export function startGame(next:()=>PieceType):GameState { return spawnNext(idleState(),next()); }
 /** Spawn against the settled board, preserving it if the spawn is blocked. */
 export function spawnNext(state:GameState,type:PieceType):GameState {
   const active=spawn(type);
-  return canPlace(state.board,active) ? {...state,active,status:'running',fallMs:0} : {...state,active:null,status:'over',fallMs:0};
+  return canPlace(state.board,active) ? {...state,active,status:'running',fallMs:0,holdUsed:false} : {...state,active:null,status:'over',fallMs:0};
+}
+/** Hold exchanges types at a fresh spawn, consuming a draw only for an empty slot. */
+export function holdPiece(state:GameState,next:()=>PieceType):GameState {
+  if(state.status!=='running'||!state.active||state.holdUsed)return state;
+  const incoming=state.heldPiece??next();
+  return {...spawnNext(state,incoming),heldPiece:state.active.type,holdUsed:true};
 }
 /** Apply a legal single-cell move or baseline no-kick rotation to a running game. */
 export function command(state:GameState,action:Action):GameState {

@@ -6,3 +6,7 @@
 
 /* Keep the shared keyboard reference reachable below the game at narrow widths. */
 .help{width:220px;max-width:100%;padding:26px 0}.help .key-guide{margin-top:0;padding-top:0;border-top:0}@media(max-width:760px){.help{grid-row:3;justify-self:center;width:min(300px,100%);padding:0}.help .key-guide{display:block;margin-top:4px}}
+
+.piece-panel{margin-bottom:24px}.piece-panel h3{font-size:10px;letter-spacing:.16em;color:#778b9c;margin:0 0 12px}.piece-panel svg{display:block;width:100px;height:60px;background:#0a111c;border:1px solid #293340;border-radius:4px}@media(max-width:760px){.piece-panel{display:inline-block;vertical-align:top;margin-right:16px}.help .key-guide{margin-top:12px}}
+
+.hold{width:100px;margin-top:8px;padding:6px;border:1px solid #3a4c5e;border-radius:4px;background:#1c2935;color:#afc3d1;cursor:pointer}.hold:disabled{opacity:.4;cursor:default}.piece-panel small{display:block;font-size:9px;color:#778b9c;margin-top:6px}
