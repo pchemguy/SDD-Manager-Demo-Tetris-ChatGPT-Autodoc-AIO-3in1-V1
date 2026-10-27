@@ -185,7 +185,7 @@ The user explicitly directed: “Run full implementation without native Windows 
 ## Phase 4 — Landing and rotation rules
 
 - [ ] Phase 4 — Landing and rotation rules
-    - [ ] Milestone 4.1 — SRS rotation
+    - [x] Milestone 4.1 — SRS rotation
         - [x] T-028 — Define canonical SRS geometry and orientation fixtures
             Scope: src/core geometry/tables and tests/fixtures. Contracts: MOD SRS/ghost/drop/timing.
             Depends on: T-027. Phase 3 integration/publication/release and current-phase activation must also be verified.
@@ -203,10 +203,11 @@ The user explicitly directed: “Run full implementation without native Windows 
             Verified: Old reducer wall rejection observed RED, then96 core/application tests, typecheck/build and34 extracted-browser headless cases pass. Shared commands use ordered SRS; literal I wall/CCW Canvas and Hold orientation reset verified. Independent milestone review found no defects; screenshot inspected. Report/HANDOFF included; native Windows/installed-sidebar behavior explicitly unverified under approved scope.
             Milestone boundary: after its implementation, review all of 4.1, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/4/4.1.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
     - [ ] Milestone 4.2 — Ghost and hard drop
-        - [ ] T-031 — Implement normal landing projection
+        - [x] T-031 — Implement normal landing projection
             Scope: src/core landing and tests/core. Contracts: MOD SRS/ghost/drop/timing.
             Depends on: T-030.
             Acceptance/evidence: Projection returns the first reachable resting placement, including hidden-spawn cells, cavities and immediate support, without mutating board state.
+            Verified: RED missing landing module reproduced;101 core/application tests and typecheck pass. All normal orientations project to the first reachable floor/support; floating obstructions are never jumped, reachable wells and immediate/hidden spawn support are literal fixtures. Inputs/board remain unchanged; invalid initial placement rejected. SRS milestone13 and issues37–39 closed/read back.
         - [ ] T-032 — Implement hard-drop movement and scoring
             Scope: src/core commands and tests/core/app. Contracts: MOD SRS/ghost/drop/timing.
             Depends on: T-031.
