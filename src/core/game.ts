@@ -3,6 +3,7 @@ import { emptyBoard, spawn, canPlace, cells, WIDTH, HEIGHT, type Cell, type Piec
 export interface GameState {
   board:Cell[][];
   active:Piece|null;
+  nextPiece:PieceType|null;
   status:'idle'|'running'|'paused'|'over';
   score:number;
   lines:number;
@@ -12,7 +13,7 @@ export interface GameState {
 export type Action='left'|'right'|'down'|'rotateCW'|'rotateCCW';
 /** Allocate a clean inactive game. No random values are consumed. */
 export function idleState():GameState {
-  return {board:emptyBoard(),active:null,status:'idle',score:0,lines:0,level:1,fallMs:0};
+  return {board:emptyBoard(),active:null,nextPiece:null,status:'idle',score:0,lines:0,level:1,fallMs:0};
 }
 /** Start/restart from a fresh board and consume one injected piece draw. */
 export function startGame(next:()=>PieceType):GameState { return spawnNext(idleState(),next()); }

@@ -146,10 +146,11 @@ The user explicitly directed: “Run full implementation without native Windows 
             Depends on: T-020. Phase 2 integration/publication/release and current-phase activation must also be verified.
             Acceptance/evidence: Seeded draws prove each bag has one of every type, valid shuffle bounds and reproducible independent bags.
             Verified: RED missing-module test reproduced; 47 core/app tests and typecheck pass. Seeded 100-bag reproducibility, complete bags, shuffle endpoints, draw bounds, reset and invalid RNG verified. Phase3 tracking verified before edits; version advanced to 0.3.0.
-        - [ ] T-022 — Expose the next-piece snapshot without consuming it
+        - [x] T-022 — Expose the next-piece snapshot without consuming it
             Scope: src/core/session interfaces and tests/app. Contracts: MOD bag/preview/Hold.
             Depends on: T-021.
             Acceptance/evidence: Repeated preview reads consume no random values and always match the next spawn, including bag boundaries.
+            Verified: RED missing preview and non-bag default reproduced; 49 core/app tests and typecheck pass. Repeated snapshots consume no draws; cached preview matches ten controlled spawns across bag boundaries. Default session uses complete seven-piece bags and restart resets pending selection.
         - [ ] T-023 — Render next preview on every host
             Scope: src/ui next view and cross-host acceptance. Contracts: MOD bag/preview/Hold.
             Depends on: T-021, T-022.
