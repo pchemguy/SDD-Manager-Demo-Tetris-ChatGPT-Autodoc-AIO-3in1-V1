@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {startGame,tick,command,hardDrop,descend,type GameState} from '../../src/core/game.ts';
+import {startGame,tick,command,hardDrop,descend,holdPiece,type GameState} from '../../src/core/game.ts';
 import {TYPES,type Piece} from '../../src/core/geometry.ts';
 const next=()=> 'T' as const;
 const interval=(active:Piece):GameState=>({...startGame(()=> 'O'),active,lockPolicy:'interval',grounding:null});
@@ -39,4 +39,13 @@ test('one large advance equals successive advances through multiple locks and ga
 test('pause excludes elapsed time from both clocks',()=>{
  const state=tick(interval({type:'O',rotation:0,x:0,y:18}),400,next),paused={...state,status:'paused' as const};assert.equal(tick(paused,100000,next),paused);
  let resumed=tick({...paused,status:'running'},599,next);assert.equal(resumed.grounding?.elapsedMs,999);resumed=tick(resumed,1,next);assert.equal(resumed.active?.type,'T');
+});
+test('immediate hard-drop override locks even under interval policy',()=>{
+ const state={...interval({type:'I',rotation:0,x:3,y:-1}),hardDropLock:'immediate' as const};const dropped=hardDrop(state,()=> 'O');assert.equal(dropped.active?.type,'O');assert.equal(dropped.score,38);assert.equal(dropped.board[19][3],'I');assert.equal(dropped.grounding,null);
+});
+
+test('Hold gets fresh clocks on immediate support and clears them on a blocked held spawn',()=>{
+ let state=tick(interval({type:'T',rotation:0,x:3,y:18}),400,next);state.board[1][4]='Z';
+ const supported=holdPiece({...state,heldPiece:'I'},()=>{throw Error('Unexpected draw');});assert.equal(supported.fallMs,0);assert.deepEqual(supported.grounding,{elapsedMs:0,intervalMs:1000});assert.equal(supported.active?.rotation,0);
+ state.board[0][4]='Z';const before=JSON.stringify(state.board),blocked=holdPiece({...state,heldPiece:'I'},next);assert.equal(blocked.status,'over');assert.equal(blocked.fallMs,0);assert.equal(blocked.grounding,null);assert.equal(JSON.stringify(blocked.board),before);
 });

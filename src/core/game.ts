@@ -14,12 +14,13 @@ export interface GameState {
   level:number;
   fallMs:number;
   lockPolicy:'failed-down'|'interval';
+  hardDropLock:'general'|'immediate';
   grounding:{elapsedMs:number;intervalMs:number}|null;
 }
 export type Action='left'|'right'|'down'|'rotateCW'|'rotateCCW';
 /** Allocate a clean inactive game. No random values are consumed. */
 export function idleState():GameState {
-  return {board:emptyBoard(),active:null,nextPiece:null,heldPiece:null,holdUsed:false,status:'idle',score:0,lines:0,level:1,fallMs:0,lockPolicy:'failed-down',grounding:null};
+  return {board:emptyBoard(),active:null,nextPiece:null,heldPiece:null,holdUsed:false,status:'idle',score:0,lines:0,level:1,fallMs:0,lockPolicy:'failed-down',hardDropLock:'general',grounding:null};
 }
 /** Start/restart from a fresh board and consume one injected piece draw. */
 export function startGame(next:()=>PieceType):GameState { return spawnNext(idleState(),next()); }
@@ -55,7 +56,7 @@ export function hardDrop(state:GameState,next:()=>PieceType):GameState {
   if(state.status!=='running'||!state.active)return state;
   const current=reconcileGrounding(state),active=projectLanding(current.board,current.active!);
   const dropped={...current,active,score:addScore(current.score,(active.y-current.active!.y)*2)};
-  return current.lockPolicy==='interval'?reconcileGrounding(dropped):lockPiece(dropped,next);
+  return current.lockPolicy==='interval'&&current.hardDropLock==='general'?reconcileGrounding(dropped):lockPiece(dropped,next);
 }
 /** Current classic fall interval; level changes are owned by clear/scoring transitions. */
 export function gravityMs(level:number){return Math.max(80,Math.floor(1000*Math.pow(.8,level-1)));}

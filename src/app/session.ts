@@ -1,7 +1,7 @@
 /** Document-local game orchestration with terminal-transition completion events. */
 import {type PieceType} from '../core/geometry.ts';
 import {SevenBag} from '../core/randomizer.ts';
-import {idleState,startGame,holdPiece,hardDrop,command,descend,tick,type Action,type GameState} from '../core/game.ts';
+import {idleState,startGame,reconcileGrounding,holdPiece,hardDrop,command,descend,tick,type Action,type GameState} from '../core/game.ts';
 export type SessionAction=Action|'hold'|'hardDrop';
 export class GameSession {
   private state:GameState=idleState();
@@ -15,7 +15,7 @@ export class GameSession {
   constructor(next?:()=>PieceType){this.source=next??(()=>this.bag.next());}
   subscribe(listener:(state:Readonly<GameState>)=>void){this.listeners.add(listener);listener(this.state);return()=>{this.listeners.delete(listener);};}
   onComplete(listener:(score:number)=>void){this.completions.add(listener);return()=>{this.completions.delete(listener);};}
-  start(){this.bag.reset();this.pending=undefined;this.commit(startGame(this.next));}
+  start(){this.bag.reset();this.pending=undefined;this.commit(reconcileGrounding({...startGame(this.next),lockPolicy:'interval'}));}
   act(action:SessionAction){this.commit(action==='hold'?holdPiece(this.state,this.next):action==='hardDrop'?hardDrop(this.state,this.next):action==='down'?descend(this.state,this.next,'soft'):command(this.state,action));}
   pause(){if(this.state.status==='running')this.commit({...this.state,status:'paused'});}
   togglePause(){if(this.state.status==='running')this.pause();else if(this.state.status==='paused')this.commit({...this.state,status:'running'});}

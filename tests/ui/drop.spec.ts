@@ -15,3 +15,8 @@ test('Space reaches the ghost for exact distance points; held repeat and form Sp
  await page.keyboard.down('Space');await page.clock.runFor(500);await page.keyboard.up('Space');await expect(page.getByLabel('Score',{exact:true})).toHaveText('38');
  await page.getByRole('button',{name:'Pause',exact:true}).focus();await page.keyboard.press('Space');await expect(page.getByRole('status',{name:'Game status',exact:true})).toHaveText('Paused');await expect(page.getByLabel('Score',{exact:true})).toHaveText('38');
 });
+test('grounded lock waits the full interval and pause/resume retains its remainder',async({page})=>{
+ const board=page.getByRole('img',{name:'Game board'});await board.press('Space');await page.clock.runFor(500);await expect(page.locator('.piece-name')).toHaveText('I piece');
+ await page.getByRole('button',{name:'Pause',exact:true}).click();await page.clock.runFor(5000);await expect(page.locator('.piece-name')).toHaveText('I piece');await page.getByRole('button',{name:'Resume',exact:true}).click();
+ await page.clock.runFor(400);await expect(page.locator('.piece-name')).toHaveText('I piece');await page.clock.runFor(200);await expect(page.locator('.piece-name')).toHaveText('J piece');await expect(page.getByLabel('Score',{exact:true})).toHaveText('38');
+});

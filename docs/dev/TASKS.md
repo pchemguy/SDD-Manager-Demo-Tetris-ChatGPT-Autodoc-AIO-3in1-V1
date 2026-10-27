@@ -225,10 +225,11 @@ The user explicitly directed: “Run full implementation without native Windows 
             Depends on: T-033.
             Acceptance/evidence: Grounding captures the interval; grounded movement/rotation and repeated drops do not reset it; support changes and precise boundary times behave deterministically.
             Verified: Eight interval scenarios observed RED, then115 core/application tests and typecheck pass. Separate gravity/grounding deadlines capture a full level interval at contact, preserve elapsed time through supported movement/rotation/repeated drops, cancel on support loss and lock at exact boundaries. Large and chunked elapsed time agree through game over; pause freezes both clocks. Existing failed-down behavior remains covered; application default integration is T-035.
-        - [ ] T-035 — Integrate timing with pause, Hold and drop policies
+        - [x] T-035 — Integrate timing with pause, Hold and drop policies
             Scope: src/core/app and tests/app. Contracts: MOD SRS/ghost/drop/timing.
             Depends on: T-034.
             Acceptance/evidence: Paused duration is excluded; Hold/spawn reset only permitted timers; fixed modern interval behavior preserves current hard-drop timing.
+            Verified: Default/override integration observed RED, then119 core/application tests, typecheck/build and40 extracted-browser headless cases pass. Shared session now uses fixed modern interval locking; pause preserves both remainders, Hold/spawn reset clocks including immediate/blocked support, repeated zero-distance drops preserve timer/score and immediate override locks. Prior bag/Hold/SRS tests now wait the full interval; controls updated.
         - [ ] T-036 — Verify modern landing packages across hosts
             Scope: cross-host runtime suites, packaging and docs/user. Contracts: MOD SRS/ghost/drop/timing.
             Depends on: T-034, T-035.
