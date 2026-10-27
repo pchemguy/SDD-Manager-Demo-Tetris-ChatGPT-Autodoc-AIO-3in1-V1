@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Blockfield Tetris",
+  "version": "0.2.0",
+  "description": "A local Tetris game in your browser side panel.",
+  "minimum_chrome_version": "142",
+  "permissions": ["sidePanel"],
+  "action": {"default_title": "Open Blockfield"},
+  "side_panel": {"default_path": "index.html"},
+  "background": {"service_worker": "background.js"},
+  "content_security_policy": {"extension_pages": "script-src 'self'; object-src 'self'"}
+}

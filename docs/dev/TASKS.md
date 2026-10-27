@@ -96,10 +96,11 @@ The user explicitly directed: “Run full implementation without native Windows 
             Verified: Portable unsigned Windows x64 candidate built and integrity/content verified with pinned official Electron43.8.3 runtime; final ZIP SHA-256 b9d0794e17fe0cc7d2a235a99434cc0627cbf98658fa856e3cdad8d70083918c. Eight desktop,40 core/app,10 packaging and28 final extracted-shared-asset Chromium/Firefox cases pass; typecheck/build pass. Independent whole-milestone code review passed and configuration/license findings fixed/rechecked. Native Windows execution explicitly waived/unverified. See reports/phases/2/2.1.md; Phase2 and actual sidebar verification remain incomplete.
             Milestone boundary: after its implementation, review all of 2.1, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/2/2.1.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
     - [ ] Milestone 2.2 — Chromium sidebar
-        - [ ] T-014 — Build the minimal Chromium sidebar package
+        - [x] T-014 — Build the minimal Chromium sidebar package
             Scope: extensions/chromium, src/entry and src/platform/chromium. Contracts: HOST/UI, RELEASE for all four targets.
             Depends on: T-013.
             Acceptance/evidence: MV3 manifest and local assets open the same classic game in a real side panel with only currently required permissions.
+            Verified: Three extension packaging tests observed RED before the packager existed, then passed. The actual Chromium worker configures the toolbar opener through the expected sidePanel API boundary. Production compilation/typecheck and versioned ZIP build passed with bundled shared UI, minimal sidePanel-only permission, local panel path and notices. Candidate SHA-2563e2a39e69aa4c2524c6204d29ff4f6afbe02d28307160541d70a16fbea0ab98f. Native installation/opening remains explicitly unverified under the user-authorized headless-only scope.
         - [ ] T-015 — Integrate Chromium panel close and reopen events
             Scope: src/platform/chromium lifecycle bridge and tests/extensions/chromium. Contracts: HOST/UI, RELEASE for all four targets.
             Depends on: T-014.

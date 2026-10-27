@@ -18,7 +18,8 @@
     "test:artifact": "npm run package:web && python scripts/prepare_web_test.py && node scripts/browser.mjs test --config playwright.artifact.config.ts",
     "test:desktop": "node --test tests/desktop/*.test.mjs",
     "package:windows": "npm run build && python scripts/package_desktop.py",
-    "test:windows-assets": "python scripts/prepare_desktop_test.py && node scripts/browser.mjs test --config playwright.desktop-assets.config.ts"
+    "test:windows-assets": "python scripts/prepare_desktop_test.py && node scripts/browser.mjs test --config playwright.desktop-assets.config.ts",
+    "package:chromium": "npm run build && python scripts/package_extension.py chromium"
   },
   "devDependencies": {
     "@playwright/test": "1.62.1",
