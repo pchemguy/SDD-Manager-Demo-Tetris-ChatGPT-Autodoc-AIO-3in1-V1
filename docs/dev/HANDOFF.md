@@ -1,8 +1,8 @@
 # Project handoff
 
-Checkpoint: Milestone2.3 Firefox/all-target package acceptance complete; T-019 publication and hosted closure follow.
+Checkpoint: Phase2 review and four-target release candidate ready; T-020 publication/hosted closure and integration/release follow.
 
-Outcome: T-001–T-019 implement classic browser play, desktop and both sidebar development packages. All four targets build from the same compiled UI. Final Firefox,Chromium and Windows-extracted assets each passed28 headless browser cases;43 core/app,2 extension,8 desktop and14 packaging cases pass. Native coverage remains explicitly unverified under the user's scope. See [Firefox/all-target report](reports/phases/2/2.3.md). Phase2 review/integration/release remain pending.
+Outcome: T-001–T-020 implement classic browser, desktop and both sidebar development packages. Independent phase review found one stale documentation paragraph; corrected/rechecked.43 core/app,8 desktop,2 extension,14 package,1 server and112 combined headless artifact cases pass. See [phase report](reports/phases/2/PHASE-REPORT.md). Native Windows and actual sidebar installation/events remain unverified under the accepted scope. v0.2.0 is prepared but not yet published.
 
 ## Workflow and sources
 
@@ -22,6 +22,7 @@ Outcome: T-001–T-019 implement classic browser play, desktop and both sidebar 
 
 ## Pending work and next action
 
-- Full T-001–T-072 implementation and per-phase releases remain authorized with native Windows verification excluded and headless-only supported verification selected. Record native installation/event coverage as unverified without halting progression; do not claim those checks passed.
-- Confirm T-019 publication/issue28 closure, then close/read back milestone8 (2.3). Milestones6/7 and their task issues are closed/read back. Execute T-020 phase review next, including persistence audit, final notes/source/artifact preparation and independent cross-milestone review.
-- Only after review milestone closure, integrate/publish the complete phase into main and perform the exact-body default-branch release commit/tag workflow. Publish all four assets with checksums/instructions and explicit development/native-verification status. Native limits do not imply signed/store delivery.
+- Confirm T-020 publication/issue29 closure, then close/read back review milestone9. All three delivery milestones6/7/8 and their issues are closed/read back.
+- Integrate the complete phase into refreshed main with an explicit two-parent merge, verify/publish, then perform the exact-body default-branch release commit/tag and direct GitHub publisher workflow. Complete notes are locally ignored but retained; source/body freshness and raw commit equality must be checked before tagging. Phase2 remains unreleased until all four uploaded assets/checksums/instructions and latest state are verified.
+- Final source must rebuild all four packages. Candidate names/hashes are in2.3.md; release filenames are version-free. Native Windows/installed-sidebar coverage remains unverified and must be stated in notes/manifests/instructions without halting authorized supported checks.
+- After verified v0.2.0 publication, continue Phase3 and the full T-021–T-072 range with individual commits/pushes, milestone reports and per-phase releases. No further human checkpoint approval is required within the retained scope.

@@ -24,7 +24,7 @@ Playwright 1.62.1 is pinned. Browser assets are provisioned for the owning brows
 node node_modules/playwright/cli.js install --only-shell chromium firefox
 ```
 
-Linux sets PLAYWRIGHT_BROWSERS_PATH in the process environment. Windows CMD uses set PLAYWRIGHT_BROWSERS_PATH=<absolute-owned-directory>; do not invoke PowerShell/pwsh. Native sidebar tasks require full contained browsers and actual sidebar events; shell content tests do not substitute. Follow the bundled browser policy and Playwright diagnostics for download signatures, matching revisions, sandbox/session faults and supported official-image recovery. Native Windows package evidence remains required before desktop delivery.
+Linux sets PLAYWRIGHT_BROWSERS_PATH in the process environment. Windows CMD uses set PLAYWRIGHT_BROWSERS_PATH=<absolute-owned-directory>; do not invoke PowerShell/pwsh. Actual native sidebar installation/events require a compatible full browser; headless-shell content tests do not establish that coverage. The user selected supported headless application/adapter/package checks for continued implementation and releases, with unavailable native coverage explicitly unverified. Follow the bundled browser policy and Playwright diagnostics for download signatures, matching revisions, sandbox/session faults and supported official-image recovery. Native Windows execution is explicitly excluded from this implementation’s verification scope; installation instructions and release notes retain that limitation.
 
 ## Browser checks on the diagnosed Linux host
 

@@ -112,7 +112,7 @@ The user explicitly directed: “Run full implementation without native Windows 
             Acceptance/evidence: Extract and load unpacked; demonstrate actual panel input, 280/360/600 widths, close/reopen and offline loading, with exact package/binary evidence.
             Verified: Validated/extracted actual Chromium development ZIP;28 headless Chromium/Firefox UI cases and13 packaging cases passed. Candidate SHA-256 a7ef5b32e4038b57971394cf35bde450d7bf87f84f08410c9869a0332fadd309. Independent whole-milestone code review found no defects. Static-host shared UI, source/API and package checks establish the authorized scope; native extension installation and actual panel events remain explicitly unverified. See reports/phases/2/2.2.md.
             Milestone boundary: after its implementation, review all of 2.2, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/2/2.2.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
-    - [ ] Milestone 2.3 — Firefox sidebar
+    - [x] Milestone 2.3 — Firefox sidebar
         - [x] T-017 — Build the Firefox sidebar package
             Scope: extensions/firefox, src/entry and src/platform/firefox. Contracts: HOST/UI, RELEASE for all four targets.
             Depends on: T-016.
@@ -129,11 +129,12 @@ The user explicitly directed: “Run full implementation without native Windows 
             Acceptance/evidence: Temporary ZIP installation opens a real sidebar offline; document restart/signing limitations and verify the classic behavior remains shared across all four packaged targets.
             Verified: All four target archives built from one compiled UI;Firefox,Chromium and Windows-extracted shared assets each passed28 headless browser cases.43 core/app,2 extension API,8 desktop and14 packaging cases passed; build/typecheck passed. Independent milestone and final harness review found no defects. Hashes and exact candidate names are in reports/phases/2/2.3.md. Native Windows/extension installation/events remain explicitly unverified under the authorized scope; Phase2 release remains pending.
             Milestone boundary: after its implementation, review all of 2.3, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/2/2.3.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
-    - [ ] Milestone 2.4 — Phase review
-        - [ ] T-020 — Review, test and report phase 2
+    - [x] Milestone 2.4 — Phase review
+        - [x] T-020 — Review, test and report phase 2
             Scope: whole Phase 2 code, contracts, integration, required artifacts and preserved prior behavior.
             Depends on: T-013, T-016, T-019; all delivery milestones 2.1, 2.2, 2.3 completed and closed/read back.
             Acceptance/evidence: independent code review and applicable domain/application/native-package checks cover the phase exits in PLAN; fix blockers, audit one-task commit/checkbox persistence, prepare version 0.2.0, complete release notes, installation/development-status instructions and candidate artifact checksums. Include PHASE-REPORT.md and HANDOFF with this task’s initial completion. A missing required platform check blocks completion; no integration/release is claimed before its actual verified workflow.
+            Verified: Independent full Phase2 code review passed after correcting/rechecking one stale native-verification paragraph.43 core/app,8 desktop,2 extension,14 package,1 server and112 combined headless artifact cases pass; typecheck/build pass. Four candidate versions/hashes/shared UI parity and T011-T019 single-task persistence audit verified.0.2.0 notes/inventory prepared with native limits explicit. See reports/phases/2/PHASE-REPORT.md; integration and published release are subsequent gates.
             Report: docs/dev/reports/phases/2/PHASE-REPORT.md. After this task and its review milestone close, integrate/verify/publish the complete phase and perform the pinned default-branch release workflow before activating any authorized next phase.
 
 ## Phase 3 — Piece flow
