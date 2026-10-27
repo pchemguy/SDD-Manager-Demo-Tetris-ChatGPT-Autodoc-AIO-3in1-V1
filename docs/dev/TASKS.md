@@ -84,10 +84,11 @@ The user explicitly directed: “Run full implementation without native Windows 
             Depends on: T-010. Phase 1 integration/publication/release and current-phase activation must also be verified.
             Acceptance/evidence: Allowlisted standard app origin loads bundled assets, rejects traversal/navigation, and exposes no Node or arbitrary filesystem API to the renderer.
             Verified: Five real-filesystem asset/window-policy cases observed RED on the missing host, then passed. Verified fixed standard app origin assets, MIME/CSP, traversal/credential-path/foreign-origin rejection, GET/HEAD policy, symlink rejection, sandbox/context isolation/Node-off preferences and denied navigation/popups. Forty existing core/app tests, typecheck, syntax checks and production build pass. Electron 43.8.3 pinned; native Windows execution explicitly waived and not claimed.
-        - [ ] T-012 — Integrate desktop focus and lifecycle behavior
+        - [x] T-012 — Integrate desktop focus and lifecycle behavior
             Scope: electron window lifecycle, src/platform/electron and native tests. Contracts: HOST/UI, RELEASE for all four targets.
             Depends on: T-011.
             Acceptance/evidence: Native focus/hide/resume events pause the shared game, preserve remaining timers and clear keys; retained versus destroyed windows follow session contracts.
+            Verified: Host lifecycle and actual preload tests observed RED before their corresponding changes. Eight desktop boundary tests now pass, along with 40 core/app tests, typecheck and 16 Chromium/Firefox UI cases. Blur/hide/minimize forward a narrow suspension signal into shared key-clearing/pause handlers; show/focus/restore do not auto-resume, destroyed/disposed windows receive no messages and no IPC/Node object enters the renderer. These are controlled host-boundary/browser checks; native Windows delivery is explicitly waived and unverified.
         - [ ] T-013 — Package and verify portable Windows execution
             Scope: scripts desktop packaging, tests/desktop and docs/user. Contracts: HOST/UI, RELEASE for all four targets.
             Depends on: T-011, T-012.
