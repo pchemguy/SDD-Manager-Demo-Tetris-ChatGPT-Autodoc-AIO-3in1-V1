@@ -118,10 +118,11 @@ The user explicitly directed: “Run full implementation without native Windows 
             Depends on: T-016.
             Acceptance/evidence: Firefox manifest/sidebarAction opens the shared app from local assets without a native companion, remote code or premature storage/file permissions.
             Verified: Firefox package/opener cases observed RED before support existed, then2 actual-background API cases and14 packaging cases passed. Production build/typecheck and Firefox ZIP generation passed. Firefox140+ MV2 sidebar manifest, direct toolbar user-action opener, local shared assets, no website/storage permissions, no-data-collection declaration and temporary unsigned installation instructions are included. Native installation/opening remains explicitly unverified under headless-only scope.
-        - [ ] T-018 — Integrate Firefox sidebar session lifecycle
+        - [x] T-018 — Integrate Firefox sidebar session lifecycle
             Scope: src/platform/firefox and tests/extensions/firefox. Contracts: HOST/UI, RELEASE for all four targets.
             Depends on: T-017.
             Acceptance/evidence: Actual sidebar hide/close/document destruction obey pause/reset rules; retained settings and results have only their current in-scope lifetimes.
+            Verified: Firefox lifecycle tests failed on the missing adapter, then43 core/app and2 background API cases passed with typecheck and production build. Page hide/restoration routes into shared suspension, preserves remaining gravity time and requires manual resume; new documents create idle sessions with no background game replica. Native sidebar destruction/reopen delivery remains explicitly unverified under headless-only scope.
         - [ ] T-019 — Verify temporary Firefox installation and all-host parity
             Scope: scripts packaging, tests/extensions/firefox, cross-host checks and docs/user. Contracts: HOST/UI, RELEASE for all four targets.
             Depends on: T-017, T-018.
