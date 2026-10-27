@@ -21,3 +21,25 @@ Publish T-027, close/read back issue36 and review milestone12, then explicitly i
 ## TODO
 
 None within the authorized phase scope. Native Windows/installed-sidebar coverage remains an unverified evidence limitation.
+
+## Integration and release outcome
+
+Phase3 explicitly integrated into main at19c9e54aa1955e01a2aff389ce59548faca27f63, parents2326831e3c5222decccb7bbd207f4451aa418682 and8a5f1441924b82d5707ec707f6780690fd0086c0. Its tree exactly matched the reviewed branch;55 core/application and32 extracted-web cases passed on the merged state. Integration and direct exact-body release commit b808e093c2747d962b834be5d4de4598aaf68586 were individually pushed/read back. Lightweight v0.3.0 points to that main first-parent commit and was separately pushed/read back. No tag was moved.
+
+The exact release source rebuilt all four packages. Every archive byte/hash matched its previously tested candidate, preserving the128-case final artifact evidence. CRC, version, controls and identical compiled assets were rechecked. Native Windows/installed-sidebar coverage remains explicitly unverified.
+
+[GitHub v0.3.0](https://github.com/pchemguy/SDD-Manager-Demo-Tetris-ChatGPT-Autodoc-AIO-3in1-V1/releases/tag/v0.3.0), release425066174, is published stable and read back as latest. One publisher uploaded the explicit nine-file inventory before publishing. Body SHA-256 694316f31f73d50f0cbf9011647f33e327e68f4cf77343a887b279402ac4432b matches retained notes and the raw release commit. Server digests and protected API downloads matched every asset byte; refreshed published metadata supplies canonical tag-specific URLs.
+
+| Asset | Bytes | SHA-256 |
+| --- | --- | --- |
+| INSTALL-CHROMIUM.md | 1555 | 932fa085feb384234498c17ed8f9a647f4c14bf2bd9692352cc5c1e5512dc5ac |
+| INSTALL-FIREFOX.md | 1634 | 562c4d6adc3facbab8cce96d6c86616bfbec84984c597affb8d430f9b6ff4c81 |
+| INSTALL-WEB.md | 1524 | 4de3a04b00bbf216d0c47855423b57f160f4c30c7f8791efc9bed8a607c36064 |
+| INSTALL-WINDOWS.md | 1823 | f977dc9a37e4673d6e0170d3178089d7e4336297b13734181cfd4c93ba8a2a97 |
+| SHA256SUMS | 678 | ff8beeb04fde2cad377e5b72ed073437b1d6d6cecd81c20cb39f4c805a7a7cd1 |
+| tetris-chromium.zip | 18478 | a0e0ba0cf2ed10253bb37b71cef9c54c0b9166cecd9f8bbc28ddb4b9a1345ea8 |
+| tetris-firefox.zip | 18389 | 9674328ddef49728ec53b6efac95f321e54faf7d3ea8d0d13dd1b000e7848e5b |
+| tetris-web.zip | 17636 | d5d62e8188181a335e68581bca44cfeea4a540f53bd54399f788e6fd9200f7bb |
+| tetris-windows-x64.zip | 151392806 | 56264edff76fc17e0fd60a9b172b4570340448831995b259f455b170bab3404f |
+
+All issues30–36 and milestones10–12 are closed/read back. The actual T-027 commit was inspected for its single owning checkbox/result/report/handoff; all seven closing boundaries satisfy the audit. The consumed internal highlights checkpoint is removed only after published-body readback; complete RELEASE-NOTES.md remains retained. Phase4 activation is eligible under the full implementation authorization.

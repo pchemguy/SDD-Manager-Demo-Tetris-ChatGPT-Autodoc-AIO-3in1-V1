@@ -1,8 +1,8 @@
 # Project handoff
 
-Checkpoint: Phase3 full implementation/review verified; integration/release pending.
+Checkpoint: Phase3 v0.3.0 four-target release verified; Phase4 activation is next.
 
-Outcome: T-001–T-020 are implemented, separately committed/pushed and closed. Phase2 explicitly merged into main; release v0.2.0 is published stable/latest from ef75333c01367559f47923bbd7d09881044976b9. All four ZIPs,checksums and four installation documents were downloaded and byte/hash compared. See [phase/release report](reports/phases/2/PHASE-REPORT.md). Native Windows execution and actual installed-sidebar events remain explicitly unverified under the accepted scope.
+Outcome: T-001–T-027 are implemented, separately committed/pushed and closed. Phase2 explicitly merged into main; release v0.2.0 is published stable/latest from ef75333c01367559f47923bbd7d09881044976b9. All four ZIPs,checksums and four installation documents were downloaded and byte/hash compared. See [phase/release report](reports/phases/2/PHASE-REPORT.md). Native Windows execution and actual installed-sidebar events remain explicitly unverified under the accepted scope.
 
 ## Workflow and sources
 
@@ -15,7 +15,7 @@ Outcome: T-001–T-020 are implemented, separately committed/pushed and closed. 
 
 ## Branches and return
 
-- Current branch: phase/3-piece-flow, created from published main 2326831e3c5222decccb7bbd207f4451aa418682. Integration target: main.
+- Current branch: main; completed Phase3 source: phase/3-piece-flow. Recorded source parent/target is main; Phase3 branch-off2326831e3c5222decccb7bbd207f4451aa418682.
 - Creation parent and integration target: main.
 - Phase 2 branch-off commit: 422adf7f01bde2a0a0912448b5f3744f7e7d998c.
 - Retain design-docs/main and design-docs/ai-logs. Preparation integration is complete; no unfinished parent workflow is suspended.
@@ -23,6 +23,6 @@ Outcome: T-001–T-020 are implemented, separately committed/pushed and closed. 
 ## Pending work and next action
 
 - Phase2 integration/publication, issues20–29, milestones6–9, exact-body release commit/tag, all nine release assets and latest state are verified. Preserve v0.2.0 at ef75333c01367559f47923bbd7d09881044976b9; subsequent report/task commits do not move it.
-- Phase3 T-021–T-027 bag/preview/Hold implementation and independent review are verified. Delivery issues30–35/milestones10–11 closed/read back. Publish T-027 and close issue36/milestone12, then integrate/release0.3.0 before Phase4 activation. All four candidates pass32 headless cases each; see reports/phases/3/PHASE-REPORT.md.
-- Continue the full T-021–T-072 range and per-phase releases without another approval. Native Windows execution is excluded, and unavailable actual sidebar/native-window coverage remains explicitly unverified while supported headless source/adapter/package checks govern progression. Never claim those native checks passed.
+- Phase3 integrated/published at19c9e54aa1955e01a2aff389ce59548faca27f63 and v0.3.0 released from b808e093c2747d962b834be5d4de4598aaf68586. All issues30–36/milestones10–12 and nine uploaded/downloaded assets/body/latest verified; see reports/phases/3/PHASE-REPORT.md. Create Phase4 from the published main checkpoint containing this record, verify its branch-off and complete tracking before task/test edits. No Phase4 tracking objects are yet created.
+- Continue the full T-028–T-072 range and per-phase releases without another approval. Native Windows execution is excluded, and unavailable actual sidebar/native-window coverage remains explicitly unverified while supported headless source/adapter/package checks govern progression. Never claim those native checks passed.
 - Complete notes remain locally ignored and retained, recoverable from release commits/GitHub. Generated packages/caches may need rebuilding after transfer. Phase3 outcome is bag/preview/Hold, followed by the remaining accepted gameplay/configuration/persistence phases.

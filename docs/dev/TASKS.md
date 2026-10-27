@@ -139,7 +139,7 @@ The user explicitly directed: “Run full implementation without native Windows 
 
 ## Phase 3 — Piece flow
 
-- [ ] Phase 3 — Piece flow
+- [x] Phase 3 — Piece flow
     - [x] Milestone 3.1 — Bag and next preview
         - [x] T-021 — Implement the injectable seven-piece bag
             Scope: src/core randomizer and tests/core. Contracts: MOD bag/preview/Hold.
@@ -174,7 +174,7 @@ The user explicitly directed: “Run full implementation without native Windows 
             Acceptance/evidence: All four updated extracted artifacts demonstrate bag/preview/Hold combinations, retain classic behavior and contain accurate controls/version/assets.
             Verified: All four rebuilt version0.3.0 archives each passed32 extracted headless cases (128 total), including Hold/Next at five widths and prior gameplay. CRC/version/entry/controls and identical compiled UI verified. Independent milestone review found no defects;280px artifact screenshot inspected.55 core/app and20 source UI cases remain passing; native Windows/installed sidebar events explicitly unverified.
             Milestone boundary: after its implementation, review all of 3.2, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/3/3.2.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
-    - [ ] Milestone 3.3 — Phase review
+    - [x] Milestone 3.3 — Phase review
         - [x] T-027 — Review, test and report phase 3
             Scope: whole Phase 3 code, contracts, integration, required artifacts and preserved prior behavior.
             Depends on: T-023, T-026; all delivery milestones 3.1, 3.2 completed and closed/read back.
