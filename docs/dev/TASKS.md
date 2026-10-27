@@ -141,10 +141,11 @@ The user explicitly directed: “Run full implementation without native Windows 
 
 - [ ] Phase 3 — Piece flow
     - [ ] Milestone 3.1 — Bag and next preview
-        - [ ] T-021 — Implement the injectable seven-piece bag
+        - [x] T-021 — Implement the injectable seven-piece bag
             Scope: src/core randomizer and tests/core. Contracts: MOD bag/preview/Hold.
             Depends on: T-020. Phase 2 integration/publication/release and current-phase activation must also be verified.
             Acceptance/evidence: Seeded draws prove each bag has one of every type, valid shuffle bounds and reproducible independent bags.
+            Verified: RED missing-module test reproduced; 47 core/app tests and typecheck pass. Seeded 100-bag reproducibility, complete bags, shuffle endpoints, draw bounds, reset and invalid RNG verified. Phase3 tracking verified before edits; version advanced to 0.3.0.
         - [ ] T-022 — Expose the next-piece snapshot without consuming it
             Scope: src/core/session interfaces and tests/app. Contracts: MOD bag/preview/Hold.
             Depends on: T-021.

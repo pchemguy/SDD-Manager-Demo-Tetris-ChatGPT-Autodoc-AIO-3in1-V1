@@ -1,6 +1,6 @@
 # Project handoff
 
-Checkpoint: Phase2 v0.2.0 four-target release verified; Phase3 activation is next.
+Checkpoint: Phase3 activated from published Phase2; T-021 bag implementation in progress.
 
 Outcome: T-001–T-020 are implemented, separately committed/pushed and closed. Phase2 explicitly merged into main; release v0.2.0 is published stable/latest from ef75333c01367559f47923bbd7d09881044976b9. All four ZIPs,checksums and four installation documents were downloaded and byte/hash compared. See [phase/release report](reports/phases/2/PHASE-REPORT.md). Native Windows execution and actual installed-sidebar events remain explicitly unverified under the accepted scope.
 
@@ -9,13 +9,13 @@ Outcome: T-001–T-020 are implemented, separately committed/pushed and closed. 
 - Workflow: main implementation; sdd-implement owns T-001–T-072. Governing [SPEC](SPEC.md), [PLAN](PLAN.md), [layout](layout.md), [TASKS](TASKS.md), [package QC](DOCS-QC-REPORT.md) and [preparation evidence](DOCS_PREPARATION.md).
 - Dependencies: Node 24.x, exact package-lock dependencies and [development commands](../user/DEVELOPMENT.md). Isolated Chromium/Firefox browser input/Canvas execution is verified under the documented recovered environment; native Windows and actual sidebars remain unverified.
 - Selected range: full 72-task implementation with required phase releases, authorized by “Do QC and full implement” and resumed by “Try again”. No additional human checkpoint approval is required within that scope; technical gates remain except the explicit native Windows verification exception below.
-- Tracking: phase label sdd-phase-1-Classic-browser-game; milestones 1.1–1.4 map to GitHub milestone numbers 2–5; all ten task bodies/labels/milestone associations were read back before T-001. T-001 is issue 10. Phase 2 is now fully projected: label sdd-phase-2-Desktop-and-sidebar-baseline; milestones 2.1–2.4 are numbers 6–9; T-011–T-020 are issues 20–29, all titles/bodies and associations read back. Later phases remain unactivated.
+- Tracking: phase label sdd-phase-1-Classic-browser-game; milestones 1.1–1.4 map to GitHub milestone numbers 2–5; all ten task bodies/labels/milestone associations were read back before T-001. T-001 is issue 10. Phase 2 is now fully projected: label sdd-phase-2-Desktop-and-sidebar-baseline; milestones 2.1–2.4 are numbers 6–9; T-011–T-020 are issues 20–29, all titles/bodies and associations read back. Phase3 associations are verified: milestones 3.1–3.3 are 10–12; T-021–T-027 are issues 30–36. Later phases remain unactivated.
 - The projection utility left T-001 creation uncertain; read-only reconciliation confirmed it, then missing issues were created/reused and every association read back. No duplicate identities were created.
 - Reporting: Standard. Preserve one verified task result/evidence/initial checkbox per commit, push/read back before advancing.
 
 ## Branches and return
 
-- Current branch: main; completed Phase2 source: phase/2-desktop-and-sidebar-baseline. Recorded source parent/target is main.
+- Current branch: phase/3-piece-flow, created from published main 2326831e3c5222decccb7bbd207f4451aa418682. Integration target: main.
 - Creation parent and integration target: main.
 - Phase 2 branch-off commit: 422adf7f01bde2a0a0912448b5f3744f7e7d998c.
 - Retain design-docs/main and design-docs/ai-logs. Preparation integration is complete; no unfinished parent workflow is suspended.
@@ -23,6 +23,6 @@ Outcome: T-001–T-020 are implemented, separately committed/pushed and closed. 
 ## Pending work and next action
 
 - Phase2 integration/publication, issues20–29, milestones6–9, exact-body release commit/tag, all nine release assets and latest state are verified. Preserve v0.2.0 at ef75333c01367559f47923bbd7d09881044976b9; subsequent report/task commits do not move it.
-- Create Phase3 from the published main checkpoint containing this record; establish its actual branch-off and fully verify Phase3 tracking before source/test edits. A source-bound draft exists outside the repository with eligibility false; refresh/check its source/authority before apply. No Phase3 objects have been created.
+- Phase3 branch and all seven issue/milestone associations are verified before source/test edits. Continue T-021 bag, then preview and Hold in task order.
 - Continue the full T-021–T-072 range and per-phase releases without another approval. Native Windows execution is excluded, and unavailable actual sidebar/native-window coverage remains explicitly unverified while supported headless source/adapter/package checks govern progression. Never claim those native checks passed.
 - Complete notes remain locally ignored and retained, recoverable from release commits/GitHub. Generated packages/caches may need rebuilding after transfer. Phase3 outcome is bag/preview/Hold, followed by the remaining accepted gameplay/configuration/persistence phases.
