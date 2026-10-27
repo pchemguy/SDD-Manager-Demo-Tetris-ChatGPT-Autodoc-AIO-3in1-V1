@@ -168,10 +168,11 @@ The user explicitly directed: “Run full implementation without native Windows 
             Depends on: T-024.
             Acceptance/evidence: C/Shift exchanges once, renders the held piece and ignores repeated activation until a lock; game over and pause reject actions.
             Verified: RED missing Hold UI and session exchange reproduced;55 core/app tests, typecheck and20 Chromium/Firefox headless UI cases pass. C/Shift and button share Hold reducer; repeated actions, paused/game-over rejection, post-lock swap, non-consuming populated slot and restart rendering verified. Shared Hold/Next geometry and controls instructions updated; screenshot inspected.
-        - [ ] T-026 — Verify piece-flow artifacts and instructions
+        - [x] T-026 — Verify piece-flow artifacts and instructions
             Scope: cross-host suites, packaging and docs/user. Contracts: MOD bag/preview/Hold.
             Depends on: T-024, T-025.
             Acceptance/evidence: All four updated extracted artifacts demonstrate bag/preview/Hold combinations, retain classic behavior and contain accurate controls/version/assets.
+            Verified: All four rebuilt version0.3.0 archives each passed32 extracted headless cases (128 total), including Hold/Next at five widths and prior gameplay. CRC/version/entry/controls and identical compiled UI verified. Independent milestone review found no defects;280px artifact screenshot inspected.55 core/app and20 source UI cases remain passing; native Windows/installed sidebar events explicitly unverified.
             Milestone boundary: after its implementation, review all of 3.2, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/3/3.2.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
     - [ ] Milestone 3.3 — Phase review
         - [ ] T-027 — Review, test and report phase 3

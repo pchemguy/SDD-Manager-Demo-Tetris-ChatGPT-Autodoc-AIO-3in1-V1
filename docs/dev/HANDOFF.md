@@ -1,6 +1,6 @@
 # Project handoff
 
-Checkpoint: Phase3 activated from published Phase2; Milestone3.1 bag/preview verified.
+Checkpoint: Phase3 activated from published Phase2; Milestones3.1/3.2 piece-flow implementation verified.
 
 Outcome: T-001–T-020 are implemented, separately committed/pushed and closed. Phase2 explicitly merged into main; release v0.2.0 is published stable/latest from ef75333c01367559f47923bbd7d09881044976b9. All four ZIPs,checksums and four installation documents were downloaded and byte/hash compared. See [phase/release report](reports/phases/2/PHASE-REPORT.md). Native Windows execution and actual installed-sidebar events remain explicitly unverified under the accepted scope.
 
@@ -23,6 +23,6 @@ Outcome: T-001–T-020 are implemented, separately committed/pushed and closed. 
 ## Pending work and next action
 
 - Phase2 integration/publication, issues20–29, milestones6–9, exact-body release commit/tag, all nine release assets and latest state are verified. Preserve v0.2.0 at ef75333c01367559f47923bbd7d09881044976b9; subsequent report/task commits do not move it.
-- Phase3 T-021–T-023 bag/preview implemented. All four extracted packages passed30 headless cases each; independent review found no defects. Publish/close T-023 and milestone3.1, then T-024–T-027 Hold/artifact/phase review. See reports/phases/3/3.1.md.
+- Phase3 T-021–T-026 bag/preview/Hold implemented. Milestone3.1 closed/read back. All four final candidates pass32 headless cases each; independent milestone reviews found no defects. Publish/close T-026 and milestone3.2 before T-027 phase review. See reports/phases/3/3.1.md and3.2.md.
 - Continue the full T-021–T-072 range and per-phase releases without another approval. Native Windows execution is excluded, and unavailable actual sidebar/native-window coverage remains explicitly unverified while supported headless source/adapter/package checks govern progression. Never claim those native checks passed.
 - Complete notes remain locally ignored and retained, recoverable from release commits/GitHub. Generated packages/caches may need rebuilding after transfer. Phase3 outcome is bag/preview/Hold, followed by the remaining accepted gameplay/configuration/persistence phases.

@@ -15,6 +15,10 @@ for(const width of [280,360,600,1024,1440]){
   for(const label of ['Pause','Restart']){const button=page.getByRole('button',{name:label,exact:true});await expect(button).toBeVisible();const b=await button.boundingBox();expect(b!.x).toBeGreaterThanOrEqual(0);expect(b!.x+b!.width).toBeLessThanOrEqual(width);}
   await page.getByRole('button',{name:'Pause',exact:true}).click();await expect(page.getByRole('status',{name:'Game status',exact:true})).toHaveText('Paused');
   await page.getByRole('button',{name:'Restart',exact:true}).click();await expect(page.getByLabel('Score',{exact:true})).toHaveText('0');
+  const active=(await page.locator('.piece-name').innerText()).slice(0,1),next=await page.getByRole('img',{name:'Next piece'}).getAttribute('data-piece');
+  const hold=page.getByRole('button',{name:'Hold',exact:true});await hold.scrollIntoViewIfNeeded();await expect(hold).toBeVisible();await hold.click();
+  const held=page.getByRole('img',{name:'Held piece'});await expect(held).toHaveAttribute('data-piece',active);await expect(held.locator('rect')).toHaveCount(4);await expect(page.locator('.piece-name')).toHaveText(`${next} piece`);await expect(hold).toBeDisabled();
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   await page.screenshot({path:`test-results/artifact-${test.info().project.name}-${width}.png`,fullPage:true});
   expect(errors).toEqual([]);expect(external).toEqual([]);
  });
