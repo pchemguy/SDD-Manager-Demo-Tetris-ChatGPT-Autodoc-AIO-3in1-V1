@@ -1,8 +1,8 @@
 # Project handoff
 
-Checkpoint: Full implementation resumed with an explicit native Windows verification exception.
+Checkpoint: Milestone 2.1 desktop implementation/package verified under the native Windows exception; T-013 publication and milestone closure follow.
 
-Outcome: T-001–T-010 are complete, individually committed/pushed and closed. Phase 1 is explicitly integrated into main and v0.1.0 is published stable/latest from 416feaaab94b53d809a9d33c129a07a1eb329494. All three uploaded assets were downloaded through the supported asset API and byte/hash compared. See [phase and release report](reports/phases/1/PHASE-REPORT.md). The final release source passed 28 extracted Chromium/Firefox cases; core/application, package/server and type checks passed.
+Outcome: T-001–T-013 implement the classic browser game and desktop host/lifecycle/portable Windows candidate. Eight desktop, 40 core/app, 10 package and 28 extracted-Windows-shared-asset cases pass. Native Windows execution remains explicitly waived/unverified. See [desktop milestone report](reports/phases/2/2.1.md). Phase 1 v0.1.0 remains the latest published release; Phase 2 is incomplete.
 
 ## Workflow and sources
 
@@ -22,7 +22,7 @@ Outcome: T-001–T-010 are complete, individually committed/pushed and closed. P
 
 ## Pending work and next action
 
-- User direction: “Run full implementation without native Windows 10/11 verification.” Apply this exception across the remaining T-011–T-072 and their milestone/phase/release gates, overriding native Windows requirements in accepted documents. Package/content, source/adapter and available runtime checks remain required. Windows assets remain required and must be clearly labeled unsigned development packages with native Windows execution unverified. Actual extension sidebar requirements remain in force.
-- Phase 1 release v0.1.0 remains verified at 416feaaab94b53d809a9d33c129a07a1eb329494. The new decision changes verification scope only, with no gameplay, platform or delivery-task changes. The owning TASKS records the exception; existing preparation QC remains applicable to unchanged contracts/decomposition.
-- Phase 2 branch and projection are established. T-011 asset/window host source is verified; publish/close its issue, then execute T-012 lifecycle integration. Full range and per-phase releases remain authorized without another approval.
-- Investigate the full-Chromium native-window/socket limitation when sidebar tasks require it; preserve all browser policies and evidence limits.
+- Preserve the explicit user instruction “Run full implementation without native Windows 10/11 verification” across all remaining tasks/releases. Native Windows execution is waived; source/adapter/archive and available runtime checks remain required, Windows assets remain in scope, and native Windows claims remain unverified. Actual extension sidebar checks are not waived.
+- Confirm T-013 publication/issue 22 closure and close/read back milestone 6 (2.1). T-011/T-012 publication and issue closures are verified. Candidate tetris-windows-x64-0.2.0.zip has SHA-256 b9d0794e17fe0cc7d2a235a99434cc0627cbf98658fa856e3cdad8d70083918c; rebuild via the recorded package command if ignored files are unavailable.
+- Next task T-014 requires an actual Chromium side panel. Fresh isolated full Chromium 151.0.7922.34 launch fails before page creation with process_singleton_posix.cc:297 socket() EPERM; an independent AF_UNIX bind is also denied. Playwright's owned process/profile cleanup completed. Headless-shell asset tests pass but cannot establish actual sidebars. Docker/Xvfb and a compatible connected remote facility are unavailable. No restriction bypass, browser downgrade or silent coverage waiver is authorized.
+- Full T-001–T-072 implementation and per-phase release authority persists. Resume T-014 when its required full-browser capability is available; Phase 2 remains on its phase branch and must not integrate/release while its unwaived exits remain blocked.

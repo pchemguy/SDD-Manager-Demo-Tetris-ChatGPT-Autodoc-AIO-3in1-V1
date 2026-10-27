@@ -89,10 +89,11 @@ The user explicitly directed: “Run full implementation without native Windows 
             Depends on: T-011.
             Acceptance/evidence: Native focus/hide/resume events pause the shared game, preserve remaining timers and clear keys; retained versus destroyed windows follow session contracts.
             Verified: Host lifecycle and actual preload tests observed RED before their corresponding changes. Eight desktop boundary tests now pass, along with 40 core/app tests, typecheck and 16 Chromium/Firefox UI cases. Blur/hide/minimize forward a narrow suspension signal into shared key-clearing/pause handlers; show/focus/restore do not auto-resume, destroyed/disposed windows receive no messages and no IPC/Node object enters the renderer. These are controlled host-boundary/browser checks; native Windows delivery is explicitly waived and unverified.
-        - [ ] T-013 — Package and verify portable Windows execution
+        - [x] T-013 — Package and verify portable Windows execution
             Scope: scripts desktop packaging, tests/desktop and docs/user. Contracts: HOST/UI, RELEASE for all four targets.
             Depends on: T-011, T-012.
             Acceptance/evidence: Extracted Windows x64 ZIP launches on actual declared Windows versions without external Node/server; record unsigned status, runtime versions, offline assets and checksums.
+            Verified: Portable unsigned Windows x64 candidate built and integrity/content verified with pinned official Electron43.8.3 runtime; final ZIP SHA-256 b9d0794e17fe0cc7d2a235a99434cc0627cbf98658fa856e3cdad8d70083918c. Eight desktop,40 core/app,10 packaging and28 final extracted-shared-asset Chromium/Firefox cases pass; typecheck/build pass. Independent whole-milestone code review passed and configuration/license findings fixed/rechecked. Native Windows execution explicitly waived/unverified. See reports/phases/2/2.1.md; Phase2 and actual sidebar verification remain incomplete.
             Milestone boundary: after its implementation, review all of 2.1, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/2/2.1.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
     - [ ] Milestone 2.2 — Chromium sidebar
         - [ ] T-014 — Build the minimal Chromium sidebar package
