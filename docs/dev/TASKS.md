@@ -113,10 +113,11 @@ The user explicitly directed: “Run full implementation without native Windows 
             Verified: Validated/extracted actual Chromium development ZIP;28 headless Chromium/Firefox UI cases and13 packaging cases passed. Candidate SHA-256 a7ef5b32e4038b57971394cf35bde450d7bf87f84f08410c9869a0332fadd309. Independent whole-milestone code review found no defects. Static-host shared UI, source/API and package checks establish the authorized scope; native extension installation and actual panel events remain explicitly unverified. See reports/phases/2/2.2.md.
             Milestone boundary: after its implementation, review all of 2.2, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/2/2.2.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
     - [ ] Milestone 2.3 — Firefox sidebar
-        - [ ] T-017 — Build the Firefox sidebar package
+        - [x] T-017 — Build the Firefox sidebar package
             Scope: extensions/firefox, src/entry and src/platform/firefox. Contracts: HOST/UI, RELEASE for all four targets.
             Depends on: T-016.
             Acceptance/evidence: Firefox manifest/sidebarAction opens the shared app from local assets without a native companion, remote code or premature storage/file permissions.
+            Verified: Firefox package/opener cases observed RED before support existed, then2 actual-background API cases and14 packaging cases passed. Production build/typecheck and Firefox ZIP generation passed. Firefox140+ MV2 sidebar manifest, direct toolbar user-action opener, local shared assets, no website/storage permissions, no-data-collection declaration and temporary unsigned installation instructions are included. Native installation/opening remains explicitly unverified under headless-only scope.
         - [ ] T-018 — Integrate Firefox sidebar session lifecycle
             Scope: src/platform/firefox and tests/extensions/firefox. Contracts: HOST/UI, RELEASE for all four targets.
             Depends on: T-017.

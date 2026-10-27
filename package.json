@@ -21,7 +21,8 @@
     "test:windows-assets": "python scripts/prepare_desktop_test.py && node scripts/browser.mjs test --config playwright.desktop-assets.config.ts",
     "package:chromium": "npm run build && python scripts/package_extension.py chromium",
     "test:extensions": "node --test tests/extensions/*.test.mjs",
-    "test:chromium-assets": "python scripts/prepare_extension_test.py chromium && node scripts/browser.mjs test --config playwright.extension.config.ts"
+    "test:chromium-assets": "python scripts/prepare_extension_test.py chromium && node scripts/browser.mjs test --config playwright.extension.config.ts",
+    "package:firefox": "npm run build && python scripts/package_extension.py firefox"
   },
   "devDependencies": {
     "@playwright/test": "1.62.1",

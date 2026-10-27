@@ -17,3 +17,8 @@ class ExtensionPackageTests(unittest.TestCase):
     def test_website_access_rejected(self):
         self.manifest['host_permissions']=['<all_urls>']
         with self.assertRaises(ValueError):module.package_extension(self.web,self.manifest,{'background.js':b''},self.root/'x.zip','0.2.0',{})
+    def test_firefox_sidebar_distribution(self):
+        manifest={'manifest_version':2,'name':'Tetris','version':'0.0.0','permissions':[],'sidebar_action':{'default_panel':'index.html'},'background':{'scripts':['background.js']},'browser_specific_settings':{'gecko':{'id':'blockfield@tetris.invalid','strict_min_version':'140.0','data_collection_permissions':{'required':['none']}}}}
+        output=self.root/'firefox.zip';module.package_extension(self.web,manifest,{'background.js':b'// opener'},output,'0.2.0',{'INSTALL.md':b'Temporary unsigned installation'})
+        with zipfile.ZipFile(output) as z:
+            actual=json.loads(z.read('manifest.json'));self.assertEqual(actual['sidebar_action']['default_panel'],'index.html');self.assertEqual(actual['permissions'],[]);self.assertIn('background.js',z.namelist());self.assertNotIn('side_panel',actual)
