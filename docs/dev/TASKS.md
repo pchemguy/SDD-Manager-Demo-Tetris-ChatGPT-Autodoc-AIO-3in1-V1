@@ -185,53 +185,63 @@ The user explicitly directed: “Run full implementation without native Windows 
 ## Phase 4 — Landing and rotation rules
 
 - [ ] Phase 4 — Landing and rotation rules
-    - [ ] Milestone 4.1 — SRS rotation
-        - [ ] T-028 — Define canonical SRS geometry and orientation fixtures
+    - [x] Milestone 4.1 — SRS rotation
+        - [x] T-028 — Define canonical SRS geometry and orientation fixtures
             Scope: src/core geometry/tables and tests/fixtures. Contracts: MOD SRS/ghost/drop/timing.
             Depends on: T-027. Phase 3 integration/publication/release and current-phase activation must also be verified.
             Acceptance/evidence: All orientations and rotation centers are explicitly documented; independent fixtures establish matrix coordinates and kick-sign convention.
-        - [ ] T-029 — Implement ordered SRS kick searches
+            Verified: RED missing SRS data module reproduced;84 core/application tests and typecheck pass. Independent literal fixtures cover all28 orientations, matrix centers, all16 ordered five-position kick sets and y-up to y-down conversion. Reference checked against published SRS diagrams/tables; existing spawn height remains GAME-defined. Phase4 tracking verified before edits; version0.4.0 prepared.
+        - [x] T-029 — Implement ordered SRS kick searches
             Scope: src/core rotation and tests/core. Contracts: MOD SRS/ghost/drop/timing.
             Depends on: T-028.
             Acceptance/evidence: JLSTZ, I and O cases cover walls/floors, CW/CCW transitions, first-valid ordering and unchanged state after complete rejection.
-        - [ ] T-030 — Integrate SRS rotation into the shared game
+            Verified: RED missing rotation search module reproduced;95 core/application tests and typecheck pass. CW/CCW traverse canonical orientations, JLSTZ/I wall/floor fixtures select the first valid ordered candidate, O geometry remains stationary, stack collisions are immutable and complete rejection preserves original identity/board.
+        - [x] T-030 — Integrate SRS rotation into the shared game
             Scope: src/core reducer, src/app input and UI acceptance. Contracts: MOD SRS/ghost/drop/timing.
             Depends on: T-028, T-029.
             Acceptance/evidence: Visible rotations and rejected wall/floor cases match fixture expectations; Hold/spawn orientation behavior remains correct.
+            Verified: Old reducer wall rejection observed RED, then96 core/application tests, typecheck/build and34 extracted-browser headless cases pass. Shared commands use ordered SRS; literal I wall/CCW Canvas and Hold orientation reset verified. Independent milestone review found no defects; screenshot inspected. Report/HANDOFF included; native Windows/installed-sidebar behavior explicitly unverified under approved scope.
             Milestone boundary: after its implementation, review all of 4.1, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/4/4.1.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
-    - [ ] Milestone 4.2 — Ghost and hard drop
-        - [ ] T-031 — Implement normal landing projection
+    - [x] Milestone 4.2 — Ghost and hard drop
+        - [x] T-031 — Implement normal landing projection
             Scope: src/core landing and tests/core. Contracts: MOD SRS/ghost/drop/timing.
             Depends on: T-030.
             Acceptance/evidence: Projection returns the first reachable resting placement, including hidden-spawn cells, cavities and immediate support, without mutating board state.
-        - [ ] T-032 — Implement hard-drop movement and scoring
+            Verified: RED missing landing module reproduced;101 core/application tests and typecheck pass. All normal orientations project to the first reachable floor/support; floating obstructions are never jumped, reachable wells and immediate/hidden spawn support are literal fixtures. Inputs/board remain unchanged; invalid initial placement rejected. SRS milestone13 and issues37–39 closed/read back.
+        - [x] T-032 — Implement hard-drop movement and scoring
             Scope: src/core commands and tests/core/app. Contracts: MOD SRS/ghost/drop/timing.
             Depends on: T-031.
             Acceptance/evidence: Hard drop matches landing, adds exactly two points per descended row and cannot jump obstructions or score on a zero-distance repeat.
-        - [ ] T-033 — Render the shared ghost and integrate hard-drop input
+            Verified: RED missing hard-drop export reproduced;107 core/application tests and typecheck pass. Hard drop uses first-reachable projection, awards exactly2 points per descended row before line scoring, respects safe integer saturation and cannot jump obstructions. Zero-distance/terminal repeats award no extra points; current failed-down policy locks once and advances the cached stream. Interval behavior remains T-034/T-035.
+        - [x] T-033 — Render the shared ghost and integrate hard-drop input
             Scope: src/ui board, src/app input and UI checks. Contracts: MOD SRS/ghost/drop/timing.
             Depends on: T-031, T-032.
             Acceptance/evidence: Ghost outline is distinguishable from active cells and exactly matches hard drop on controlled boards; Space handling does not interfere with form controls.
+            Verified: Absent ghost pixels observed RED;107 core/app tests and38 extracted Chromium/Firefox headless cases pass with build/typecheck. Outline and hard drop share first-reachable projection; coincidence remains visible. Space is board-only and once per press, with exact distance score and normal focused-button behavior. Independent milestone review clean; screenshot inspected. Interval timing remains next milestone; native omissions retained.
             Milestone boundary: after its implementation, review all of 4.2, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/4/4.2.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
-    - [ ] Milestone 4.3 — Grounded lock delay
-        - [ ] T-034 — Implement full-interval grounding timers
+    - [x] Milestone 4.3 — Grounded lock delay
+        - [x] T-034 — Implement full-interval grounding timers
             Scope: src/core timing and tests/core. Contracts: MOD SRS/ghost/drop/timing.
             Depends on: T-033.
             Acceptance/evidence: Grounding captures the interval; grounded movement/rotation and repeated drops do not reset it; support changes and precise boundary times behave deterministically.
-        - [ ] T-035 — Integrate timing with pause, Hold and drop policies
+            Verified: Eight interval scenarios observed RED, then115 core/application tests and typecheck pass. Separate gravity/grounding deadlines capture a full level interval at contact, preserve elapsed time through supported movement/rotation/repeated drops, cancel on support loss and lock at exact boundaries. Large and chunked elapsed time agree through game over; pause freezes both clocks. Existing failed-down behavior remains covered; application default integration is T-035.
+        - [x] T-035 — Integrate timing with pause, Hold and drop policies
             Scope: src/core/app and tests/app. Contracts: MOD SRS/ghost/drop/timing.
             Depends on: T-034.
             Acceptance/evidence: Paused duration is excluded; Hold/spawn reset only permitted timers; fixed modern interval behavior preserves current hard-drop timing.
-        - [ ] T-036 — Verify modern landing packages across hosts
+            Verified: Default/override integration observed RED, then119 core/application tests, typecheck/build and40 extracted-browser headless cases pass. Shared session now uses fixed modern interval locking; pause preserves both remainders, Hold/spawn reset clocks including immediate/blocked support, repeated zero-distance drops preserve timer/score and immediate override locks. Prior bag/Hold/SRS tests now wait the full interval; controls updated.
+        - [x] T-036 — Verify modern landing packages across hosts
             Scope: cross-host runtime suites, packaging and docs/user. Contracts: MOD SRS/ghost/drop/timing.
             Depends on: T-034, T-035.
             Acceptance/evidence: All four artifacts pass SRS/projection/drop/timing interactions, native pause evidence and preserved piece-flow/classic behavior; update installation/controls notes.
+            Verified: All four version0.4.0 archives each passed40 extracted Chromium/Firefox headless cases (160 total): SRS/ghost/drop/grounding, manual pause and modeled host blur, preserved piece flow and five widths.119 core/app checks/typecheck/build pass; CRC/version/current controls/shared UI/hash inspected. Independent timing milestone review clean;280px screenshot inspected. Native Windows/installed sidebar delivery remains explicitly unverified under approved scope.
             Milestone boundary: after its implementation, review all of 4.3, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/4/4.3.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
     - [ ] Milestone 4.4 — Phase review
-        - [ ] T-037 — Review, test and report phase 4
+        - [x] T-037 — Review, test and report phase 4
             Scope: whole Phase 4 code, contracts, integration, required artifacts and preserved prior behavior.
             Depends on: T-030, T-033, T-036; all delivery milestones 4.1, 4.2, 4.3 completed and closed/read back.
             Acceptance/evidence: independent code review and applicable domain/application/native-package checks cover the phase exits in PLAN; fix blockers, audit one-task commit/checkbox persistence, prepare version 0.4.0, complete release notes, installation/development-status instructions and candidate artifact checksums. Include PHASE-REPORT.md and HANDOFF with this task’s initial completion. A missing required platform check blocks completion; no integration/release is claimed before its actual verified workflow.
+            Verified: Independent full Phase4 review clean; fresh119 core/app,8 desktop,2 background,14 packaging,1 private-route checks and typecheck/build pass. All four exact candidates pass40 headless cases each (160 total), with shared UI/controls/version/hash verified. Nine prior closing commit/parent checkbox/result/evidence boundaries audited;0.4.0 notes/checksums/status ready. Native omissions retained. Integration/release pending.
             Report: docs/dev/reports/phases/4/PHASE-REPORT.md. After this task and its review milestone close, integrate/verify/publish the complete phase and perform the pinned default-branch release workflow before activating any authorized next phase.
 
 ## Phase 5 — Penetrator and dynamic ghost

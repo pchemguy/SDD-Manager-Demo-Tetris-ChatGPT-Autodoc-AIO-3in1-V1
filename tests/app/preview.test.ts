@@ -13,7 +13,7 @@ test('snapshot reads never consume draws and preview matches each subsequent spa
   assert.equal(count,draws);
   for(let shift=0;shift<4;shift++)session.act(i%2?'left':'right');
   const board=state!.board;let attempts=0;
-  while(state!.board===board&&state!.status==='running'&&attempts++<30)session.act('down');
+  while(state!.board===board&&state!.status==='running'&&attempts++<30)session.act('down');session.advance(1000);
   assert.equal(state!.active?.type,next);assert.equal(count,draws+1);
  }
 });
@@ -23,7 +23,7 @@ test('default session uses complete independent seven-piece bags',()=>{
  for(let i=0;i<6;i++){
   for(let shift=0;shift<4;shift++)session.act(i%2?'left':'right');
   const board=state!.board;let attempts=0;
-  while(state!.board===board&&attempts++<30)session.act('down');types.push(state!.active!.type);
+  while(state!.board===board&&attempts++<30)session.act('down');session.advance(1000);types.push(state!.active!.type);
  }
  assert.deepEqual(types.sort(),[...TYPES].sort());
 });
@@ -31,7 +31,21 @@ test('Hold and preview share one stream; swapping consumes none and restart clea
  let draws=0;const session=new GameSession(()=>TYPES[draws++%7]);let state:Readonly<GameState>;session.subscribe(s=>{state=s;});session.start();
  session.act('hold');assert.equal(state!.heldPiece,'I');assert.equal(state!.active?.type,'J');assert.equal(state!.nextPiece,'L');assert.equal(draws,3);
  session.act('hold');assert.equal(draws,3);const board=state!.board;let attempts=0;
- while(state!.board===board&&attempts++<30)session.act('down');assert.equal(state!.active?.type,'L');assert.equal(state!.nextPiece,'O');assert.equal(draws,4);
+ while(state!.board===board&&attempts++<30)session.act('down');session.advance(1000);assert.equal(state!.active?.type,'L');assert.equal(state!.nextPiece,'O');assert.equal(draws,4);
  session.act('hold');assert.equal(state!.active?.type,'I');assert.equal(state!.heldPiece,'L');assert.equal(state!.nextPiece,'O');assert.equal(draws,4);
  session.start();assert.equal(state!.heldPiece,null);assert.equal(state!.holdUsed,false);assert.equal(draws,6);
+});
+test('session hard drop uses the shared projection, scores distance and advances one cached spawn',()=>{
+ let draws=0;const session=new GameSession(()=>TYPES[draws++%7]);let state:Readonly<GameState>;session.subscribe(s=>{state=s;});session.start();session.act('hardDrop');
+ assert.equal(state!.score,38);assert.equal(state!.active?.type,'I');assert.equal(state!.nextPiece,'J');assert.equal(draws,2);session.advance(999);assert.equal(state!.active?.type,'I');session.advance(1);assert.equal(state!.active?.type,'J');assert.equal(state!.nextPiece,'L');assert.equal(draws,3);
+});
+test('modern session preserves grounding through pause and zero-distance drops',()=>{
+ const session=new GameSession(()=> 'I');let state:Readonly<GameState>;session.subscribe(s=>{state=s;});session.start();assert.equal(state!.lockPolicy,'interval');session.act('hardDrop');session.advance(400);
+ assert.equal(state!.grounding?.elapsedMs,400);assert.equal(state!.score,38);session.pause();session.advance(100000);assert.equal(state!.grounding?.elapsedMs,400);session.togglePause();session.act('hardDrop');assert.equal(state!.score,38);assert.equal(state!.grounding?.elapsedMs,400);
+ session.advance(599);assert.equal(state!.grounding?.elapsedMs,999);assert.equal(state!.board[19][3],null);session.advance(1);assert.equal(state!.board[19][3],'I');assert.equal(state!.grounding,null);assert.equal(state!.fallMs,0);
+});
+test('Hold and restart discard both clocks and keep the fixed modern policy',()=>{
+ let draws=0;const session=new GameSession(()=>TYPES[draws++%7]);let state:Readonly<GameState>;session.subscribe(s=>{state=s;});session.start();session.act('hardDrop');session.advance(400);session.act('hold');
+ assert.equal(state!.heldPiece,'I');assert.equal(state!.active?.type,'J');assert.equal(state!.grounding,null);assert.equal(state!.fallMs,0);session.advance(999);assert.equal(state!.active?.y,-1);session.advance(1);assert.equal(state!.active?.y,0);
+ session.start();assert.equal(state!.heldPiece,null);assert.equal(state!.grounding,null);assert.equal(state!.fallMs,0);assert.equal(state!.lockPolicy,'interval');
 });

@@ -1,10 +1,6 @@
 /** Real DOM input and Canvas pixels verify the shared board view. */
-import {test,expect,type Page} from '@playwright/test';
-async function painted(page:Page){return page.locator('canvas').evaluate(node=>{
- const ctx=(node as HTMLCanvasElement).getContext('2d')!;const result:string[]=[];
- for(let y=0;y<20;y++)for(let x=0;x<10;x++){const p=ctx.getImageData(x*30+15,y*30+15,1,1).data;const v=[p[0],p[1],p[2]];if(Math.max(...v)>140&&Math.max(...v)-Math.min(...v)>60)result.push(`${x},${y}`);}
- return result.sort();
-});}
+import {test,expect} from '@playwright/test';
+import {painted} from './helpers.ts';
 test.beforeEach(async({page})=>{await page.clock.install({time:new Date('2026-01-01T00:00:00Z')});await page.clock.pauseAt(new Date('2026-01-01T00:00:01Z'));});
 test('rendered piece follows legal controls and stops at the wall',async({page})=>{
  await page.goto('/');await page.getByRole('button',{name:'Start',exact:true}).click();
