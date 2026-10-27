@@ -219,7 +219,7 @@ The user explicitly directed: “Run full implementation without native Windows 
             Acceptance/evidence: Ghost outline is distinguishable from active cells and exactly matches hard drop on controlled boards; Space handling does not interfere with form controls.
             Verified: Absent ghost pixels observed RED;107 core/app tests and38 extracted Chromium/Firefox headless cases pass with build/typecheck. Outline and hard drop share first-reachable projection; coincidence remains visible. Space is board-only and once per press, with exact distance score and normal focused-button behavior. Independent milestone review clean; screenshot inspected. Interval timing remains next milestone; native omissions retained.
             Milestone boundary: after its implementation, review all of 4.2, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/4/4.2.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
-    - [ ] Milestone 4.3 — Grounded lock delay
+    - [x] Milestone 4.3 — Grounded lock delay
         - [x] T-034 — Implement full-interval grounding timers
             Scope: src/core timing and tests/core. Contracts: MOD SRS/ghost/drop/timing.
             Depends on: T-033.
@@ -237,10 +237,11 @@ The user explicitly directed: “Run full implementation without native Windows 
             Verified: All four version0.4.0 archives each passed40 extracted Chromium/Firefox headless cases (160 total): SRS/ghost/drop/grounding, manual pause and modeled host blur, preserved piece flow and five widths.119 core/app checks/typecheck/build pass; CRC/version/current controls/shared UI/hash inspected. Independent timing milestone review clean;280px screenshot inspected. Native Windows/installed sidebar delivery remains explicitly unverified under approved scope.
             Milestone boundary: after its implementation, review all of 4.3, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/4/4.3.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
     - [ ] Milestone 4.4 — Phase review
-        - [ ] T-037 — Review, test and report phase 4
+        - [x] T-037 — Review, test and report phase 4
             Scope: whole Phase 4 code, contracts, integration, required artifacts and preserved prior behavior.
             Depends on: T-030, T-033, T-036; all delivery milestones 4.1, 4.2, 4.3 completed and closed/read back.
             Acceptance/evidence: independent code review and applicable domain/application/native-package checks cover the phase exits in PLAN; fix blockers, audit one-task commit/checkbox persistence, prepare version 0.4.0, complete release notes, installation/development-status instructions and candidate artifact checksums. Include PHASE-REPORT.md and HANDOFF with this task’s initial completion. A missing required platform check blocks completion; no integration/release is claimed before its actual verified workflow.
+            Verified: Independent full Phase4 review clean; fresh119 core/app,8 desktop,2 background,14 packaging,1 private-route checks and typecheck/build pass. All four exact candidates pass40 headless cases each (160 total), with shared UI/controls/version/hash verified. Nine prior closing commit/parent checkbox/result/evidence boundaries audited;0.4.0 notes/checksums/status ready. Native omissions retained. Integration/release pending.
             Report: docs/dev/reports/phases/4/PHASE-REPORT.md. After this task and its review milestone close, integrate/verify/publish the complete phase and perform the pinned default-branch release workflow before activating any authorized next phase.
 
 ## Phase 5 — Penetrator and dynamic ghost

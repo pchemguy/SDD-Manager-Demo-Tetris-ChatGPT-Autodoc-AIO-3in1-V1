@@ -1,6 +1,6 @@
 # Project handoff
 
-Checkpoint: Phase4 activated from published Phase3; Milestones4.1–4.3 modern landing verified.
+Checkpoint: Phase4 activated from published Phase3; Full Phase4 implementation/review verified; integration/release pending.
 
 Outcome: T-001–T-027 are implemented, separately committed/pushed and closed. Phase2 explicitly merged into main; release v0.2.0 is published stable/latest from ef75333c01367559f47923bbd7d09881044976b9. All four ZIPs,checksums and four installation documents were downloaded and byte/hash compared. See [phase/release report](reports/phases/2/PHASE-REPORT.md). Native Windows execution and actual installed-sidebar events remain explicitly unverified under the accepted scope.
 
@@ -23,6 +23,6 @@ Outcome: T-001–T-027 are implemented, separately committed/pushed and closed. 
 ## Pending work and next action
 
 - Phase2 integration/publication, issues20–29, milestones6–9, exact-body release commit/tag, all nine release assets and latest state are verified. Preserve v0.2.0 at ef75333c01367559f47923bbd7d09881044976b9; subsequent report/task commits do not move it.
-- Phase3 integrated/published at19c9e54aa1955e01a2aff389ce59548faca27f63 and v0.3.0 released from b808e093c2747d962b834be5d4de4598aaf68586. All issues30–36/milestones10–12 and nine uploaded/downloaded assets/body/latest verified; see reports/phases/3/PHASE-REPORT.md. Phase4 branch-off and complete tracking were verified before task/test edits. Phase4 tracking is fully verified: milestones4.1–4.4 are13–16; T-028–T-037 are issues37–46. T-028–T-036 modern landing implemented/reviewed;119 core/app and40 headless cases per extracted target (160 total) pass. Milestones13/14 closed/read back. Publish T-036 and close milestone15 before T-037 phase review. See reports/phases/4/4.3.md.
+- Phase3 integrated/published at19c9e54aa1955e01a2aff389ce59548faca27f63 and v0.3.0 released from b808e093c2747d962b834be5d4de4598aaf68586. All issues30–36/milestones10–12 and nine uploaded/downloaded assets/body/latest verified; see reports/phases/3/PHASE-REPORT.md. Phase4 branch-off and complete tracking were verified before task/test edits. Phase4 tracking is fully verified: milestones4.1–4.4 are13–16; T-028–T-037 are issues37–46. T-028–T-037 modern landing implementation/independent review verified;119 core/app and40 headless cases per target (160 total) pass. Delivery issues37–45/milestones13–15 closed/read back. Publish T-037 and close issue46/milestone16, then integrate/release0.4.0 before Phase5 activation. See reports/phases/4/PHASE-REPORT.md.
 - Continue the full T-028–T-072 range and per-phase releases without another approval. Native Windows execution is excluded, and unavailable actual sidebar/native-window coverage remains explicitly unverified while supported headless source/adapter/package checks govern progression. Never claim those native checks passed.
 - Complete notes remain locally ignored and retained, recoverable from release commits/GitHub. Generated packages/caches may need rebuilding after transfer. Phase3 outcome is bag/preview/Hold, followed by the remaining accepted gameplay/configuration/persistence phases.
