@@ -1,8 +1,8 @@
 # Blockfield Tetris
 
-A classic Tetris game sharing one TypeScript game core and Canvas UI across the browser, Windows Electron desktop and Chromium/Firefox sidebar development packages.
+A Tetris game sharing one TypeScript game core and Canvas UI across the browser, Windows Electron desktop and Chromium/Firefox sidebar development packages.
 
-Implemented: seven tetrominoes, movement and rotation, automatic gravity, line clearing, scoring/levels, game over/restart, pause/focus handling and controlled held-arrow repeat, seven-piece bags, next preview and once-per-piece Hold. SRS/ghost/hard drop/lock delay, penetrator, settings, leaderboard and manual JSON/SQLite transfer are planned increments described by the [project brief](docs/dev/PROJECT.md).
+Implemented: seven tetrominoes, movement and SRS rotation, automatic gravity, line clearing, scoring/levels, game over/restart, pause/focus handling and controlled held-arrow repeat, seven-piece bags, next preview, once-per-piece Hold, ghost/hard drop and full-interval grounded locking. Penetrator, settings, leaderboard and manual JSON/SQLite transfer are planned increments described by the [project brief](docs/dev/PROJECT.md).
 
 ## Build and install
 

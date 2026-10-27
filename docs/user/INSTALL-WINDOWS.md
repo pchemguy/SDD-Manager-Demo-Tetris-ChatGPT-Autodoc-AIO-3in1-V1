@@ -10,7 +10,7 @@ Download the Windows x64 ZIP and verify its SHA-256 against the release checksum
 
 The runtime is bundled Electron 43.8.3. The renderer uses a fixed local app origin, sandboxing, context isolation and disabled Node integration. External navigation and popups are denied. Windows may display unsigned-application prompts; this package is neither signed nor store-distributed.
 
-Click the board to focus keyboard controls. Loss of focus, hiding or minimizing suspends play; resume explicitly. Closing destroys the current game session. Read CONTROLS.md for the classic rules and bindings. No settings, leaderboard or file-transfer capabilities are present in the desktop baseline.
+Click the board to focus keyboard controls. Loss of focus, hiding or minimizing suspends play; resume explicitly. Closing destroys the current game session. Read CONTROLS.md for the current rules and bindings. No settings, leaderboard or file-transfer capabilities are present in the desktop release.
 
 ## Contents and updates
 

@@ -230,10 +230,11 @@ The user explicitly directed: “Run full implementation without native Windows 
             Depends on: T-034.
             Acceptance/evidence: Paused duration is excluded; Hold/spawn reset only permitted timers; fixed modern interval behavior preserves current hard-drop timing.
             Verified: Default/override integration observed RED, then119 core/application tests, typecheck/build and40 extracted-browser headless cases pass. Shared session now uses fixed modern interval locking; pause preserves both remainders, Hold/spawn reset clocks including immediate/blocked support, repeated zero-distance drops preserve timer/score and immediate override locks. Prior bag/Hold/SRS tests now wait the full interval; controls updated.
-        - [ ] T-036 — Verify modern landing packages across hosts
+        - [x] T-036 — Verify modern landing packages across hosts
             Scope: cross-host runtime suites, packaging and docs/user. Contracts: MOD SRS/ghost/drop/timing.
             Depends on: T-034, T-035.
             Acceptance/evidence: All four artifacts pass SRS/projection/drop/timing interactions, native pause evidence and preserved piece-flow/classic behavior; update installation/controls notes.
+            Verified: All four version0.4.0 archives each passed40 extracted Chromium/Firefox headless cases (160 total): SRS/ghost/drop/grounding, manual pause and modeled host blur, preserved piece flow and five widths.119 core/app checks/typecheck/build pass; CRC/version/current controls/shared UI/hash inspected. Independent timing milestone review clean;280px screenshot inspected. Native Windows/installed sidebar delivery remains explicitly unverified under approved scope.
             Milestone boundary: after its implementation, review all of 4.3, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/4/4.3.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
     - [ ] Milestone 4.4 — Phase review
         - [ ] T-037 — Review, test and report phase 4
