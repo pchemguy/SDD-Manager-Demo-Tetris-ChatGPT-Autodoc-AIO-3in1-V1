@@ -46,7 +46,7 @@ Versions and platform deferrals are in PLAN. Every phase review prepares source/
             Acceptance/evidence: Demonstrate continued play, score/levels and game over; completion fires once and restart abandons unfinished games without recording fake completions.
             Verified: Four application cases and two real-browser automatic-gravity scenarios observed RED before integration. Final verification: 36 core/application tests, eight Chromium/Firefox UI tests, typecheck and production compilation passed. Whole-milestone code review, completion/restart behavior and screenshot inspection passed; report 1.2.md records timing controls, resolved status-locator ambiguity and native/package evidence limits.
             Milestone boundary: after its implementation, review all of 1.2, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/1/1.2.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
-    - [ ] Milestone 1.3 — Browser delivery
+    - [x] Milestone 1.3 — Browser delivery
         - [x] T-007 — Implement pause, focus and keyboard repeat handling
             Scope: src/app input/scheduler and focused UI checks. Contracts: GAME, basic HOST/UI, browser RELEASE.
             Depends on: T-006.
@@ -63,11 +63,12 @@ Versions and platform deferrals are in PLAN. Every phase review prepares source/
             Acceptance/evidence: Isolated Chromium/Firefox exercise the extracted build, actual Canvas output, restart/pause and wide/narrow layout; report exact binaries and evidence limitations.
             Verified: 26 extracted-build Chromium/Firefox cases passed across five viewport widths; 40 core/app tests, typecheck, five packaging tests and credential-route regression passed. Candidate ZIP hash remained 744557c62935ff1330ec88ec333aaf928195033dc826ef24fc8e0765bc234421. Whole Milestone 1.3 code review and screenshot inspection passed; see reports/phases/1/1.3.md for binaries and explicit native-event limits.
             Milestone boundary: after its implementation, review all of 1.3, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/1/1.3.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
-    - [ ] Milestone 1.4 — Phase review
-        - [ ] T-010 — Review, test and report phase 1
+    - [x] Milestone 1.4 — Phase review
+        - [x] T-010 — Review, test and report phase 1
             Scope: whole Phase 1 code, contracts, integration, required artifacts and preserved prior behavior.
             Depends on: T-003, T-006, T-009; all delivery milestones 1.1, 1.2, 1.3 completed and closed/read back.
             Acceptance/evidence: independent code review and applicable domain/application/native-package checks cover the phase exits in PLAN; fix blockers, audit one-task commit/checkbox persistence, prepare version 0.1.0, complete release notes, installation/development-status instructions and candidate artifact checksums. Include PHASE-REPORT.md and HANDOFF with this task’s initial completion. A missing required platform check blocks completion; no integration/release is claimed before its actual verified workflow.
+            Verified: Independent Phase 1 code review found no Critical/Important issues; two Minor help/documentation findings fixed and rechecked. Narrow guide regression observed RED before repair; all 28 rebuilt extracted-browser cases, 40 core/app tests, typecheck, five packaging cases and credential-route regression pass. Task persistence audit passed; version 0.1.0 notes and candidate hash prepared. See reports/phases/1/PHASE-REPORT.md. Integration and published release remain subsequent gates.
             Report: docs/dev/reports/phases/1/PHASE-REPORT.md. After this task and its review milestone close, integrate/verify/publish the complete phase and perform the pinned default-branch release workflow before activating any authorized next phase.
 
 ## Phase 2 — Desktop and sidebar baseline

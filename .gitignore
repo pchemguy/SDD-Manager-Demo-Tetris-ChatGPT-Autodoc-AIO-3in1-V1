@@ -13,3 +13,6 @@ __pycache__/
 *.pyc
 
 .package-test/
+
+/RELEASE-NOTES.md
+/.release-highlights.md

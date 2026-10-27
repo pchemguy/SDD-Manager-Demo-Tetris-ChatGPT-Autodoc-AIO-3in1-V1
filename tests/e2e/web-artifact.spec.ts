@@ -19,3 +19,12 @@ for(const width of [280,360,600,1024,1440]){
   expect(errors).toEqual([]);expect(external).toEqual([]);
  });
 }
+
+test('narrow layout keeps the keyboard guide reachable below the board',async({page})=>{
+ await page.setViewportSize({width:360,height:900});await page.goto('/');
+ const guide=page.getByRole('region',{name:'Keyboard controls'});await guide.scrollIntoViewIfNeeded();await expect(guide).toBeVisible();
+ await expect(guide.getByText('Pause / resume',{exact:true})).toBeVisible();
+ const g=await guide.boundingBox(),b=await page.getByRole('img',{name:'Game board'}).boundingBox();
+ expect(g!.y).toBeGreaterThanOrEqual(b!.y+b!.height);
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});

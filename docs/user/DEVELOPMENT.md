@@ -14,11 +14,11 @@ npm test
 npm run typecheck
 ```
 
-Node's built-in runner executes the TypeScript core tests directly. Compiler checking is a separate command. The classic game loop is available with npm run dev; npm run build compiles the static browser bundle. Phase packaging and release verification remain later tasks. These source commands are not evidence of an extracted release artifact.
+Node's built-in runner executes the TypeScript core tests directly. Compiler checking is a separate command. The classic game loop is available with npm run dev; npm run build compiles the static browser bundle. Browser packaging and extracted-artifact checks are described below. These source commands alone do not verify a distribution.
 
 ## Isolated browser provisioning
 
-Playwright 1.62.1 is pinned. Browser assets are provisioned for the owning browser task using one absolute project/job-specific PLAYWRIGHT_BROWSERS_PATH for both installation and execution. Do not use personal/system browser installations or profiles. Chromium and Playwright-managed Firefox are required. Initial provisioning syntax follows below; browser download/launch has not yet been verified by the geometry task.
+Playwright 1.62.1 is pinned. Browser assets are provisioned for the owning browser task using one absolute project/job-specific PLAYWRIGHT_BROWSERS_PATH for both installation and execution. Do not use personal/system browser installations or profiles. Chromium and Playwright-managed Firefox are required. Provisioning syntax follows below. The diagnosed Linux setup and verified browser versions are recorded in the milestone reports linked below.
 
 ```text
 node node_modules/playwright/cli.js install --only-shell chromium firefox

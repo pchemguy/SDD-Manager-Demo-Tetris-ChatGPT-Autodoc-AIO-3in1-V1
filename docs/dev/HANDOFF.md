@@ -1,8 +1,8 @@
 # Project handoff
 
-Checkpoint: Milestone 1.3 browser delivery verified; T-009 publication/issue/milestone closure follows this checkpoint.
+Checkpoint: Phase 1 reviewed and browser release candidate verified; T-010 publication and downstream integration/release follow this checkpoint.
 
-Outcome: T-001–T-009 implement and verify the classic browser game and extracted static distribution. Core/application, packaging and credential-route checks pass; 26 extracted-build Chromium/Firefox cases pass. See [browser delivery report](reports/phases/1/1.3.md). No phase integration or release is claimed.
+Outcome: T-001–T-010 implement and verify the classic browser game. Independent phase review found two Minor issues; narrow help access and stale documentation were fixed and rechecked. Forty core/application, five package, one server and 28 extracted Chromium/Firefox cases pass. See [phase report](reports/phases/1/PHASE-REPORT.md). Candidate version 0.1.0; provider release remains pending. Complete notes are retained locally in ignored RELEASE-NOTES.md and must be reconstructed if unavailable after transfer.
 
 ## Workflow and sources
 
@@ -22,6 +22,6 @@ Outcome: T-001–T-009 implement and verify the classic browser game and extract
 
 ## Pending work and next action
 
-- Confirm T-009 publication and issue 18 closure, then close/read back milestone 4 (1.3). T-007/T-008 issue closures are verified.
-- Execute T-010 phase review after the delivery milestone closures; verify task persistence, prepare 0.1.0 source/notes/artifacts, close its issue/review milestone, then integrate/publish main and perform the pinned release workflow.
-- Full T-001–T-072 authorization persists. Later-phase activation follows the verified predecessor release. Native Windows and actual sidebars remain unverified and required before Phase 2 acceptance.
+- Confirm T-010 publication/issue 19 closure, then close/read back milestone 5 (1.4). All delivery milestones are closed/read back.
+- Integrate the complete phase into refreshed main with an explicit two-parent merge, verify/publish it, then perform the exact-body default-branch release commit/tag and direct GitHub release workflow. No existing publisher is configured. Release assets: stable tetris-web.zip, SHA256SUMS and INSTALL-WEB.md; final-source rebuild/acceptance and uploaded-byte readback remain required.
+- Full T-001–T-072 authorization persists. Activate Phase 2 only after verified predecessor release. Native Windows and actual sidebar evidence remain unestablished and required before corresponding acceptance.
