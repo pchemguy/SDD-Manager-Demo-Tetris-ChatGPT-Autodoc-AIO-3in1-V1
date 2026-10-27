@@ -57,3 +57,7 @@ The package command compiles the static build and creates release/tetris-web-<ve
 Run npm run test:artifact to build the versioned ZIP, verify its checksum and entries, extract it into .package-test/web and execute the Chromium/Firefox suite through a plain Python static server. The test server serves only extracted files, with no Vite transformation or application backend. Python 3.11+ is required for this developer check. Apply the process-local Firefox override described above only on the diagnosed host.
 
 The artifact suite reuses gameplay, Canvas, pause/repeat and restart checks, then exercises 280/360/600/1024/1440-pixel layouts and rejects external runtime requests. Browser virtual clocks control timing; modeled window/document events are labeled separately from actual DOM focus and key delivery.
+
+## Electron host checks
+
+Electron 43.8.3 is pinned. npm run test:desktop exercises fixed-origin asset responses and sandboxed-window/navigation policy through real filesystem fixtures and a controlled Electron API boundary. npm run build compiles the shared UI. These source checks do not establish native Windows execution. The user waived native Windows 10/11 verification for the remaining implementation; Windows packages must retain that explicit limitation. Developer dependency installation can set ELECTRON_SKIP_BINARY_DOWNLOAD=1 when only source/cross-package checks are needed; distributable runtime archives are verified separately by desktop packaging.

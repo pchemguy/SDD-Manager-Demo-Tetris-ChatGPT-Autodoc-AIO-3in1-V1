@@ -79,10 +79,11 @@ The user explicitly directed: “Run full implementation without native Windows 
 
 - [ ] Phase 2 — Desktop and sidebar baseline
     - [ ] Milestone 2.1 — Windows desktop
-        - [ ] T-011 — Implement the sandboxed Electron asset host
+        - [x] T-011 — Implement the sandboxed Electron asset host
             Scope: electron main/protocol/preload, src/platform/electron and tests/desktop. Contracts: HOST/UI, RELEASE for all four targets.
             Depends on: T-010. Phase 1 integration/publication/release and current-phase activation must also be verified.
             Acceptance/evidence: Allowlisted standard app origin loads bundled assets, rejects traversal/navigation, and exposes no Node or arbitrary filesystem API to the renderer.
+            Verified: Five real-filesystem asset/window-policy cases observed RED on the missing host, then passed. Verified fixed standard app origin assets, MIME/CSP, traversal/credential-path/foreign-origin rejection, GET/HEAD policy, symlink rejection, sandbox/context isolation/Node-off preferences and denied navigation/popups. Forty existing core/app tests, typecheck, syntax checks and production build pass. Electron 43.8.3 pinned; native Windows execution explicitly waived and not claimed.
         - [ ] T-012 — Integrate desktop focus and lifecycle behavior
             Scope: electron window lifecycle, src/platform/electron and native tests. Contracts: HOST/UI, RELEASE for all four targets.
             Depends on: T-011.
