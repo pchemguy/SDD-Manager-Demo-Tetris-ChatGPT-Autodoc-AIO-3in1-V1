@@ -27,3 +27,11 @@ test('default session uses complete independent seven-piece bags',()=>{
  }
  assert.deepEqual(types.sort(),[...TYPES].sort());
 });
+test('Hold and preview share one stream; swapping consumes none and restart clears the slot',()=>{
+ let draws=0;const session=new GameSession(()=>TYPES[draws++%7]);let state:Readonly<GameState>;session.subscribe(s=>{state=s;});session.start();
+ session.act('hold');assert.equal(state!.heldPiece,'I');assert.equal(state!.active?.type,'J');assert.equal(state!.nextPiece,'L');assert.equal(draws,3);
+ session.act('hold');assert.equal(draws,3);const board=state!.board;let attempts=0;
+ while(state!.board===board&&attempts++<30)session.act('down');assert.equal(state!.active?.type,'L');assert.equal(state!.nextPiece,'O');assert.equal(draws,4);
+ session.act('hold');assert.equal(state!.active?.type,'I');assert.equal(state!.heldPiece,'L');assert.equal(state!.nextPiece,'O');assert.equal(draws,4);
+ session.start();assert.equal(state!.heldPiece,null);assert.equal(state!.holdUsed,false);assert.equal(draws,6);
+});

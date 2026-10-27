@@ -163,10 +163,11 @@ The user explicitly directed: “Run full implementation without native Windows 
             Depends on: T-023.
             Acceptance/evidence: Empty/populated slots, once-per-piece limits, orientation/timer reset and blocked held-piece spawn match MOD.
             Verified: RED missing Hold export reproduced;54 core/application tests and typecheck pass. Empty slot consumes one draw; populated swap consumes none; second Hold rejected until lock; spawn resets orientation/position/timer; blocked swap preserves settled board and ends game. Pause/game-over/idle reject Hold; restart clears slot. Milestone3.1 issues30–32 and milestone10 closed/read back.
-        - [ ] T-025 — Integrate Hold controls and presentation
+        - [x] T-025 — Integrate Hold controls and presentation
             Scope: src/app input and src/ui Hold view. Contracts: MOD bag/preview/Hold.
             Depends on: T-024.
             Acceptance/evidence: C/Shift exchanges once, renders the held piece and ignores repeated activation until a lock; game over and pause reject actions.
+            Verified: RED missing Hold UI and session exchange reproduced;55 core/app tests, typecheck and20 Chromium/Firefox headless UI cases pass. C/Shift and button share Hold reducer; repeated actions, paused/game-over rejection, post-lock swap, non-consuming populated slot and restart rendering verified. Shared Hold/Next geometry and controls instructions updated; screenshot inspected.
         - [ ] T-026 — Verify piece-flow artifacts and instructions
             Scope: cross-host suites, packaging and docs/user. Contracts: MOD bag/preview/Hold.
             Depends on: T-024, T-025.
