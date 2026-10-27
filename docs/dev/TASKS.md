@@ -191,10 +191,11 @@ The user explicitly directed: “Run full implementation without native Windows 
             Depends on: T-027. Phase 3 integration/publication/release and current-phase activation must also be verified.
             Acceptance/evidence: All orientations and rotation centers are explicitly documented; independent fixtures establish matrix coordinates and kick-sign convention.
             Verified: RED missing SRS data module reproduced;84 core/application tests and typecheck pass. Independent literal fixtures cover all28 orientations, matrix centers, all16 ordered five-position kick sets and y-up to y-down conversion. Reference checked against published SRS diagrams/tables; existing spawn height remains GAME-defined. Phase4 tracking verified before edits; version0.4.0 prepared.
-        - [ ] T-029 — Implement ordered SRS kick searches
+        - [x] T-029 — Implement ordered SRS kick searches
             Scope: src/core rotation and tests/core. Contracts: MOD SRS/ghost/drop/timing.
             Depends on: T-028.
             Acceptance/evidence: JLSTZ, I and O cases cover walls/floors, CW/CCW transitions, first-valid ordering and unchanged state after complete rejection.
+            Verified: RED missing rotation search module reproduced;95 core/application tests and typecheck pass. CW/CCW traverse canonical orientations, JLSTZ/I wall/floor fixtures select the first valid ordered candidate, O geometry remains stationary, stack collisions are immutable and complete rejection preserves original identity/board.
         - [ ] T-030 — Integrate SRS rotation into the shared game
             Scope: src/core reducer, src/app input and UI acceptance. Contracts: MOD SRS/ghost/drop/timing.
             Depends on: T-028, T-029.
