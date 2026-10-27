@@ -213,10 +213,11 @@ The user explicitly directed: “Run full implementation without native Windows 
             Depends on: T-031.
             Acceptance/evidence: Hard drop matches landing, adds exactly two points per descended row and cannot jump obstructions or score on a zero-distance repeat.
             Verified: RED missing hard-drop export reproduced;107 core/application tests and typecheck pass. Hard drop uses first-reachable projection, awards exactly2 points per descended row before line scoring, respects safe integer saturation and cannot jump obstructions. Zero-distance/terminal repeats award no extra points; current failed-down policy locks once and advances the cached stream. Interval behavior remains T-034/T-035.
-        - [ ] T-033 — Render the shared ghost and integrate hard-drop input
+        - [x] T-033 — Render the shared ghost and integrate hard-drop input
             Scope: src/ui board, src/app input and UI checks. Contracts: MOD SRS/ghost/drop/timing.
             Depends on: T-031, T-032.
             Acceptance/evidence: Ghost outline is distinguishable from active cells and exactly matches hard drop on controlled boards; Space handling does not interfere with form controls.
+            Verified: Absent ghost pixels observed RED;107 core/app tests and38 extracted Chromium/Firefox headless cases pass with build/typecheck. Outline and hard drop share first-reachable projection; coincidence remains visible. Space is board-only and once per press, with exact distance score and normal focused-button behavior. Independent milestone review clean; screenshot inspected. Interval timing remains next milestone; native omissions retained.
             Milestone boundary: after its implementation, review all of 4.2, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/4/4.2.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
     - [ ] Milestone 4.3 — Grounded lock delay
         - [ ] T-034 — Implement full-interval grounding timers

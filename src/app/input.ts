@@ -19,7 +19,7 @@ export class KeyRepeater {
 export function keyboardControls(board:HTMLCanvasElement,session:GameSession){
  const keys=new KeyRepeater(action=>session.act(action));let running=false;
  const stop=session.subscribe(state=>{running=state.status==='running';if(!running)keys.clear();});
- const actions:Record<string,Action>={ArrowLeft:'left',ArrowRight:'right',ArrowDown:'down',ArrowUp:'rotateCW',x:'rotateCW',X:'rotateCW',z:'rotateCCW',Z:'rotateCCW',c:'hold',C:'hold',Shift:'hold'};
+ const actions:Record<string,Action>={ArrowLeft:'left',ArrowRight:'right',ArrowDown:'down',ArrowUp:'rotateCW',x:'rotateCW',X:'rotateCW',z:'rotateCCW',Z:'rotateCCW',c:'hold',C:'hold',Shift:'hold',' ':'hardDrop'};
  const down=(event:KeyboardEvent)=>{
   if(event.key==='p'||event.key==='P'||event.key==='Escape'){event.preventDefault();if(!event.repeat)session.togglePause();return;}
   const action=actions[event.key];if(!action)return;event.preventDefault();if(running&&!event.repeat)keys.press(event.code||event.key,action);
