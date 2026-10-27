@@ -157,7 +157,7 @@ The user explicitly directed: “Run full implementation without native Windows 
             Acceptance/evidence: Preview matches a controlled spawn sequence on browser, desktop and both sidebars without changing gameplay state.
             Verified: RED missing Next view reproduced in both browsers; shared SVG preview passes controlled spawn/pause checks. All four extracted packages each pass30 headless cases (120 total), 49 core/app plus host/package/security checks pass. Independent milestone review found no defects; screenshot inspected. Native Windows and actual installed sidebars remain explicitly unverified under authorized scope.
             Milestone boundary: after its implementation, review all of 3.1, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/3/3.1.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
-    - [ ] Milestone 3.2 — Hold
+    - [x] Milestone 3.2 — Hold
         - [x] T-024 — Implement Hold state and exchange rules
             Scope: src/core Hold transitions and tests/core. Contracts: MOD bag/preview/Hold.
             Depends on: T-023.
@@ -175,10 +175,11 @@ The user explicitly directed: “Run full implementation without native Windows 
             Verified: All four rebuilt version0.3.0 archives each passed32 extracted headless cases (128 total), including Hold/Next at five widths and prior gameplay. CRC/version/entry/controls and identical compiled UI verified. Independent milestone review found no defects;280px artifact screenshot inspected.55 core/app and20 source UI cases remain passing; native Windows/installed sidebar events explicitly unverified.
             Milestone boundary: after its implementation, review all of 3.2, run required focused/integration/regression checks, repair blockers, and include the milestone report and HANDOFF with this task’s initial completion. Report: docs/dev/reports/phases/3/3.2.md. Close/read back all constituent task issues and this milestone before dependent review/transition.
     - [ ] Milestone 3.3 — Phase review
-        - [ ] T-027 — Review, test and report phase 3
+        - [x] T-027 — Review, test and report phase 3
             Scope: whole Phase 3 code, contracts, integration, required artifacts and preserved prior behavior.
             Depends on: T-023, T-026; all delivery milestones 3.1, 3.2 completed and closed/read back.
             Acceptance/evidence: independent code review and applicable domain/application/native-package checks cover the phase exits in PLAN; fix blockers, audit one-task commit/checkbox persistence, prepare version 0.3.0, complete release notes, installation/development-status instructions and candidate artifact checksums. Include PHASE-REPORT.md and HANDOFF with this task’s initial completion. A missing required platform check blocks completion; no integration/release is claimed before its actual verified workflow.
+            Verified: Independent full Phase3 review found no defects;55 core/app,8 desktop,2 background,14 packaging,1 private-route checks and typecheck pass. Four exact candidates each pass32 headless cases (128 total), shared UI/controls/version/hash checked. Each prior closing commit and parent checkbox/result/evidence audited. Version0.3.0, complete notes, installation/status and candidate checksums ready; native limitations retained. Integration/release pending.
             Report: docs/dev/reports/phases/3/PHASE-REPORT.md. After this task and its review milestone close, integrate/verify/publish the complete phase and perform the pinned default-branch release workflow before activating any authorized next phase.
 
 ## Phase 4 — Landing and rotation rules
